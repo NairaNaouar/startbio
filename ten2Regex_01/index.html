@@ -73,7 +73,7 @@
         
             <li><a class="toctree-l4" href="#quantifiers-and">Quantifiers — * + ? and {}</a></li>
         
-            <li><a class="toctree-l4" href="#or-operator-or">OR operator — | or []</a></li>
+            <li><a class="toctree-l4" href="#or-operator-or">OR operator — | or [ ]</a></li>
         
             <li><a class="toctree-l4" href="#character-classes-d-w-s-and">Character classes — \d \w \s and .</a></li>
         
@@ -252,7 +252,7 @@
   </tr>
 </table>
 
-<h3 id="or-operator-or">OR operator — | or []</h3>
+<h3 id="or-operator-or">OR operator — | or [ ]</h3>
 <table>
   <tr>
    <td><strong><code>a(b|c)</code></strong>
@@ -405,26 +405,12 @@
 <p>Remember that inside bracket expressions all special characters (including the backslash <code>\</code>) lose their special powers: thus we will not apply the “escape rule”.</p>
 <h3 id="greedy-and-lazy-match">Greedy and Lazy match</h3>
 <p>The quantifiers ( <code>* + {}</code>) are greedy operators, so they expand the match as far as they can through the provided text.</p>
-<p>For example, <code>&lt;.+&gt;</code> matches <code>&lt;div&gt;simple div&lt;/div&gt;</code> in <code>This is a <strong><div> simple div</div></strong> test</code>. In order to catch only the <code>div</code> tag we can use a <code>?</code> to make it lazy:</p>
-<table>
-  <tr>
-   <td><strong><code><.+?></code></strong>
-   </td>
-   <td>matches <strong>any character one or more</strong> times included <strong>inside <</strong> and <strong>></strong>, <strong>expanding as needed </strong>-><strong><a href="https://regex101.com/r/cO8lqs/24"> Try it!</a></strong>
-   </td>
-  </tr>
-</table>
-
+<p>For example, <code>&lt;.+&gt;</code> matches <code>&lt;div&gt;simple div&lt;/div&gt;</code> in <code>This is a &lt;strong&gt;&lt;div&gt; simple div&lt;/div&gt;&lt;/strong&gt; test</code>.</p>
+<hr />
+<p>In order to catch only the <code>div</code> tag we can use a <code>?</code> to make it lazy:</p>
+<p><code>&lt;.+?&gt;</code> matches <strong>any character one or more</strong> times included <strong>inside &lt;</strong> and <strong>&gt;</strong>, expanding as needed <a href="https://regex101.com/r/cO8lqs/24">Try it!</a></p>
 <p>Notice that a better solution should avoid the usage of <code>.</code> in favor of a more strict regex:</p>
-<table>
-  <tr>
-   <td><strong><code><[^<>]+></code></strong>
-   </td>
-   <td>matches <strong>any character except < or > one or more </strong>times included <strong>inside <</strong> and <strong>> </strong>-><strong><a href="https://regex101.com/r/cO8lqs/23"> Try it!</a></strong>
-   </td>
-  </tr>
-</table>
-
+<p><code>&lt;[^&lt;&gt;]+&gt;</code> matches <strong>any character except &lt; or &gt; one or more</strong> times included <strong>inside &lt; and &gt;</strong> -&gt; <a href="https://regex101.com/r/cO8lqs/23">Try it!</a></p>
 <hr />
 <h2 id="advanced-topics">Advanced topics</h2>
 <h3 id="boundaries-b-and-b">Boundaries — \b and \B</h3>
@@ -448,32 +434,33 @@
   </tr>
 </table>
 
-<pre><code>
-
-</code></pre>
-
 <h3 id="back-references-1">Back-references — \1</h3>
 <table>
-  <tr>
-   <td><strong><code>([abc])\1</code></strong>
-   </td>
-   <td>using <strong>\1</strong> it matches <strong>the same</strong> text <strong>that was matched by the first capturing group </strong>-><strong><a href="https://regex101.com/r/cO8lqs/14"> Try it!</a></strong>
-   </td>
-  </tr>
-  <tr>
-   <td><code>([abc])<strong>(</strong>[de]<strong>)\2</strong>\1</code>
-   </td>
-   <td>we can use <strong>\2</strong> (\3, \4, etc.) to identify <strong>the same</strong> text that <strong>was matched by the second </strong>(third, fourth, etc.) <strong>capturing group </strong>-><strong><a href="https://regex101.com/r/cO8lqs/15"> Try it!</a></strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>(?<foo>[abc])\k<foo></code></strong>
-   </td>
-   <td>we put the name <strong>foo t</strong>o the group and we reference it later (<strong>\k<foo></strong>). The result is the same of the first regex -><a href="https://regex101.com/r/cO8lqs/16"> Try it!</a>
-   </td>
-  </tr>
+<thead>
+<tr>
+<th>expression</th>
+<th>effect</th>
+<th>Try</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>([abc])\1</code></td>
+<td>using <strong>\1</strong> it matches the <strong>same</strong> text that was matched by the <strong>first capturing group</strong></td>
+<td><a href="https://regex101.com/r/cO8lqs/14">Try it!</a></td>
+</tr>
+<tr>
+<td><code>([abc])([de])\2\1</code></td>
+<td>we can use <strong>\2</strong> (\3, \4, etc.) to identify <strong>the same</strong> text that <strong>was matched by the second</strong> (third, fourth, etc.) <strong>capturing group</strong></td>
+<td><a href="https://regex101.com/r/cO8lqs/15">Try it!</a></td>
+</tr>
+<tr>
+<td><code>(?&lt;foo&gt;[abc])\k&lt;foo&gt;</code></td>
+<td>we put the name <strong>foo</strong> to the group and we reference it later (<strong>\k<foo></strong>). The result is the same of the first regex</td>
+<td><a href="https://regex101.com/r/cO8lqs/16">Try it!</a></td>
+</tr>
+</tbody>
 </table>
-
 <h3 id="look-ahead-and-look-behind-and">Look-ahead and Look-behind — (?=) and (?&lt;=)</h3>
 <table>
   <tr>
@@ -492,24 +479,26 @@
 
 <p>You can use also the negation operator!</p>
 <table>
-  <tr>
-   <td><code>d<strong>(?!</strong>r<strong>)</strong></code>
-   </td>
-   <td>matches a <strong>d </strong>only if is<strong> not followed by r</strong>, <strong>but r will not be</strong> part of the overall regex <strong>match </strong>-><strong><a href="https://regex101.com/r/cO8lqs/20"> Try it!</a></strong>
-   </td>
-  </tr>
-  <tr>
-   <td><strong><code>(?<!r)d</code></strong>
-   </td>
-   <td>matches a <strong>d </strong>only if is<strong> not preceded by an r</strong>, <strong>but r will not be</strong> part of the overall regex <strong>match </strong>-><strong><a href="https://regex101.com/r/cO8lqs/21"> Try it!</a></strong>
-   </td>
-  </tr>
+<thead>
+<tr>
+<th>expression</th>
+<th>effect</th>
+<th>Try</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>d(?=r)</code></td>
+<td>matches a <strong>d</strong> only if is <strong>not followed by r</strong>, <strong>but r will not be</strong> part of the overall regex <strong>match</strong></td>
+<td><a href="https://regex101.com/r/cO8lqs/20">Try it!</a></td>
+</tr>
+<tr>
+<td><code>(?&lt;!r)d</code></td>
+<td>matches a <strong>d</strong> <strong>only if is not preceded by an r, but r will not be</strong> part of the overall regex <strong>match</strong></td>
+<td><a href="https://regex101.com/r/cO8lqs/21">Try it!</a></td>
+</tr>
+</tbody>
 </table>
-
-<pre><code>
-
-</code></pre>
-
 <h2 id="summary">Summary</h2>
 <p>As you’ve seen, the application fields of regex can be multiple and I’m sure that you’ve recognized at least one of these tasks among those seen in your developer career, here a quick list:</p>
 <ul>
