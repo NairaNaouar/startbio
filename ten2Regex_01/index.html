@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Grep and Regex (1) - STARTbio</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Grep and Regex (1)";
+    var mkdocs_page_input_path = "ten2Regex_01.md";
+    var mkdocs_page_url = "/startbio/ten2Regex_01/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> STARTbio</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">1OminToLearn</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Grep and Regex (1)</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#credit-this-tutorial-is-extracted-from-regex-tutorial-a-quick-cheatsheet-by-examples">Credit: this tutorial is extracted from Regex tutorial — A quick cheatsheet by examples</a></li>
+    
+
+    <li class="toctree-l3"><a href="#basic-topics">Basic topics</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#anchors-and">Anchors — ^ and $</a></li>
+        
+            <li><a class="toctree-l4" href="#quantifiers-and">Quantifiers — * + ? and {}</a></li>
+        
+            <li><a class="toctree-l4" href="#or-operator-or">OR operator — | or []</a></li>
+        
+            <li><a class="toctree-l4" href="#character-classes-d-w-s-and">Character classes — \d \w \s and .</a></li>
+        
+            <li><a class="toctree-l4" href="#flags">Flags</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#intermediate-topics">Intermediate topics</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#grouping-and-capturing">Grouping and capturing — ()</a></li>
+        
+            <li><a class="toctree-l4" href="#bracket-expressions">Bracket expressions — []</a></li>
+        
+            <li><a class="toctree-l4" href="#greedy-and-lazy-match">Greedy and Lazy match</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#advanced-topics">Advanced topics</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#boundaries-b-and-b">Boundaries — \b and \B</a></li>
+        
+            <li><a class="toctree-l4" href="#back-references-1">Back-references — \1</a></li>
+        
+            <li><a class="toctree-l4" href="#look-ahead-and-look-behind-and">Look-ahead and Look-behind — (?=) and (?&lt;=)</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#summary">Summary</a></li>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Annexes</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../Curamus_project/">Curamus Project</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">STARTbio</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>1OminToLearn &raquo;</li>
+        
+      
+    
+    <li>Grep and Regex (1)</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/ARTbio/startbio/edit/master/docs/ten2Regex_01.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h4 id="credit-this-tutorial-is-extracted-from-regex-tutorial-a-quick-cheatsheet-by-examples">Credit: this tutorial is extracted from <a href="https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285">Regex tutorial — A quick cheatsheet by examples</a></h4>
+<p>Regular expressions (regex or regexp) are extremely useful in <strong>extracting information from any text</strong> by searching for one or more matches of a specific search pattern (i.e. a specific sequence of ASCII or unicode characters).</p>
+<p>Fields of application range from validation to parsing/replacing strings, passing through translating data to other formats and web scraping.</p>
+<p>One of the most interesting features is that once you’ve learned the syntax, you can actually use this tool in (almost) all programming languages ​​(JavaScript, Java, VB, C #, C / C++, Python, Perl, Ruby, Delphi, R, Tcl, and many others) with the slightest distinctions about the support of the most advanced features and syntax versions supported by the engines).</p>
+<p>Let’s start by looking at some examples and explanations.</p>
+<h2 id="basic-topics">Basic topics</h2>
+<h3 id="anchors-and">Anchors — ^ and $</h3>
+<table>
+  <tr>
+   <td><strong><code>^The</code></strong>
+   </td>
+   <td>matches any string that <strong>starts with</strong> <strong>The </strong>-><strong><a href="https://regex101.com/r/cO8lqs/2"> Try it!</a></strong>
+   </td>
+  </tr>
+  <tr>
+   <td><strong><code>end$</code></strong>
+   </td>
+   <td>matches <strong>a</strong> string that <strong>ends with</strong> <strong>end</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><strong><code>^The end$</code></strong>
+   </td>
+   <td><strong>exact string match</strong> (starts and <strong>ends</strong> with <strong>The end</strong>)
+   </td>
+  </tr>
+  <tr>
+   <td><strong><code>roar</code></strong>
+   </td>
+   <td>matches any string that <strong>has the text roar in it</strong>
+   </td>
+  </tr>
+</table>
+
+<h3 id="quantifiers-and">Quantifiers — * + ? and {}</h3>
+<table>
+  <tr>
+   <td><code>abc<strong>*</strong></code>
+   </td>
+   <td>matches a string that has <strong>ab followed by zero or more c </strong>-><strong><a href="https://regex101.com/r/cO8lqs/1"> Try it!</a></strong>
+   </td>
+  </tr>
+  <tr>
+   <td><code>abc<strong>+</strong></code>
+   </td>
+   <td>matches a string that has <strong>ab followed by one or more c</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><code>abc<strong>?</strong></code>
+   </td>
+   <td>matches a string that has <strong>ab followed by zero or one c</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><code>abc<strong>{2}</strong></code>
+   </td>
+   <td>matches a string that has <strong>ab followed by 2 c</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><code>abc<strong>{2,}</strong></code>
+   </td>
+   <td>matches a string that has <strong>ab followed by 2 or more c</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><code>abc<strong>{2,5}</strong></code>
+   </td>
+   <td>matches a string that has <strong>ab followed by 2 up to 5 c</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><code>a<strong>(bc)*</strong></code>
+   </td>
+   <td>matches a string that has <strong>a followed by zero or more copies of the sequence bc</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><code>a<strong>(bc){2,5}</strong></code>
+   </td>
+   <td>matches a string that has<strong> a followed by 2 up to 5 copies of the sequence bc</strong>
+   </td>
+  </tr>
+</table>
+
+<h3 id="or-operator-or">OR operator — | or []</h3>
+<table>
+  <tr>
+   <td><strong><code>a(b|c)</code></strong>
+   </td>
+   <td>matches a string that has <strong>a followed by b or c -><a href="https://regex101.com/r/cO8lqs/3"> Try it!</a></strong>
+   </td>
+  </tr>
+  <tr>
+   <td><strong><code>a[bc]</code></strong>
+   </td>
+   <td>same as previous
+   </td>
+  </tr>
+</table>
+
+<h3 id="character-classes-d-w-s-and"><code></code>Character classes — \d \w \s and .</h3>
+<table>
+  <tr>
+   <td><strong><code>\d</code></strong>
+   </td>
+   <td>matches a <strong>single character</strong> that is a <strong>digit </strong>-><strong><a href="https://regex101.com/r/cO8lqs/4"> Try it!</a></strong>
+   </td>
+  </tr>
+  <tr>
+   <td><strong><code>\w</code></strong>
+   </td>
+   <td>matches a <strong>word character</strong> (alphanumeric character plus underscore) -><a href="https://regex101.com/r/cO8lqs/4"> Try it!</a>
+   </td>
+  </tr>
+  <tr>
+   <td><strong><code>\s</code></strong>
+   </td>
+   <td>matches a <strong>whitespace character</strong> (includes tabs and line breaks)
+   </td>
+  </tr>
+  <tr>
+   <td><strong><code>.</code></strong>
+   </td>
+   <td>matches <strong>any character </strong>-><strong><a href="https://regex101.com/r/cO8lqs/5"> Try it!</a></strong>
+   </td>
+  </tr>
+</table>
+
+<p>Use the <code>.</code> operator carefully since often class or negated character class (which we’ll cover next) are faster and more precise.</p>
+<p><code>\d</code>, <code>\w</code> and <code>\s</code> also present their negations with <code>\D</code>, <code>\W</code> and <code>\S</code> respectively.</p>
+<p>For example, <code>\D</code> will perform the inverse match with respect to that obtained with <code>\d</code>.</p>
+<table>
+  <tr>
+   <td><strong><code>\D</code></strong>
+   </td>
+   <td>matches a <strong>single non-digit character </strong>-><strong><a href="https://regex101.com/r/cO8lqs/6"> Try it!</a></strong>
+   </td>
+  </tr>
+</table>
+
+<p>In order to be taken literally, you must escape the characters <code>^.[$()|*+?{\</code>with a backslash <code>\</code> as they have special meaning.</p>
+<table>
+  <tr>
+   <td><strong><code>\$\d</code></strong>
+   </td>
+   <td>matches a string that has a <strong>$ before one digit </strong>-><strong><a href="https://regex101.com/r/cO8lqs/9"> Try it!</a></strong>
+   </td>
+  </tr>
+  <tr>
+   <td><strong><code>\$\d</code></strong>
+   </td>
+   <td>Notice that you can match also <strong>non-printable characters</strong> like tabs <code>\t</code>, new-lines <code>\n</code>, carriage returns <code>\r</code>.
+   </td>
+  </tr>
+</table>
+
+<h3 id="flags">Flags</h3>
+<p>We are learning how to construct a regex but forgetting a fundamental concept: <strong>flags</strong>.</p>
+<p>A regex usually comes within this form **<code>/abc/</code></strong>, where the search pattern is delimited by two slash characters <code>/</code>. At the end we can specify a flag with these values (we can also combine them each other):</p>
+<ul>
+<li>
+<p><strong>g </strong>(global) does not return after the first match, restarting the subsequent searches from the end of the previous match</p>
+</li>
+<li>
+<p><strong>m</strong> (multi-line) when enabled <code>^</code> and <code>$</code> will match the start and end of a line, instead of the whole string</p>
+</li>
+<li>
+<p><strong>i</strong> (insensitive) makes the whole expression case-insensitive (for instance **<code>/aBc/i</code></strong> would match <strong><code>AbC</code></strong>)</p>
+</li>
+</ul>
+<hr />
+<h2 id="intermediate-topics">Intermediate topics</h2>
+<h3 id="grouping-and-capturing">Grouping and capturing — ()</h3>
+<table>
+  <tr>
+   <td><code>a<strong>(</strong>bc<strong>)</strong></code>
+   </td>
+   <td>parentheses create a <strong>capturing group with value bc </strong>-><strong><a href="https://regex101.com/r/cO8lqs/11"> Try it!</a></strong>
+   </td>
+  </tr>
+  <tr>
+   <td><code>a<strong>(?:</strong>bc<strong>)</strong>*</code>
+   </td>
+   <td>using <strong>?:</strong> we <strong>disable the capturing group </strong>-><strong><a href="https://regex101.com/r/cO8lqs/12"> Try it!</a></strong>
+   </td>
+  </tr>
+  <tr>
+   <td><code>a<strong>(?<foo></strong>bc<strong>)</strong></code>
+   </td>
+   <td>using <strong>?<foo></strong> we put a name to the group -><a href="https://regex101.com/r/cO8lqs/17"> Try it!</a>
+   </td>
+  </tr>
+</table>
+
+<p>This operator is very useful when we need to extract information from strings or data using your preferred programming language. Any multiple occurrences captured by several groups will be exposed in the form of a classical array: we will access their values specifying using an index on the result of the match.</p>
+<p>If we choose to put a name to the groups (using <code>(<strong>?<foo></strong>...)</code>) we will be able to retrieve the group values using the match result like a dictionary where the keys will be the name of each group.</p>
+<h3 id="bracket-expressions">Bracket expressions — []</h3>
+<table>
+  <tr>
+   <td><strong><code>[abc]</code></strong>
+   </td>
+   <td>matches a string that has <strong>either an a or a b or a c </strong>-><strong> </strong>is the <strong>same as a|b|c </strong>-><strong><a href="https://regex101.com/r/cO8lqs/7"> Try it!</a></strong>
+   </td>
+  </tr>
+  <tr>
+   <td><strong><code>[a-c]</code></strong>
+   </td>
+   <td>same as previous
+   </td>
+  </tr>
+  <tr>
+   <td><strong><code>[a-fA-F0-9]</code></strong>
+   </td>
+   <td>a string that represents <strong>a single hexadecimal digit, case insensitively </strong>-><strong><a href="https://regex101.com/r/cO8lqs/22"> Try it!</a></strong>
+   </td>
+  </tr>
+  <tr>
+   <td><strong><code>[0-9]%</code></strong>
+   </td>
+   <td>a string that has a character <strong>from 0 to 9 before a % sign</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><strong><code>[^a-zA-Z]</code></strong>
+   </td>
+   <td>a string that has <strong>not a letter from a to z or from A to Z. </strong>In this case the <strong>^</strong> is used as <strong>negation of the expression </strong>-><strong><a href="https://regex101.com/r/cO8lqs/10"> Try it!</a></strong>
+   </td>
+  </tr>
+</table>
+
+<pre><code>
+
+</code></pre>
+
+<p>Remember that inside bracket expressions all special characters (including the backslash <code>\</code>) lose their special powers: thus we will not apply the “escape rule”.</p>
+<h3 id="greedy-and-lazy-match">Greedy and Lazy match</h3>
+<p>The quantifiers ( <code>* + {}</code>) are greedy operators, so they expand the match as far as they can through the provided text.</p>
+<p>For example, <code>&lt;.+&gt;</code> matches <code>&lt;div&gt;simple div&lt;/div&gt;</code> in <code>This is a <strong><div> simple div</div></strong> test</code>. In order to catch only the <code>div</code> tag we can use a <code>?</code> to make it lazy:</p>
+<table>
+  <tr>
+   <td><strong><code><.+?></code></strong>
+   </td>
+   <td>matches <strong>any character one or more</strong> times included <strong>inside <</strong> and <strong>></strong>, <strong>expanding as needed </strong>-><strong><a href="https://regex101.com/r/cO8lqs/24"> Try it!</a></strong>
+   </td>
+  </tr>
+</table>
+
+<p>Notice that a better solution should avoid the usage of <code>.</code> in favor of a more strict regex:</p>
+<table>
+  <tr>
+   <td><strong><code><[^<>]+></code></strong>
+   </td>
+   <td>matches <strong>any character except < or > one or more </strong>times included <strong>inside <</strong> and <strong>> </strong>-><strong><a href="https://regex101.com/r/cO8lqs/23"> Try it!</a></strong>
+   </td>
+  </tr>
+</table>
+
+<hr />
+<h2 id="advanced-topics">Advanced topics</h2>
+<h3 id="boundaries-b-and-b">Boundaries — \b and \B</h3>
+<table>
+  <tr>
+   <td><strong><code>\babc\b</code></strong>
+   </td>
+   <td>performs a <strong>"whole words only" search </strong>-><strong><a href="https://regex101.com/r/cO8lqs/25"> Try it!</a></strong>
+   </td>
+  </tr>
+</table>
+
+<p><code>\b</code> represents an <strong>anchor like caret</strong> (it is similar to <code>$</code> and <code>^</code>) matching positions where <strong>one side is a word</strong> <strong>character </strong>(like <code>\w</code>) and the <strong>other side is not a word</strong> <strong>character </strong>(for instance it may be the beginning of the string or a space character).</p>
+<p>It comes with its <strong>negation</strong>, <code>\B</code>. This matches all positions where <code>\b</code> doesn’t match and could be if we want to find a search pattern fully surrounded by word characters.</p>
+<table>
+  <tr>
+   <td><strong><code>\Babc\B </code></strong>
+   </td>
+   <td>matches only if the pattern is <strong>fully surrounded by word</strong> characters -><a href="https://regex101.com/r/cO8lqs/26"> Try it!</a>
+   </td>
+  </tr>
+</table>
+
+<pre><code>
+
+</code></pre>
+
+<h3 id="back-references-1">Back-references — \1</h3>
+<table>
+  <tr>
+   <td><strong><code>([abc])\1</code></strong>
+   </td>
+   <td>using <strong>\1</strong> it matches <strong>the same</strong> text <strong>that was matched by the first capturing group </strong>-><strong><a href="https://regex101.com/r/cO8lqs/14"> Try it!</a></strong>
+   </td>
+  </tr>
+  <tr>
+   <td><code>([abc])<strong>(</strong>[de]<strong>)\2</strong>\1</code>
+   </td>
+   <td>we can use <strong>\2</strong> (\3, \4, etc.) to identify <strong>the same</strong> text that <strong>was matched by the second </strong>(third, fourth, etc.) <strong>capturing group </strong>-><strong><a href="https://regex101.com/r/cO8lqs/15"> Try it!</a></strong>
+   </td>
+  </tr>
+  <tr>
+   <td><strong><code>(?<foo>[abc])\k<foo></code></strong>
+   </td>
+   <td>we put the name <strong>foo t</strong>o the group and we reference it later (<strong>\k<foo></strong>). The result is the same of the first regex -><a href="https://regex101.com/r/cO8lqs/16"> Try it!</a>
+   </td>
+  </tr>
+</table>
+
+<h3 id="look-ahead-and-look-behind-and">Look-ahead and Look-behind — (?=) and (?&lt;=)</h3>
+<table>
+  <tr>
+   <td><code>d<strong>(?=</strong>r<strong>)</strong></code>
+   </td>
+   <td>matches a <strong>d </strong>only if is<strong> followed by r</strong>, <strong>but r will not be</strong> part of the overall regex <strong>match </strong>-><strong><a href="https://regex101.com/r/cO8lqs/18"> Try it!</a></strong>
+   </td>
+  </tr>
+  <tr>
+   <td><strong><code>(?<=r)d</code></strong>
+   </td>
+   <td>matches a <strong>d </strong>only if is<strong> preceded by an r</strong>, <strong>but r will not be</strong> part of the overall regex <strong>match </strong>-><strong><a href="https://regex101.com/r/cO8lqs/19"> Try it!</a></strong>
+   </td>
+  </tr>
+</table>
+
+<p>You can use also the negation operator!</p>
+<table>
+  <tr>
+   <td><code>d<strong>(?!</strong>r<strong>)</strong></code>
+   </td>
+   <td>matches a <strong>d </strong>only if is<strong> not followed by r</strong>, <strong>but r will not be</strong> part of the overall regex <strong>match </strong>-><strong><a href="https://regex101.com/r/cO8lqs/20"> Try it!</a></strong>
+   </td>
+  </tr>
+  <tr>
+   <td><strong><code>(?<!r)d</code></strong>
+   </td>
+   <td>matches a <strong>d </strong>only if is<strong> not preceded by an r</strong>, <strong>but r will not be</strong> part of the overall regex <strong>match </strong>-><strong><a href="https://regex101.com/r/cO8lqs/21"> Try it!</a></strong>
+   </td>
+  </tr>
+</table>
+
+<pre><code>
+
+</code></pre>
+
+<h2 id="summary">Summary</h2>
+<p>As you’ve seen, the application fields of regex can be multiple and I’m sure that you’ve recognized at least one of these tasks among those seen in your developer career, here a quick list:</p>
+<ul>
+<li>
+<p>data validation (for example check if a time string i well-formed)</p>
+</li>
+<li>
+<p>data scraping (especially web scraping, find all pages that contain a certain set of words eventually in a specific order)</p>
+</li>
+<li>
+<p>data wrangling (transform data from “raw” to another format)</p>
+</li>
+<li>
+<p>string parsing (for example catch all URL GET parameters, capture text inside a set of parenthesis)</p>
+</li>
+<li>
+<p>string replacement (for example, even during a code session using a common IDE to translate a Java or C# class in the respective JSON object — replace “;” with “,” make it lowercase, avoid type declaration, etc.)</p>
+</li>
+<li>
+<p>syntax highlightning, file renaming, packet sniffing and many other applications involving strings (where data need not be textual)
+Have fun and do not forget to recommend the article if you liked it 💚</p>
+</li>
+</ul>
+<!-- Docs to Markdown version 1.0β17 -->
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Curamus_project/" class="btn btn-neutral float-right" title="Curamus Project">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/ARTbio/startbio/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Curamus_project/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
