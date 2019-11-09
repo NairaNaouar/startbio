@@ -1,0 +1,1799 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://artbio.github.io/startbio/metavisitor/use_case_3-2/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Use Case 3-2 - STARTbio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#use-case-3-2s-aim" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://artbio.github.io/startbio/" title="STARTbio" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              STARTbio
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Use Case 3-2
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/ARTbio/startbio/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://artbio.github.io/startbio/" title="STARTbio" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    STARTbio
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/ARTbio/startbio/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      1Omin2
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        1Omin2
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ten2Regex_01/" title="Grep and Regex (1)" class="md-nav__link">
+      Grep and Regex (1)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Galaxy Trainings
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Galaxy Trainings
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Run your Galaxy server
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Run your Galaxy server
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Run-Galaxy/" title="Introduction: Why Running Galaxy as an administrator?" class="md-nav__link">
+      Introduction: Why Running Galaxy as an administrator?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Run-Galaxy/Training_menu/" title="Training Menu" class="md-nav__link">
+      Training Menu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Run-Galaxy/bare-galaxy/" title="Install a minimal standalone galaxy server" class="md-nav__link">
+      Install a minimal standalone galaxy server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Run-Galaxy/Run_workflow/" title="After deployment use case" class="md-nav__link">
+      After deployment use case
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Run-Galaxy/GalaxyKickStart/" title="Install a Galaxy server with Ansible and GalaxyKickStart" class="md-nav__link">
+      Install a Galaxy server with Ansible and GalaxyKickStart
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Run-Galaxy/Docker_GalaxyKickStart/" title="Install a Galaxy server with Docker" class="md-nav__link">
+      Install a Galaxy server with Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Run-Galaxy/Google_cloud_Account/" title="Appendix 1: Getting a Google Cloud Engine Account" class="md-nav__link">
+      Appendix 1: Getting a Google Cloud Engine Account
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Run-Galaxy/spin_off_VM/" title="Appendix 1: Spin off a Virtual Machine" class="md-nav__link">
+      Appendix 1: Spin off a Virtual Machine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Run-Galaxy/GCE_TP_Galaxy/" title="Appendix 2: Run your personal TP Galaxy server" class="md-nav__link">
+      Appendix 2: Run your personal TP Galaxy server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Run-Galaxy/Galaxy_architecture/" title="Appendix 3: Galaxy software architecture" class="md-nav__link">
+      Appendix 3: Galaxy software architecture
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Search for chomosome translocations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Search for chomosome translocations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/seq/" title="Sequencing Protocol" class="md-nav__link">
+      Sequencing Protocol
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/lumpy_approach/" title="Lumpy approach" class="md-nav__link">
+      Lumpy approach
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/connection/" title="Trainee connection" class="md-nav__link">
+      Trainee connection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/import/" title="Import datasets" class="md-nav__link">
+      Import datasets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/BWA/" title="BWA mem tool" class="md-nav__link">
+      BWA mem tool
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/lumpy/" title="lumpy analysis" class="md-nav__link">
+      lumpy analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/filter_vcf/" title="Filter VCF file for visualization" class="md-nav__link">
+      Filter VCF file for visualization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/coverage/" title="Compute genome coverage" class="md-nav__link">
+      Compute genome coverage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/workflow/" title="Generate workflow from history" class="md-nav__link">
+      Generate workflow from history
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/run_workflow/" title="Run the workflow" class="md-nav__link">
+      Run the workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/visualisation/" title="Visualisation in UCSC Genome Browser" class="md-nav__link">
+      Visualisation in UCSC Genome Browser
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Reference-based RNAseq analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Reference-based RNAseq analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-2" type="checkbox" id="nav-3-3-2">
+    
+    <label class="md-nav__link" for="nav-3-3-2">
+      Pretreatments
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-2">
+        Pretreatments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/uploads/" title="Data upload" class="md-nav__link">
+      Data upload
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/QC/" title="Quality control" class="md-nav__link">
+      Quality control
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-3" type="checkbox" id="nav-3-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3-3">
+      Outline and general concepts for the RNAseq analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-3">
+        Outline and general concepts for the RNAseq analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/cDNAs/" title="RNAseq librairies - cDNA synthesis" class="md-nav__link">
+      RNAseq librairies - cDNA synthesis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/sequencing_strategies/" title="RNAseq librairies - Inserts and sequencing strategies" class="md-nav__link">
+      RNAseq librairies - Inserts and sequencing strategies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/readcounts/" title="The key idea in Reference-base Expression analysis" class="md-nav__link">
+      The key idea in Reference-base Expression analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/read_filtering/" title="Reflecting on quality control & “filtering” in RNAseq analysis" class="md-nav__link">
+      Reflecting on quality control & “filtering” in RNAseq analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/transcript_quant/" title="Transcript Quantification" class="md-nav__link">
+      Transcript Quantification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/RNAseq_DE/" title="Statistical Analysis of Differential expression" class="md-nav__link">
+      Statistical Analysis of Differential expression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/outline_conclusion/" title="Experimental procedures affect downstream analyses" class="md-nav__link">
+      Experimental procedures affect downstream analyses
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-4" type="checkbox" id="nav-3-3-4">
+    
+    <label class="md-nav__link" for="nav-3-3-4">
+      Quality filtering
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-4">
+        Quality filtering
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/Cutadapt/" title="Optional filtering of reads on sequence quality" class="md-nav__link">
+      Optional filtering of reads on sequence quality
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-5" type="checkbox" id="nav-3-3-5">
+    
+    <label class="md-nav__link" for="nav-3-3-5">
+      Mapping
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-5">
+        Mapping
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/mapping/" title="Mapping" class="md-nav__link">
+      Mapping
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/star/" title="RNA STAR" class="md-nav__link">
+      RNA STAR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/hisat2/" title="HiSAT2" class="md-nav__link">
+      HiSAT2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/bam/" title="BAM inspection" class="md-nav__link">
+      BAM inspection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/visu_map/" title="Visualisation of read mapping" class="md-nav__link">
+      Visualisation of read mapping
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-6" type="checkbox" id="nav-3-3-6">
+    
+    <label class="md-nav__link" for="nav-3-3-6">
+      Analysis of the differential gene expression
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-6">
+        Analysis of the differential gene expression
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/intro_counting/" title="Introduction to read counting" class="md-nav__link">
+      Introduction to read counting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/strandness/" title="Estimation of the strandness" class="md-nav__link">
+      Estimation of the strandness
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/count/" title="Count the number of reads per annotated gene" class="md-nav__link">
+      Count the number of reads per annotated gene
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/DE_intro/" title="Identification of the differentially expressed features - DESeq2" class="md-nav__link">
+      Identification of the differentially expressed features - DESeq2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/DEDESeq2/" title="DESeq2 use" class="md-nav__link">
+      DESeq2 use
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/volcano/" title="Volcano Plot" class="md-nav__link">
+      Volcano Plot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/DEseq2visu/" title="Visualization of the differentially expressed genes" class="md-nav__link">
+      Visualization of the differentially expressed genes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-6-8" type="checkbox" id="nav-3-3-6-8">
+    
+    <label class="md-nav__link" for="nav-3-3-6-8">
+      Analysis of functional enrichment among the differentially expressed genes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-3-3-6-8">
+        Analysis of functional enrichment among the differentially expressed genes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/GO-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/GO-tool/" title="GO" class="md-nav__link">
+      GO
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-7" type="checkbox" id="nav-3-3-7">
+    
+    <label class="md-nav__link" for="nav-3-3-7">
+      Galaxy Workflows
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-7">
+        Galaxy Workflows
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/workflow_intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/workflow_use/" title="Example" class="md-nav__link">
+      Example
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" checked>
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Viruses Metagenomics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Viruses Metagenomics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Metavisitor" class="md-nav__link">
+      Metavisitor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../metavisitor_configure_references/" title="Prepare Metavisitor Galaxy instance for analyses" class="md-nav__link">
+      Prepare Metavisitor Galaxy instance for analyses
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../use_cases_input_data/" title="Prepare input data histories" class="md-nav__link">
+      Prepare input data histories
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../use_case_1/" title="Use Cases 1-1 to 1-4" class="md-nav__link">
+      Use Cases 1-1 to 1-4
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../use_case_2/" title="Use Cases 2-1 and 2-2" class="md-nav__link">
+      Use Cases 2-1 and 2-2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../use_case_3-1/" title="Use Case 3-1" class="md-nav__link">
+      Use Case 3-1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Use Case 3-2
+      </label>
+    
+    <a href="./" title="Use Case 3-2" class="md-nav__link md-nav__link--active">
+      Use Case 3-2
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-3-2s-aim" class="md-nav__link">
+    Use Case 3-2's aim
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-data-for-use-case-3-2" class="md-nav__link">
+    Input data for Use Case 3-2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#history-for-use-case-3-2" class="md-nav__link">
+    History for Use Case 3-2
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../use_case_3-3/" title="Use Case 3-3" class="md-nav__link">
+      Use Case 3-3
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4-9" type="checkbox" id="nav-3-4-9">
+    
+    <label class="md-nav__link" for="nav-3-4-9">
+      Install_Metavisitor
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-4-9">
+        Install_Metavisitor
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install_metavisitor/" title="Intro" class="md-nav__link">
+      Intro
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../metavisitor_ansible/" title="GalaxyKickStart" class="md-nav__link">
+      GalaxyKickStart
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../metavisitor_docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../metavisitor_access_control/" title="Access and Control Metavisitor Galaxy instance" class="md-nav__link">
+      Access and Control Metavisitor Galaxy instance
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Annexes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Annexes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../links/" title="Links" class="md-nav__link">
+      Links
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Code Snippets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Code Snippets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash_snippets/" title="Terminal Bash" class="md-nav__link">
+      Terminal Bash
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Curamus_project/" title="Curamus Project" class="md-nav__link">
+      Curamus Project
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-case-3-2s-aim" class="md-nav__link">
+    Use Case 3-2's aim
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-data-for-use-case-3-2" class="md-nav__link">
+    Input data for Use Case 3-2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#history-for-use-case-3-2" class="md-nav__link">
+    History for Use Case 3-2
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ARTbio/startbio/edit/master/docs/metavisitor/use_case_3-2.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Use Case 3-2</h1>
+                
+                <h4 id="use-case-3-2s-aim">Use Case 3-2's aim</h4>
+<p>In this Use Case, Metavisitor is used to search for the presence of viruses and identify them in RNA sequencing data of serums of children suffering from fevers of unknown origins. To compare Metavisitor's results to <a href="https://dx.doi.org/10.1371%2Fjournal.pntd.0001485">Yozwiak <em>et al</em></a>.</p>
+<hr />
+<h2 id="input-data-for-use-case-3-2">Input data for Use Case 3-2</h2>
+<p>As for the previous Use Cases 1, 2 and 3-1, the first step is to collect all input data in an history that we will name <code>Input data for Use Case 3-2</code>.</p>
+<ul>
+<li>Create a new history</li>
+<li>Rename this history <code>Input data for Use Case 3-2</code></li>
+<li>Using the tool <code>Extract reads in FASTQ/A format from NCBI SRA</code>, we are going to upload 43 paired end datasets. Indeed, these 43 datasets correspond to 86 fastq paired-ended sequence files. In addition, some datasets derive from the same patient; in those cases we will merge those datasets using the tool <code>Concatenate multiple datasets tail-to-head</code> and delete and purge the original datasets.</li>
+<li>
+<p>Open the "Upload datasets" menu. Click on the <code>Paste/Fetch data</code> button, name the file "Use-Case_3-2_SRR_information" and copy-paste the following text:</p>
+<table>
+<thead>
+<tr>
+<th>SRR id</th>
+<th>Patient id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SRR453487</td>
+<td>patient 566</td>
+</tr>
+<tr>
+<td>SRR453437</td>
+<td>patient 438</td>
+</tr>
+<tr>
+<td>SRR453443</td>
+<td>patient 401</td>
+</tr>
+<tr>
+<td>SRR453458</td>
+<td>patient 401</td>
+</tr>
+<tr>
+<td>SRR453430</td>
+<td>patient 382</td>
+</tr>
+<tr>
+<td>SRR453491</td>
+<td>patient 377</td>
+</tr>
+<tr>
+<td>SRR453499</td>
+<td>patient 375</td>
+</tr>
+<tr>
+<td>SRR453484</td>
+<td>patient 350</td>
+</tr>
+<tr>
+<td>SRR453464</td>
+<td>patient 349</td>
+</tr>
+<tr>
+<td>SRR453506</td>
+<td>patient 345</td>
+</tr>
+<tr>
+<td>SRR453417</td>
+<td>patient 344</td>
+</tr>
+<tr>
+<td>SRR453490</td>
+<td>patient 335</td>
+</tr>
+<tr>
+<td>SRR453478</td>
+<td>patient 331</td>
+</tr>
+<tr>
+<td>SRR453465</td>
+<td>patient 330</td>
+</tr>
+<tr>
+<td>SRR453480</td>
+<td>patient 330</td>
+</tr>
+<tr>
+<td>SRR453489</td>
+<td>patient 329</td>
+</tr>
+<tr>
+<td>SRR453505</td>
+<td>patient 329</td>
+</tr>
+<tr>
+<td>SRR453498</td>
+<td>patient 322</td>
+</tr>
+<tr>
+<td>SRR453446</td>
+<td>patient 321</td>
+</tr>
+<tr>
+<td>SRR453427</td>
+<td>patient 315</td>
+</tr>
+<tr>
+<td>SRR453440</td>
+<td>patient 315</td>
+</tr>
+<tr>
+<td>SRR453438</td>
+<td>patient 282</td>
+</tr>
+<tr>
+<td>SRR453450</td>
+<td>patient 275</td>
+</tr>
+<tr>
+<td>SRR453460</td>
+<td>patient 274</td>
+</tr>
+<tr>
+<td>SRR453485</td>
+<td>patient 270</td>
+</tr>
+<tr>
+<td>SRR453448</td>
+<td>patient 266</td>
+</tr>
+<tr>
+<td>SRR453424</td>
+<td>patient 263</td>
+</tr>
+<tr>
+<td>SRR453457</td>
+<td>patient 263</td>
+</tr>
+<tr>
+<td>SRR453510</td>
+<td>patient 193</td>
+</tr>
+<tr>
+<td>SRR453456</td>
+<td>patient 187</td>
+</tr>
+<tr>
+<td>SRR453425</td>
+<td>patient 186</td>
+</tr>
+<tr>
+<td>SRR453469</td>
+<td>patient 186</td>
+</tr>
+<tr>
+<td>SRR453481</td>
+<td>patient 183</td>
+</tr>
+<tr>
+<td>SRR453531</td>
+<td>patient 180</td>
+</tr>
+<tr>
+<td>SRR453474</td>
+<td>patient 179</td>
+</tr>
+<tr>
+<td>SRR453509</td>
+<td>patient 171</td>
+</tr>
+<tr>
+<td>SRR453451</td>
+<td>patient 168</td>
+</tr>
+<tr>
+<td>SRR453495</td>
+<td>patient 161</td>
+</tr>
+<tr>
+<td>SRR453504</td>
+<td>patient 161</td>
+</tr>
+<tr>
+<td>SRR453500</td>
+<td>patient 159</td>
+</tr>
+<tr>
+<td>SRR453493</td>
+<td>patient 156</td>
+</tr>
+<tr>
+<td>SRR453444</td>
+<td>patient 131</td>
+</tr>
+<tr>
+<td>SRR453426</td>
+<td>patient 78</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Click the <code>Start</code> button.</p>
+</li>
+<li>Select the <code>Cut columns from a table</code> tool and set the "Cut columns" parameter to "c1" and select "Use-Case_3-2_SRR_information" as input file in the "From" list. Execute the tool and rename the new dataset collection "Use_Case_3-2_accessions".</li>
+<li>Select the tool <code>Download and Extract Reads in FASTA/Q format from NCBI SRA</code>and select "List of SRA accession, one per line" in "select input type" and "Use_Case_3-2_accessions" in "sra accession list". Execute the tool. The data downloading step might take 40 minutes to 1h. Delete "Single-end data (fastq-dump)".</li>
+<li>Select the <code>Concatenate multiple datasets tail-to-head</code> tool and set "Paired collection" in "What type of data do you wish to concatenate?" and "Pair-end data (fastq-dump)" as "Input paired collection to concatenate". In "What type of concatenation do you wish to perform?" select "Concatenate pairs of datasets (outputs an unpaired collection of datasets)". Execute the tool.</li>
+<li>Select <code>Tag elements from file</code> tool and set "Concatenation by pairs" as "Input Collection" and "Use-Case_3-2_SRR_information" as "Tag collection elements according to this file". Execute the tool.</li>
+<li>Select <code>Apply Rule to Collection</code> tool and set "data 1, data 144, and others (Tagged)" as "Input Collection" and click the "Edit" button.<ul>
+<li>Click the "Column" button and select "Add Column from Metadata" from the list.</li>
+<li>Select "Tags" from the "For" list and click the "Apply" button.</li>
+<li>Click the "Rules" button and select "Add / Modify Column Definitions".</li>
+<li>Click "Add Definitions" button and select "List identifier(s)" from the list.</li>
+<li>Select "B" from the "Select a column" list.</li>
+<li>Click "<em>... Assign Another Column</em>" and select "A" from the "Select column" list. Click the "Apply" button and the "Save" button. Execute the tool.</li>
+</ul>
+</li>
+<li>Select the <code>Conatenate multiple datasets tail-to-head</code> tool ans set "Nested collection" in "What type of data do you wish to concatenate?" and select the "... (re-organized)" dataset collection in "Input nested collection". Click the "Execute" button.</li>
+<li>Rename the output collection as "Tractable Patient Datasets".</li>
+<li>Copy the <code>vir2 nucleotide BLAST database</code> from the <code>References</code> history to the current history <code>Input data for Use Case 3-2</code>.</li>
+</ul>
+<h2 id="history-for-use-case-3-2">History for Use Case 3-2</h2>
+<ol>
+<li>Stay in the history <code>Input data for Use Case 3-2</code></li>
+<li>pick the workflow <code>Metavisitor: Workflow for Use Case 3-2</code> in the workflows menu, and select the <code>run</code> option.</li>
+<li>For Step 1 (Fever Patient Sequences collection), select <code>Tractable Patient Datasets</code> (this should be already selected).</li>
+<li>For Step 2, select the <code>nucleotide vir2 blast database</code> (this should also be already selected)</li>
+<li>As usual, check the box <code>Send results to a new history</code>, edit the name of the new history to <code>History for Use Case 3-2</code>, and <code>Execute</code> the workflow ! Note, that for complex workflows with dataset collections in input, the actual warning that the workflow is started make take time to show up; you can even have a "504 Gateway Time-out" warning. This is not a serious issue: just go in your <code>User</code> -&gt; <code>Saved history</code> menu, you will see you <code>History for Use Case 3-2</code> running and you will be able to access it.</li>
+</ol>
+<p>As a last note, the workflow for Use Case 3-2 may take a long time. Be patient.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../use_case_3-1/" title="Use Case 3-1" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Use Case 3-1
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../use_case_3-3/" title="Use Case 3-3" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Use Case 3-3
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
