@@ -1,0 +1,1617 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://artbio.github.io/startbio/Run-Galaxy/Docker_GalaxyKickStart/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Install a Galaxy server with Docker - STARTbio</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#installation-of-a-galaxy-server-with-docker" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://artbio.github.io/startbio/" title="STARTbio" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              STARTbio
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Install a Galaxy server with Docker
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/ARTbio/startbio/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://artbio.github.io/startbio/" title="STARTbio" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    STARTbio
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/ARTbio/startbio/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      1Omin2
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        1Omin2
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ten2Regex_01/" title="Grep and Regex (1)" class="md-nav__link">
+      Grep and Regex (1)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Galaxy Trainings
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Galaxy Trainings
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Run your Galaxy server
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Run your Galaxy server
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Introduction: Why Running Galaxy as an administrator?" class="md-nav__link">
+      Introduction: Why Running Galaxy as an administrator?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Training_menu/" title="Training Menu" class="md-nav__link">
+      Training Menu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bare-galaxy/" title="Install a minimal standalone galaxy server" class="md-nav__link">
+      Install a minimal standalone galaxy server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Run_workflow/" title="After deployment use case" class="md-nav__link">
+      After deployment use case
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../GalaxyKickStart/" title="Install a Galaxy server with Ansible and GalaxyKickStart" class="md-nav__link">
+      Install a Galaxy server with Ansible and GalaxyKickStart
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Install a Galaxy server with Docker
+      </label>
+    
+    <a href="./" title="Install a Galaxy server with Docker" class="md-nav__link md-nav__link--active">
+      Install a Galaxy server with Docker
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation-of-a-galaxy-server-with-docker" class="md-nav__link">
+    Installation of a Galaxy server with Docker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-docker" class="md-nav__link">
+    What is Docker ?
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-machines" class="md-nav__link">
+    Virtual machines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#containers" class="md-nav__link">
+    Containers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#galaxykickstart-docker-container" class="md-nav__link">
+    GalaxyKickStart Docker Container
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-docker_galaxysh-script-explained" class="md-nav__link">
+    The docker_galaxy.sh script explained
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Google_cloud_Account/" title="Appendix 1: Getting a Google Cloud Engine Account" class="md-nav__link">
+      Appendix 1: Getting a Google Cloud Engine Account
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../spin_off_VM/" title="Appendix 1: Spin off a Virtual Machine" class="md-nav__link">
+      Appendix 1: Spin off a Virtual Machine
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../GCE_TP_Galaxy/" title="Appendix 2: Run your personal TP Galaxy server" class="md-nav__link">
+      Appendix 2: Run your personal TP Galaxy server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Galaxy_architecture/" title="Appendix 3: Galaxy software architecture" class="md-nav__link">
+      Appendix 3: Galaxy software architecture
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Search for chomosome translocations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Search for chomosome translocations
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/seq/" title="Sequencing Protocol" class="md-nav__link">
+      Sequencing Protocol
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/lumpy_approach/" title="Lumpy approach" class="md-nav__link">
+      Lumpy approach
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/connection/" title="Trainee connection" class="md-nav__link">
+      Trainee connection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/import/" title="Import datasets" class="md-nav__link">
+      Import datasets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/BWA/" title="BWA mem tool" class="md-nav__link">
+      BWA mem tool
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/lumpy/" title="lumpy analysis" class="md-nav__link">
+      lumpy analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/filter_vcf/" title="Filter VCF file for visualization" class="md-nav__link">
+      Filter VCF file for visualization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/coverage/" title="Compute genome coverage" class="md-nav__link">
+      Compute genome coverage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/workflow/" title="Generate workflow from history" class="md-nav__link">
+      Generate workflow from history
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/run_workflow/" title="Run the workflow" class="md-nav__link">
+      Run the workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../translocations/visualisation/" title="Visualisation in UCSC Genome Browser" class="md-nav__link">
+      Visualisation in UCSC Genome Browser
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Reference-based RNAseq analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Reference-based RNAseq analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-2" type="checkbox" id="nav-3-3-2">
+    
+    <label class="md-nav__link" for="nav-3-3-2">
+      Pretreatments
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-2">
+        Pretreatments
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/uploads/" title="Data upload" class="md-nav__link">
+      Data upload
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/QC/" title="Quality control" class="md-nav__link">
+      Quality control
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-3" type="checkbox" id="nav-3-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3-3">
+      Outline and general concepts for the RNAseq analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-3">
+        Outline and general concepts for the RNAseq analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/cDNAs/" title="RNAseq librairies - cDNA synthesis" class="md-nav__link">
+      RNAseq librairies - cDNA synthesis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/sequencing_strategies/" title="RNAseq librairies - Inserts and sequencing strategies" class="md-nav__link">
+      RNAseq librairies - Inserts and sequencing strategies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/readcounts/" title="The key idea in Reference-base Expression analysis" class="md-nav__link">
+      The key idea in Reference-base Expression analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/read_filtering/" title="Reflecting on quality control & “filtering” in RNAseq analysis" class="md-nav__link">
+      Reflecting on quality control & “filtering” in RNAseq analysis
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/transcript_quant/" title="Transcript Quantification" class="md-nav__link">
+      Transcript Quantification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/RNAseq_DE/" title="Statistical Analysis of Differential expression" class="md-nav__link">
+      Statistical Analysis of Differential expression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/outline_conclusion/" title="Experimental procedures affect downstream analyses" class="md-nav__link">
+      Experimental procedures affect downstream analyses
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-4" type="checkbox" id="nav-3-3-4">
+    
+    <label class="md-nav__link" for="nav-3-3-4">
+      Quality filtering
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-4">
+        Quality filtering
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/Cutadapt/" title="Optional filtering of reads on sequence quality" class="md-nav__link">
+      Optional filtering of reads on sequence quality
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-5" type="checkbox" id="nav-3-3-5">
+    
+    <label class="md-nav__link" for="nav-3-3-5">
+      Mapping
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-5">
+        Mapping
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/mapping/" title="Mapping" class="md-nav__link">
+      Mapping
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/star/" title="RNA STAR" class="md-nav__link">
+      RNA STAR
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/hisat2/" title="HiSAT2" class="md-nav__link">
+      HiSAT2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/bam/" title="BAM inspection" class="md-nav__link">
+      BAM inspection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/visu_map/" title="Visualisation of read mapping" class="md-nav__link">
+      Visualisation of read mapping
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-6" type="checkbox" id="nav-3-3-6">
+    
+    <label class="md-nav__link" for="nav-3-3-6">
+      Analysis of the differential gene expression
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-6">
+        Analysis of the differential gene expression
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/intro_counting/" title="Introduction to read counting" class="md-nav__link">
+      Introduction to read counting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/strandness/" title="Estimation of the strandness" class="md-nav__link">
+      Estimation of the strandness
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/count/" title="Count the number of reads per annotated gene" class="md-nav__link">
+      Count the number of reads per annotated gene
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/DE_intro/" title="Identification of the differentially expressed features - DESeq2" class="md-nav__link">
+      Identification of the differentially expressed features - DESeq2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/DEDESeq2/" title="DESeq2 use" class="md-nav__link">
+      DESeq2 use
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/volcano/" title="Volcano Plot" class="md-nav__link">
+      Volcano Plot
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/DEseq2visu/" title="Visualization of the differentially expressed genes" class="md-nav__link">
+      Visualization of the differentially expressed genes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-6-8" type="checkbox" id="nav-3-3-6-8">
+    
+    <label class="md-nav__link" for="nav-3-3-6-8">
+      Analysis of functional enrichment among the differentially expressed genes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-3-3-6-8">
+        Analysis of functional enrichment among the differentially expressed genes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/GO-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/GO-tool/" title="GO" class="md-nav__link">
+      GO
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3-7" type="checkbox" id="nav-3-3-7">
+    
+    <label class="md-nav__link" for="nav-3-3-7">
+      Galaxy Workflows
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-3-7">
+        Galaxy Workflows
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/workflow_intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reference_based_RNAseq/workflow_use/" title="Example" class="md-nav__link">
+      Example
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Annexes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Annexes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../links/" title="Links" class="md-nav__link">
+      Links
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Code Snippets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Code Snippets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash_snippets/" title="Terminal Bash" class="md-nav__link">
+      Terminal Bash
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Curamus_project/" title="Curamus Project" class="md-nav__link">
+      Curamus Project
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation-of-a-galaxy-server-with-docker" class="md-nav__link">
+    Installation of a Galaxy server with Docker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-docker" class="md-nav__link">
+    What is Docker ?
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtual-machines" class="md-nav__link">
+    Virtual machines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#containers" class="md-nav__link">
+    Containers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#galaxykickstart-docker-container" class="md-nav__link">
+    GalaxyKickStart Docker Container
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-docker_galaxysh-script-explained" class="md-nav__link">
+    The docker_galaxy.sh script explained
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ARTbio/startbio/edit/master/docs/Run-Galaxy/Docker_GalaxyKickStart.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Install a Galaxy server with Docker</h1>
+                
+                <h2 id="installation-of-a-galaxy-server-with-docker">Installation of a Galaxy server with Docker</h2>
+<h3 id="what-is-docker">What is Docker ?</h3>
+<p><img alt="Docker" src="../images/docker.png" /></p>
+<h4 id="virtual-machines">Virtual machines</h4>
+<p>Virtual machines (VMs) are an abstraction of physical hardware turning one server into
+many servers. The hypervisor allows multiple VMs to run on a single machine.
+Each VM includes a full copy of an operating system, one or more apps, necessary binaries
+and libraries - taking up tens of GBs. VMs can also be slow to boot.</p>
+<h4 id="containers">Containers</h4>
+<p>Containers are an abstraction at the app layer that packages code and dependencies
+together. Multiple containers can run on the same machine and share the OS kernel with
+other containers, each running as isolated processes in user space. Containers take up
+less space than VMs (container images are typically tens of MBs in size), and start
+almost instantly.</p>
+<h3 id="galaxykickstart-docker-container">GalaxyKickStart Docker <strong>Container</strong></h3>
+<p>Instead of using the GalaxyKickStart playbook in a VM, the playbook can be used to build
+a Docker container image that will be an almost exact mirror of the GalaxyKickStart VM
+you have just built.</p>
+<p>You are not going to do that today (although you should be able to do it by reading the instructions).</p>
+<p>Instead, you are going to</p>
+<ul>
+<li>Install the <code>docker</code> system</li>
+<li>pull the GalaxyKickStart docker container that is deposited in the <a href="https://hub.docker.com/u/artbio/"><code>Docker Hub</code></a></li>
+<li>run this docker container and connect to the deployed GalaxyKickStart server instance</li>
+</ul>
+<h3 id="deployment">Deployment</h3>
+<ul>
+<li>There is actually no need for a new VM, the ansible already installed the docker service
+in the VM used to deploy GalaxyKickStart.</li>
+<li>If not already, be connected to you VM as root user using the Google ssh console (<code>sudo -i</code>)</li>
+<li>download the script <code>docker_galaxy.sh</code> using the command <code>wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/docker_galaxy.sh</code></li>
+<li>run the script using the command <code>sh docker_galaxy.sh artbio/rna-biologie-genome</code> or <code>sh docker_galaxy.sh artbio/rna-biologie-genome artbio/biologiegenome</code></li>
+<li>
+<p>Connect to your docker-deployed "GalaxyKickStart" instance:</p>
+<p>Just click on the url displayed in your Google Cloud Engine Console
+and connect using the login:password <code>admin@galaxy.org:admin</code></p>
+</li>
+</ul>
+<h4 id="the-docker_galaxysh-script-explained">The docker_galaxy.sh script explained</h4>
+<p>NB: in the following code, numbers in line heads should be removed to run the script.</p>
+<pre><code> 1 #!/usr/bin/env sh
+ 2 set -e
+ 3 echo &quot;Now pulling the galaxykickstart docker image from DockerHub\n&quot;
+ 4 supervisorctl stop all
+ 5 docker pull $1
+ 6 echo &quot;Running galaxykickstart docker container\n&quot;
+ 7 export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \
+ 8           --privileged=true \
+ 9           -e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True \
+10           -e GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE=True \
+11           -e GALAXY_CONFIG_ENABLE_USER_DELETION=True \
+12           -e GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES=True \
+13           -v /tmp/:/tmp/ \
+14           -v /export/:/export \
+15           $1`
+16 echo &quot;The $1 docker container is deploying...\n&quot;
+17 sleep 90
+18 echo &quot;The $1 docker container is up and running\n&quot;
+19 docker logs  $DOCKER_INSTANCE
+20 docker exec $DOCKER_INSTANCE sudo su galaxy -c '/home/galaxy/galaxy/.venv/bin/pip install cryptography==2.2.2'
+21 docker exec $DOCKER_INSTANCE sudo su galaxy -c 'cd ~/galaxy/config &amp;&amp; wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/sanitize_whitelist.txt'
+22 echo &quot;Galaxy in container will restart to take into account new settings\n&quot;
+23 sleep 120
+24 docker exec $DOCKER_INSTANCE sudo supervisorctl restart galaxy:
+</code></pre>
+
+<ol>
+<li>The shebang line. Says that it is a script code and that the interpreter to execute the
+code is sh and can be found in the /usr/bin/env environment</li>
+<li>set -e says to the sh interpreter to exit the run at first error (to avoid catastrophes)</li>
+<li>prompts "Now pulling the galaxykickstart docker image from DockerHub"</li>
+<li>stop the galaxy services (galaxy, postgresql, slurm, nginx,...) that were deployed before with ansible (to liberate ports)</li>
+<li>Pulls (Downloads) the Docker Image specified as parameter to the script (either<code>artbio/biologiegenome</code>
+or <code>artbio/rna-biologie-genome</code>) from the <a href="https://hub.docker.com/r/artbio/biologiegenome/">DockerHub repository</a></li>
+<li>reports this action to the terminal</li>
+<li>
+<p>Lines 7 to 15 are actually a single command to run an instance of the galaxykickstart
+docker image. Note the <code>\</code> at ends of lines 7 to 14: this character <code>\</code> specify that the
+code line is continued without line break for the bash interpreter.</p>
+<p>The line 7 starts with an <code>export DOCKER_INSTANCE=</code> instruction. This means that the result
+of the command between ` after the sign <code>=</code> will be put in the environmental variable
+<code>DOCKER_INSTANCE</code>, available system-wide.</p>
+<p>Now, the docker command (between `) itself:</p>
+<p>Still in line 7, we have <code>docker run -d -p 80:80 -p 21:21 -p 8800:8800</code>.</p>
+<p>This means that a container will be run as a deamon (<code>-d</code> option) and that the internal
+TCP/IP ports 80 (web interface) and 21 (ftp interface) of the docker instance will be mapped
+to the ports 80 and 21 of your machin (The VM in this case). Note that in the syntax <code>-p 80:80</code>,
+the host port is specified to the left of the <code>:</code> and the docker port is specified to the right
+of the <code>:</code>.</p>
+</li>
+<li>
+<p>docker command continued: here we specify that the docker container acquires the root privileges</p>
+</li>
+<li>
+<p>docker command continued: <code>-e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True</code>.</p>
+<p>The -e option specifies an environmental variable <code>GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE</code>
+passed (<code>e</code>xported) to the docker container with the value <code>True</code>
+<code>galaxy_manage_trackster: true</code> with the string <code>galaxy_manage_trackster: false</code>
+in the ansible configuration file <code>groups/all</code>.</p>
+</li>
+<li>
+<p>The environmental variable <code>GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE</code> is exported to
+the docker container with the value <code>True</code></p>
+</li>
+<li>The environmental variable <code>GALAXY_CONFIG_ENABLE_USER_DELETION</code> is exported to
+the docker container with the value <code>True</code></li>
+<li>
+<p>The environmental variable <code>GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES</code> is exported to
+the docker container with the value <code>True</code></p>
+<p>Note that all these exports in the docker command correspond to advanced boiling/tuning of the docker container.
+You are not obliged to understand the details to get the container properly running.
+13. Now the -v is important, better to understand it !</p>
+<p>-v stands for "volume". the <code>-v</code> option says to export the /tmp directory of the docker container
+to the /tmp directory of the host.
+14. we also export the /export directory of the container (any docker container has or
+should have by default an /export directory) to an /export directory of the host (your VM here).</p>
+<p>Note that if the /export directory does not exists at docker run runtime, it will be created.</p>
+<p>So it is important to understand the -v magics: every directory specified by the -v option will be shared
+between the docker container filesystem and the host filesystem. It is a mapping operation, so that
+the same directory is accessible either from inside the docker container or from inside the host.</p>
+<p>Now, if you stop and remove the docker container, all exported directory will persist in the host.
+If you don't do that, all operations performed with a container are lost when you stop this container !</p>
+</li>
+<li>
+<p>This is the end of the docker run command. The docker image to be instantiated is specified by $1 variable,
+the parameter passed to the script at runtime.</p>
+</li>
+<li>reports to the terminal user</li>
+<li>wait 90 sec during the docker container deployment</li>
+<li>reports to the terminal user</li>
+<li>Now that the docker container is launched, you can access its logs with the command
+<code>docker logs</code> followed by the identification number of the docker container.
+We have put this ID in the variable <code>DOCKER_INSTANCE</code>
+and we access to the content of this variable by prefixing the variable with a <code>$</code>:
+<code>docker logs $DOCKER_INSTANCE</code></li>
+<li>This is just an update of the python package <code>cryptography</code> required for the galaxy server. You see
+here an example of how a user can interact with the docker container to adjust the services it
+is providing.</li>
+<li>another update of a configuration file for galaxy (job_conf.xml)</li>
+<li>Restart Galaxy inside the container to take the setting changes into consideration</li>
+</ol>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../GalaxyKickStart/" title="Install a Galaxy server with Ansible and GalaxyKickStart" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Install a Galaxy server with Ansible and GalaxyKickStart
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Google_cloud_Account/" title="Appendix 1: Getting a Google Cloud Engine Account" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Appendix 1: Getting a Google Cloud Engine Account
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
