@@ -1411,6 +1411,81 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#remove-lines-before-and-after-some-strings-in-a-file" class="md-nav__link">
+    Remove lines before and after some strings in a file
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-before-somestring-retaining-somestring" class="md-nav__link">
+    remove before somestring, retaining somestring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-after-someotherstring-including-someotherstring" class="md-nav__link">
+    remove after someotherstring, including someotherstring
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-which-ports-are-busy-and-which-ports-are-free" class="md-nav__link">
+    Check which ports are busy and which ports are free
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-open-files-for-process" class="md-nav__link">
+    List Open Files For Process
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lsof" class="md-nav__link">
+    lsof
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#empty-the-content-of-a-file-without-closing-it" class="md-nav__link">
+    Empty the content of a file without closing it
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculate-total-used-disk-space-by-files-older-than-180-days-using-find" class="md-nav__link">
+    Calculate total used disk space by files older than 180 days using find
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-a-privatepublic-ssh-key-pair-and-share-it-for-ssh-connection" class="md-nav__link">
+    generate a private/public ssh key pair and share it for ssh connection
+  </a>
+  
+</li>
+      
       
       
       
@@ -1489,6 +1564,81 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#remove-lines-before-and-after-some-strings-in-a-file" class="md-nav__link">
+    Remove lines before and after some strings in a file
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-before-somestring-retaining-somestring" class="md-nav__link">
+    remove before somestring, retaining somestring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-after-someotherstring-including-someotherstring" class="md-nav__link">
+    remove after someotherstring, including someotherstring
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-which-ports-are-busy-and-which-ports-are-free" class="md-nav__link">
+    Check which ports are busy and which ports are free
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-open-files-for-process" class="md-nav__link">
+    List Open Files For Process
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lsof" class="md-nav__link">
+    lsof
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#empty-the-content-of-a-file-without-closing-it" class="md-nav__link">
+    Empty the content of a file without closing it
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculate-total-used-disk-space-by-files-older-than-180-days-using-find" class="md-nav__link">
+    Calculate total used disk space by files older than 180 days using find
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-a-privatepublic-ssh-key-pair-and-share-it-for-ssh-connection" class="md-nav__link">
+    generate a private/public ssh key pair and share it for ssh connection
+  </a>
+  
+</li>
+      
       
       
       
@@ -1518,6 +1668,40 @@
 <h3 id="egrep">egrep</h3>
 <pre><code>egrep --color &quot;&lt;regexp&gt;&quot; &lt;pathtofile&gt;
 </code></pre>
+
+<h3 id="remove-lines-before-and-after-some-strings-in-a-file">Remove lines before and after some strings in a file</h3>
+<h5 id="remove-before-somestring-retaining-somestring">remove before somestring, retaining somestring</h5>
+<p><code>awk '/somestring/,0' &lt;pathtofile&gt; &gt; &lt;pathtodeleted_file&gt;</code></p>
+<h5 id="remove-after-someotherstring-including-someotherstring">remove after someotherstring, including someotherstring</h5>
+<p><code>sed -n '/someotherstring/q;p' &lt;pathtofile &gt; &lt;pathtodeleted_file&gt;</code></p>
+<h3 id="check-which-ports-are-busy-and-which-ports-are-free">Check which ports are busy and which ports are free</h3>
+<pre><code>sudo netstat -tulpn
+sudo netstat -antup
+sudo lsof -i -n -P
+# You can verify process using port /proc:
+ls -l /proc/&lt;PID&gt;/exe
+</code></pre>
+
+<h3 id="list-open-files-for-process">List Open Files For Process</h3>
+<p>First you need to find out PID of process. Simply use any one of the following command to obtain process id:
+<code>ps aux | grep {program-name}</code> OR <code>ps -C {program-name} -o pid=</code></p>
+<p>To list open files for firefox process, enter:
+<code>ls -l /proc/&lt;PID&gt;/fd</code></p>
+<h5 id="lsof">lsof</h5>
+<p>lsof command list open files under all Linux distributions or UNIX like operating system.</p>
+<p>Type the following command to list open file for process ID 351:
+<code>lsof -p 351</code></p>
+<h3 id="empty-the-content-of-a-file-without-closing-it">Empty the content of a file without closing it</h3>
+<pre><code>truncate -s 0 filename
+</code></pre>
+
+<h3 id="calculate-total-used-disk-space-by-files-older-than-180-days-using-find">Calculate total used disk space by files older than 180 days using find</h3>
+<p>From <a href="http://stackoverflow.com/questions/17419337/calculate-total-used-disk-space-by-files-older-than-180-days-using-find">stackoverflow</a>,
+here an example for space occupied by files older than 5 years (1825 days)</p>
+<pre><code>find . -type f -mtime +1825 -printf '%s\n' | awk '{a+=$1;} END {printf &quot;%.1f GB\n&quot;, a/2**30;}'
+</code></pre>
+
+<h3 id="generate-a-privatepublic-ssh-key-pair-and-share-it-for-ssh-connection">generate a private/public ssh key pair and share it for ssh connection</h3>
                 
                   
                 
