@@ -405,8 +405,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-git-clone-httpsgithubcomgalaxyprojectgalaxygit-b-release_1809" class="md-nav__link">
-    4. git clone https://github.com/galaxyproject/galaxy.git -b release_18.09
+  <a href="#4-git-clone-httpsgithubcomgalaxyprojectgalaxygit-b-release_1905" class="md-nav__link">
+    4. git clone https://github.com/galaxyproject/galaxy.git -b release_19.05
   </a>
   
 </li>
@@ -433,8 +433,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#8-ready-for-the-big-bang" class="md-nav__link">
-    8. Ready for the Big Bang ?
+  <a href="#8-ready-for-deploying-galaxy" class="md-nav__link">
+    8. Ready for deploying Galaxy ?
   </a>
   
 </li>
@@ -1617,8 +1617,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-git-clone-httpsgithubcomgalaxyprojectgalaxygit-b-release_1809" class="md-nav__link">
-    4. git clone https://github.com/galaxyproject/galaxy.git -b release_18.09
+  <a href="#4-git-clone-httpsgithubcomgalaxyprojectgalaxygit-b-release_1905" class="md-nav__link">
+    4. git clone https://github.com/galaxyproject/galaxy.git -b release_19.05
   </a>
   
 </li>
@@ -1645,8 +1645,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#8-ready-for-the-big-bang" class="md-nav__link">
-    8. Ready for the Big Bang ?
+  <a href="#8-ready-for-deploying-galaxy" class="md-nav__link">
+    8. Ready for deploying Galaxy ?
   </a>
   
 </li>
@@ -1716,36 +1716,36 @@
                 
                 <h2 id="install-a-minimal-galaxy-server-with-git">Install a minimal galaxy server with git</h2>
 <h3 id="spin-off-a-virtual-machine-bare-galaxy">Spin off a virtual Machine <code>bare-galaxy</code></h3>
-<p>You may have already done this in the <a href="../spin_off_VM/">previous section</a>. If not, refer to this section
-We are going to use a GCE VM 
-- under <code>Ubuntu 16.04 LTS</code>
+<p>You may have already done this in the <a href="../spin_off_VM/">previous section</a>. If not, refer to this <a href="../spin_off_VM/">section</a></p>
+<p>We are going to use a GCE Virtual Machine with: 
+-  <code>Ubuntu 16.04 LTS</code> as OS
 - <code>2</code> processors
 - <code>7.5</code> Gb RAM
 - a <code>50 Gb</code> Volume (more than enough)</p>
 <h3 id="connect-to-the-vm-as-explained-in-this-section-using-the-ssh-web-console">Connect to the VM as explained in <a href="../spin_off_VM/">this section</a> using the ssh web console</h3>
 <h3 id="installation-of-dependencies">Installation of dependencies</h3>
-<p>To install Galaxy, we only need a few dependencies (i.e. pre-installed programs which Galaxy needs) and a limited number of command line.
-We are going to execute these instruction as the <code>root</code> unix user. This is easier because installation
+<p>To install Galaxy, we only need a few dependencies (i.e. pre-installed programs which Galaxy needs) and a limited number of command lines.</p>
+<p>We are going to execute these instruction as the <code>root</code> unix user. This is easier because installation
 of new programs as well as manipulations of network interfaces is generally permitted only
 to users with administration rights.</p>
-<p>So let's do this step by step:</p>
+<p>So let's do this, step by step:</p>
 <h5 id="1-sudo-i">1. <code>sudo -i</code></h5>
 <p>This command open a new "shell" where you are root. You can check this by typing <code>pwd</code> that
 should return <code>/root/</code>, meaning that you are now working in the directory of the <code>root</code> user.</p>
 <h4 id="2-apt-update-y">2. <code>apt update -y</code></h4>
-<p>This command will just trigger an update of the program database in the Ubuntu OS.</p>
+<p>This command will just trigger an update of the installed programs database in the Ubuntu OS.</p>
 <h5 id="3-apt-install-y-python-dev-python-pip-nano-git">3. <code>apt install -y python-dev python-pip nano git</code></h5>
-<p>This command install some python programs (python-dev python-pip) that are intensively used by Galaxy,
-<code>nano</code>, a simple text editor we need, and the <code>git</code> program which is the software to fetch,
-and update Galaxy (i.e. a sort of "installer" program). The <code>-y</code> option specifies to the <code>apt-get</code>
-package installer that no confirmation is needed for this command.</p>
-<h5 id="4-git-clone-httpsgithubcomgalaxyprojectgalaxygit-b-release_1809">4. <code>git clone https://github.com/galaxyproject/galaxy.git -b release_18.09</code></h5>
+<p>This command install some python programs (python-dev and python-pip) that are intensively used by Galaxy,
+<code>nano</code>, a simple text editor we need, and the <code>git</code> program which is the software to fetch or
+and update Galaxy (i.e. a sort of "installer" program). The <code>-y</code> option specifies to the <code>apt</code>
+package installer that no manual confirmation is needed for this command.</p>
+<h5 id="4-git-clone-httpsgithubcomgalaxyprojectgalaxygit-b-release_1905">4. <code>git clone https://github.com/galaxyproject/galaxy.git -b release_19.05</code></h5>
 <p>This command says to use <code>git</code> to <code>clone</code> the code repository located at <code>https://github.com/galaxyproject/galaxy.git</code>.
-In addition the <code>-b release_18.09</code> option specifies that only the version <code>release_18.09</code> will be cloned locally in your virtual machine.
+In addition the <code>-b release_19.05</code> option specifies that only the version <code>release_19.05</code> will be cloned locally in your virtual machine.
 You may try to visualize the URL <a href="https://github.com/galaxyproject/galaxy.git">https://github.com/galaxyproject/galaxy.git</a>
-in your web browser. You will literally see the code of Galaxy !</p>
+in your web browser. You will, literally, see the code of Galaxy. It is Open Source, as you can notice.</p>
 <h5 id="5-cd-galaxy">5. <code>cd galaxy</code></h5>
-<p>This command shift you in the <code>galaxy</code> directory that was created by git</p>
+<p>This command shift you in the <code>galaxy</code> directory that was created by git and the <code>git clone</code> command in 4.</p>
 <h5 id="6-cp-configgalaxyymlsample-configgalaxyyml">6. <code>cp config/galaxy.yml.sample config/galaxy.yml</code></h5>
 <p>This command makes a copie of the <code>galaxy.yml.sample</code> file into <code>galaxy.yml</code> - in the
 directory <code>config</code> that is in the <code>galaxy</code> directory.</p>
@@ -1758,20 +1758,20 @@ directory <code>config</code> that is in the <code>galaxy</code> directory.</p>
 <ul>
 <li>Find the line <code>#admin_users: ''</code>, delete the <code>#</code> character and type your email address between the two single quotes.</li>
 </ul>
-<p>Any email address is ok (me@myname.fr is you want). It is just used here as an admin identifier.</p>
+<p>Any email address is ok (me@myname.fr if you want). It is just used here as an admin identifier.</p>
 <ul>
-<li>save your edits by pressing the key combination <code>Ctrl</code>+<code>o</code></li>
+<li>save your changes by pressing the key combination <code>Ctrl</code>+<code>o</code></li>
 <li>quit nano by pressing the key combination <code>Ctrl</code>+<code>x</code></li>
 </ul>
-<h5 id="8-ready-for-the-big-bang">8. Ready for the Big Bang ?</h5>
+<h5 id="8-ready-for-deploying-galaxy">8. Ready for deploying Galaxy ?</h5>
 <p>Then type <code>sh run.sh</code> and press the <code>enter</code> key !</p>
 <p>You should see an abundant log scrolling down. Don't worry !
 - All Galaxy dependencies required for the Galaxy server instance are being downloaded and installed
 - The Galaxy computing environment is automatically set up
-- the Galaxy web server is installed
-- The Galaxy database is automatically upgraded to the latest structure
+- the Galaxy web server is installed and static pages are built
+- The Galaxy database is automatically upgraded to its latest structure/model
 - Various tools are upgraded.</p>
-<p>After 9 minute or so, you should see the log freezing with:</p>
+<p>After 9 minute or so, you should see the log stopping with:</p>
 <pre><code>Starting server in PID 3813.
 serving on http://127.0.0.1:80
 </code></pre>
