@@ -1657,20 +1657,26 @@ an admin user. Just use the <code>admin@galaxy.org:admin</code> as credentials (
 11
 12
 13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="nb">set</span> -e
 apt update -y
 apt install -y python-pip python-dev python-setuptools git htop
 <span class="nb">echo</span> <span class="s2">&quot;Upgrading pip&quot;</span>
 pip install -U pip
-pip --version
-pip install <span class="nv">ansible</span><span class="o">==</span><span class="m">2</span>.4
+/usr/local/bin/pip --version
+/usr/local/bin/pip install <span class="nv">ansible</span><span class="o">==</span><span class="m">2</span>.7.4
 ansible --version
 git clone https://github.com/ARTbio/GalaxyKickStart.git -b <span class="nv">$1</span>
 <span class="nb">cd</span> GalaxyKickStart/
 ansible-galaxy install -r requirements_roles.yml -p roles/ -f
 ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
+<span class="c1"># su galaxy -c &#39;cd ~/galaxy/config &amp;&amp; wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/sanitize_whitelist.txt&#39;</span>
 <span class="nb">echo</span> <span class="s2">&quot;end of deployment\n&quot;</span>
+<span class="c1"># echo &quot;Galaxy will restart to take into account last settings\n&quot;</span>
+<span class="c1"># supervisorctl restart galaxy:</span>
 </pre></div>
 </td></tr></table>
 
