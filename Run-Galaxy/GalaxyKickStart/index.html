@@ -1602,13 +1602,18 @@ Repository <a href="https://github.com/ARTbio/GalaxyKickStart">https://github.co
 <li>start a GCE VM <code>2 procs, 7.5Gb RAM, Ubuntu 16.04, 50 Go disk, http enabled</code></li>
 <li>connect to you VM using the Google ssh console</li>
 <li>start an interactive session as root using the command <code>sudo -i</code></li>
-<li>download the script <code>run_galaxykickstart.sh</code> using the command <code>wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/run_galaxykickstart.sh</code></li>
-<li>run the script using either the command
-<code>sh run_galaxykickstart.sh biogen2018; sh run_galaxykickstart.sh biogen2018</code></li>
+<li>download the script <code>run_galaxykickstart.sh</code> using the command</li>
 </ul>
-<p><em>OR</em> (to be decided during the training)</p>
-<p><code>sh run_galaxykickstart.sh pasteur-2018; sh run_galaxykickstart.sh pasteur-2018</code></p>
-<p>The installation is expected to take about 20 min for <code>biogen2018</code> or ~40 min for <code>pasteur-2018</code></p>
+<pre><code>wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/run_galaxykickstart.sh
+</code></pre>
+
+<ul>
+<li>run the script using the command</li>
+</ul>
+<pre><code>sh run_galaxykickstart.sh analyseGenomes_2019
+</code></pre>
+
+<p>The installation is expected to take about ~40 min.</p>
 <ul>
 <li>
 <p>When the deployment is finished, connect to your ansible-deployed "GalaxyKickStart" instance:</p>
@@ -1626,13 +1631,29 @@ an admin user. Just use the <code>admin@galaxy.org:admin</code> as credentials (
 <li>Click on the small wheel at the top right of your Galaxy interface (history menu)</li>
 <li>select the <code>importer depuis un fichier</code> menu (or <code>import from a file</code> if you have the English interface)</li>
 <li>copy this url :</li>
-<li><a href="http://134.158.246.184/history/export_archive?id=f597429621d6eb2b">http://134.158.246.184/history/export_archive?id=f597429621d6eb2b</a></li>
+<li><a href="https://galaxy.pasteur.fr/history/export_archive?id=4c5da5ad7355ff42">https://galaxy.pasteur.fr/history/export_archive?id=4c5da5ad7355ff42</a></li>
 <li>repeat the same operation with: </li>
-<li><a href="http://134.158.246.184/history/export_archive?id=1cd8e2f6b131e891">http://134.158.246.184/history/export_archive?id=1cd8e2f6b131e891</a></li>
-<li><a href="http://134.158.246.184/history/export_archive?id=ebfb8f50c6abde6d">http://134.158.246.184/history/export_archive?id=ebfb8f50c6abde6d</a></li>
+<li><a href="https://galaxy.pasteur.fr/history/export_archive?id=eb4c1d5564c9f78c">https://galaxy.pasteur.fr/history/export_archive?id=eb4c1d5564c9f78c</a></li>
+<li><a href="https://galaxy.pasteur.fr/history/export_archive?id=69a1b70d1c4a6bdb">https://galaxy.pasteur.fr/history/export_archive?id=69a1b70d1c4a6bdb</a></li>
 </ul>
 <h4 id="the-run_galaxykickstartsh-script-explained">the run_galaxykickstart.sh script explained</h4>
 <p>NB: in the following code, numbers in line heads should be removed to run the script.</p>
+<p>.. code-block:: bash
+   :linenos:</p>
+<p>#!/usr/bin/env bash
+   set -e
+   apt update -y
+   apt install -y python-pip python-dev python-setuptools git htop
+   echo "Upgrading pip"
+   pip install -U pip
+   pip --version
+   pip install ansible==2.4
+   ansible --version
+   git clone https://github.com/ARTbio/GalaxyKickStart.git -b $1
+   cd GalaxyKickStart/
+   ansible-galaxy install -r requirements_roles.yml -p roles/ -f
+   ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
+   echo "end of deployment\n"</p>
 <pre><code>#!/usr/bin/env bash
 set -e
 apt update -y
