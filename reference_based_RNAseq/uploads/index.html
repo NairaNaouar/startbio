@@ -1544,7 +1544,7 @@
                   <a href="https://github.com/ARTbio/startbio/edit/master/docs/reference_based_RNAseq/uploads.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="data">Data</h1>
+                <h1 id="data">Data<a class="headerlink" href="#data" title="Permanent link">&para;</a></h1>
 <p>The original data is available at NCBI Gene Expression Omnibus (GEO)
 under accession number <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE18508">GSE18508</a>.
 It is also mirrored at the EBI Small Read Archive under the accession number
@@ -1604,7 +1604,7 @@ and (iii) the sequencing technology used (single read or paired-end).</p>
 </table>
 <hr />
 <p><img alt="" src="../images/galaxylogo.png" /></p>
-<h2 id="data-upload">Data upload</h2>
+<h2 id="data-upload">Data upload<a class="headerlink" href="#data-upload" title="Permanent link">&para;</a></h2>
 <p>We will take benefit of this mandatory stage, to review various possibilities to upload
 datasets in Galaxy. Specifically, we will review two options for uploading the gtf annotations
 for the Drosophila genome dm6 in a Galaxy history. We will also have a look to a third option
@@ -1613,7 +1613,7 @@ that allows specifically to directly transfer FASTQ sequence files from the EBI 
 To avoid consuming too much time on this task, you will have the possibility to import the full set
 of the 11 FASTQ files in one of your histories, from a data library that has been pre-set in your Galaxy
 server for this training session.</p>
-<h3 id="uploading-data-from-your-local-computer">Uploading data from your local computer</h3>
+<h3 id="uploading-data-from-your-local-computer">Uploading data from your local computer<a class="headerlink" href="#uploading-data-from-your-local-computer" title="Permanent link">&para;</a></h3>
 <hr />
 <p><img alt="" src="../images/tool_small.png" /></p>
 <ol>
@@ -1622,7 +1622,7 @@ server for this training session.</p>
 Galaxy interface that pops up if you click the upload icone  <img alt="" src="../images/upload_button.png" /></li>
 </ol>
 <hr />
-<h3 id="importing-data-via-links-is-more-efficient-and-reliable">Importing data via links is more efficient and reliable !</h3>
+<h3 id="importing-data-via-links-is-more-efficient-and-reliable">Importing data via links is more efficient and reliable !<a class="headerlink" href="#importing-data-via-links-is-more-efficient-and-reliable" title="Permanent link">&para;</a></h3>
 <hr />
 <p><a href="../images/tool_small.png"></a></p>
 <p>The previous strategy is not efficient. Indeed, we can directly transfert the Drosophila_melanogaster.BDGP6.95.gtf.gz
@@ -1631,8 +1631,9 @@ from its primary location in the Ensembl database server to your Galaxy History 
 <ol>
 <li>Copy its URL below </li>
 </ol>
-<pre><code>ftp://ftp.ensembl.org/pub/release-95/gtf/drosophila_melanogaster/Drosophila_melanogaster.BDGP6.95.gtf.gz
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ftp</span><span class="p">:</span><span class="o">//</span><span class="n">ftp</span><span class="p">.</span><span class="n">ensembl</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">pub</span><span class="o">/</span><span class="n">release</span><span class="o">-</span><span class="mi">95</span><span class="o">/</span><span class="n">gtf</span><span class="o">/</span><span class="n">drosophila_melanogaster</span><span class="o">/</span><span class="n">Drosophila_melanogaster</span><span class="p">.</span><span class="n">BDGP6</span><span class="p">.</span><span class="mi">95</span><span class="p">.</span><span class="n">gtf</span><span class="p">.</span><span class="n">gz</span>
+</pre></div>
+</td></tr></table>
 
 <ol>
 <li>
@@ -1646,7 +1647,7 @@ from its primary location in the Ensembl database server to your Galaxy History 
 </li>
 </ol>
 <hr />
-<h3 id="importing-data-via-the-ebi-sra-ena-sra">Importing data via the <code>EBI SRA ENA SRA</code></h3>
+<h3 id="importing-data-via-the-ebi-sra-ena-sra">Importing data via the <code>EBI SRA ENA SRA</code><a class="headerlink" href="#importing-data-via-the-ebi-sra-ena-sra" title="Permanent link">&para;</a></h3>
 <p>Finally there is a tool to specifically fetch fastq sequence file from the EBI SRA to Galaxy</p>
 <p>The sample <code>GSM461178/SRR031716</code> was sequenced using a <code>paired-end</code> strategy (both ends of fragments
 in the library are sequenced, giving rise to 2 read files, a forward read fastq file and a reverse
@@ -1654,7 +1655,7 @@ read fastq file).</p>
 <p>We are going to download the fastq.gz files directly from
 the EBI SRA using the tool <code>EBI SRA ENA SRA</code> in the <code>Get data</code> tool submenu.</p>
 <hr />
-<h2 id="_1"><img alt="" src="../images/tool_small.png" /></h2>
+<h2 id="_1"><img alt="" src="../images/tool_small.png" /><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Click on the tool <code>EBI SRA ENA SRA</code> (you can select it rapidly using the search bar)</p>
@@ -1677,7 +1678,7 @@ the previous steps 1, 2, 3 and 4. Just Click on <code>File 2</code> instead of <
 </ol>
 <p>Then, to save time, stop the tools (by clicking the small cross) and go to the next section.</p>
 <hr />
-<h3 id="importing-data-from-data-libraries">Importing data from data libraries</h3>
+<h3 id="importing-data-from-data-libraries">Importing data from data libraries<a class="headerlink" href="#importing-data-from-data-libraries" title="Permanent link">&para;</a></h3>
 <p>For collaborative work, Galaxy offers data libraries, where datasets can be stored and
 available to one or multiple users.</p>
 <p>This is what we are going to use to import rapidly all the input data you need for this RNAseq

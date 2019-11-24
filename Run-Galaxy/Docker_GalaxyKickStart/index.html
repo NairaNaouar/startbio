@@ -1590,21 +1590,21 @@
                 
                   <h1>Install a Galaxy server with Docker</h1>
                 
-                <h2 id="installation-of-a-galaxy-server-with-docker">Installation of a Galaxy server with Docker</h2>
-<h3 id="what-is-docker">What is Docker ?</h3>
+                <h2 id="installation-of-a-galaxy-server-with-docker">Installation of a Galaxy server with Docker<a class="headerlink" href="#installation-of-a-galaxy-server-with-docker" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-docker">What is Docker ?<a class="headerlink" href="#what-is-docker" title="Permanent link">&para;</a></h3>
 <p><img alt="Docker" src="../images/docker.png" /></p>
-<h4 id="virtual-machines">Virtual machines</h4>
+<h4 id="virtual-machines">Virtual machines<a class="headerlink" href="#virtual-machines" title="Permanent link">&para;</a></h4>
 <p>Virtual machines (VMs) are an abstraction of physical hardware turning one server into
 many servers. The hypervisor allows multiple VMs to run on a single machine.
 Each VM includes a full copy of an operating system, one or more apps, necessary binaries
 and libraries - taking up tens of GBs. VMs can also be slow to boot.</p>
-<h4 id="containers">Containers</h4>
+<h4 id="containers">Containers<a class="headerlink" href="#containers" title="Permanent link">&para;</a></h4>
 <p>Containers are an abstraction at the app layer that packages code and dependencies
 together. Multiple containers can run on the same machine and share the OS kernel with
 other containers, each running as isolated processes in user space. Containers take up
 less space than VMs (container images are typically tens of MBs in size), and start
 almost instantly.</p>
-<h3 id="galaxykickstart-docker-container">GalaxyKickStart Docker <strong>Container</strong></h3>
+<h3 id="galaxykickstart-docker-container">GalaxyKickStart Docker <strong>Container</strong><a class="headerlink" href="#galaxykickstart-docker-container" title="Permanent link">&para;</a></h3>
 <p>Instead of using the GalaxyKickStart playbook in a VM, the playbook can be used to build
 a Docker container image that will be an almost exact mirror of the GalaxyKickStart VM
 you have just built.</p>
@@ -1615,7 +1615,7 @@ you have just built.</p>
 <li>pull the GalaxyKickStart docker container that is deposited in the <a href="https://hub.docker.com/u/artbio/"><code>Docker Hub</code></a></li>
 <li>run this docker container and connect to the deployed GalaxyKickStart server instance</li>
 </ul>
-<h3 id="deployment">Deployment</h3>
+<h3 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h3>
 <ul>
 <li>There is actually no need for a new VM, the ansible already installed the docker service
 in the VM used to deploy GalaxyKickStart.</li>
@@ -1628,33 +1628,57 @@ in the VM used to deploy GalaxyKickStart.</li>
 and connect using the login:password <code>admin@galaxy.org:admin</code></p>
 </li>
 </ul>
-<h4 id="the-docker_galaxysh-script-explained">The docker_galaxy.sh script explained</h4>
+<h4 id="the-docker_galaxysh-script-explained">The docker_galaxy.sh script explained<a class="headerlink" href="#the-docker_galaxysh-script-explained" title="Permanent link">&para;</a></h4>
 <p>NB: in the following code, numbers in line heads should be removed to run the script.</p>
-<pre><code> 1 #!/usr/bin/env sh
- 2 set -e
- 3 echo &quot;Now pulling the galaxykickstart docker image from DockerHub\n&quot;
- 4 supervisorctl stop all
- 5 docker pull $1
- 6 echo &quot;Running galaxykickstart docker container\n&quot;
- 7 export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \
- 8           --privileged=true \
- 9           -e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True \
-10           -e GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE=True \
-11           -e GALAXY_CONFIG_ENABLE_USER_DELETION=True \
-12           -e GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES=True \
-13           -v /tmp/:/tmp/ \
-14           -v /export/:/export \
-15           $1`
-16 echo &quot;The $1 docker container is deploying...\n&quot;
-17 sleep 90
-18 echo &quot;The $1 docker container is up and running\n&quot;
-19 docker logs  $DOCKER_INSTANCE
-20 docker exec $DOCKER_INSTANCE sudo su galaxy -c '/home/galaxy/galaxy/.venv/bin/pip install cryptography==2.2.2'
-21 docker exec $DOCKER_INSTANCE sudo su galaxy -c 'cd ~/galaxy/config &amp;&amp; wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/sanitize_whitelist.txt'
-22 echo &quot;Galaxy in container will restart to take into account new settings\n&quot;
-23 sleep 120
-24 docker exec $DOCKER_INSTANCE sudo supervisorctl restart galaxy:
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span> <span class="mi">1</span> #<span class="o">!/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">bin</span><span class="o">/</span><span class="nv">env</span> <span class="nv">sh</span>
+ <span class="mi">2</span> <span class="nv">set</span> <span class="o">-</span><span class="nv">e</span>
+ <span class="mi">3</span> <span class="nv">echo</span> <span class="s2">&quot;</span><span class="s">Now pulling the galaxykickstart docker image from DockerHub</span><span class="se">\n</span><span class="s2">&quot;</span>
+ <span class="mi">4</span> <span class="nv">supervisorctl</span> <span class="nv">stop</span> <span class="nv">all</span>
+ <span class="mi">5</span> <span class="nv">docker</span> <span class="nv">pull</span> <span class="mh">$1</span>
+ <span class="mi">6</span> <span class="nv">echo</span> <span class="s2">&quot;</span><span class="s">Running galaxykickstart docker container</span><span class="se">\n</span><span class="s2">&quot;</span>
+ <span class="mi">7</span> <span class="nv">export</span> <span class="nv">DOCKER_INSTANCE</span><span class="o">=</span>`<span class="nv">docker</span> <span class="nv">run</span> <span class="o">-</span><span class="nv">d</span> <span class="o">-</span><span class="nv">p</span> <span class="mi">80</span>:<span class="mi">80</span> <span class="o">-</span><span class="nv">p</span> <span class="mi">21</span>:<span class="mi">21</span> <span class="o">-</span><span class="nv">p</span> <span class="mi">8800</span>:<span class="mi">8800</span> \
+ <span class="mi">8</span>           <span class="o">--</span><span class="nv">privileged</span><span class="o">=</span><span class="nv">true</span> \
+ <span class="mi">9</span>           <span class="o">-</span><span class="nv">e</span> <span class="nv">GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE</span><span class="o">=</span><span class="nv">True</span> \
+<span class="mi">10</span>           <span class="o">-</span><span class="nv">e</span> <span class="nv">GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE</span><span class="o">=</span><span class="nv">True</span> \
+<span class="mi">11</span>           <span class="o">-</span><span class="nv">e</span> <span class="nv">GALAXY_CONFIG_ENABLE_USER_DELETION</span><span class="o">=</span><span class="nv">True</span> \
+<span class="mi">12</span>           <span class="o">-</span><span class="nv">e</span> <span class="nv">GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES</span><span class="o">=</span><span class="nv">True</span> \
+<span class="mi">13</span>           <span class="o">-</span><span class="nv">v</span> <span class="o">/</span><span class="nv">tmp</span><span class="o">/</span>:<span class="o">/</span><span class="nv">tmp</span><span class="o">/</span> \
+<span class="mi">14</span>           <span class="o">-</span><span class="nv">v</span> <span class="o">/</span><span class="nv">export</span><span class="o">/</span>:<span class="o">/</span><span class="nv">export</span> \
+<span class="mi">15</span>           <span class="mh">$1</span>`
+<span class="mi">16</span> <span class="nv">echo</span> <span class="s2">&quot;</span><span class="s">The $1 docker container is deploying...</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="mi">17</span> <span class="nv">sleep</span> <span class="mi">90</span>
+<span class="mi">18</span> <span class="nv">echo</span> <span class="s2">&quot;</span><span class="s">The $1 docker container is up and running</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="mi">19</span> <span class="nv">docker</span> <span class="nv">logs</span>  <span class="mh">$D</span><span class="nv">OCKER_INSTANCE</span>
+<span class="mi">20</span> <span class="nv">docker</span> <span class="k">exec</span> <span class="mh">$D</span><span class="nv">OCKER_INSTANCE</span> <span class="nv">sudo</span> <span class="nv">su</span> <span class="nv">galaxy</span> <span class="o">-</span><span class="nv">c</span> <span class="s1">&#39;</span><span class="s">/home/galaxy/galaxy/.venv/bin/pip install cryptography==2.2.2</span><span class="s1">&#39;</span>
+<span class="mi">21</span> <span class="nv">docker</span> <span class="k">exec</span> <span class="mh">$D</span><span class="nv">OCKER_INSTANCE</span> <span class="nv">sudo</span> <span class="nv">su</span> <span class="nv">galaxy</span> <span class="o">-</span><span class="nv">c</span> <span class="s1">&#39;</span><span class="s">cd ~/galaxy/config &amp;&amp; wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/sanitize_whitelist.txt</span><span class="s1">&#39;</span>
+<span class="mi">22</span> <span class="nv">echo</span> <span class="s2">&quot;</span><span class="s">Galaxy in container will restart to take into account new settings</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="mi">23</span> <span class="nv">sleep</span> <span class="mi">120</span>
+<span class="mi">24</span> <span class="nv">docker</span> <span class="k">exec</span> <span class="mh">$D</span><span class="nv">OCKER_INSTANCE</span> <span class="nv">sudo</span> <span class="nv">supervisorctl</span> <span class="nv">restart</span> <span class="nv">galaxy</span>:
+</pre></div>
+</td></tr></table>
 
 <ol>
 <li>The shebang line. Says that it is a script code and that the interpreter to execute the

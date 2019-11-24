@@ -1514,11 +1514,11 @@
                 
                 <p>Now that you are familiar with manipulations in Galaxy with the Use Cases 1-1 to 1-4 described in detail in the previous chapters, we will describe the other Use Case analyses more concisely. If you experience lack of skills in basic Galaxy operations (tool usage, copy of datasets, etc), do not hesitate to go back and examine the <a href="use_cases_input_data">previous chapters</a> step by step.</p>
 <hr />
-<h4 id="virus-detection-in-human-rnaseq-libraries">Virus detection in human RNAseq libraries</h4>
+<h4 id="virus-detection-in-human-rnaseq-libraries">Virus detection in human RNAseq libraries<a class="headerlink" href="#virus-detection-in-human-rnaseq-libraries" title="Permanent link">&para;</a></h4>
 <p>In the Use Cases 3-X we'll use Metavisitor to detect viruses in RNA sequencing dataset of human patients from 3 different studies.</p>
 <p>In Use Case 3-1 we use Metavisitor to detect and assemble HIV genomes from patients Innate lymphoid cells sequencing data EBI SRP068722.</p>
 <hr />
-<h2 id="input-data-for-use-case-3-1">Input data for Use Case 3-1</h2>
+<h2 id="input-data-for-use-case-3-1">Input data for Use Case 3-1<a class="headerlink" href="#input-data-for-use-case-3-1" title="Permanent link">&para;</a></h2>
 <p>As for the previous Use Cases 1 and 2, the first step is to collect all the input data in a history that we will name <code>Input data for Use Case 3-1</code>.</p>
 <ol>
 <li>
@@ -1730,7 +1730,7 @@
 </li>
 <li>We are done. You can now permanently delete "SRP068722_with_patient_information",  "SRP068722_with_patient_information (re-organized)" and "SRP068722". This will save you some disk space.</li>
 </ol>
-<h2 id="history-for-use-case-3-1">History for Use Case 3-1</h2>
+<h2 id="history-for-use-case-3-1">History for Use Case 3-1<a class="headerlink" href="#history-for-use-case-3-1" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Stay in the history <code>Input data for Use Case 3-1</code></li>
 <li>pick the workflow <code>Metavisitor: Workflow for Use Case 3-1</code> in the workflows menu, and select the <code>run</code> option.</li>
@@ -1739,7 +1739,7 @@
 <li>As usual, check the box <code>Send results to a new history</code>, edit the name of the new history to <code>History for Use Case 3-1</code>, and <code>Execute</code> the workflow ! Note, that for complex workflows with dataset collections in input, the actual warning that the workflow is started may take time to show up.</li>
 </ol>
 <hr />
-<h2 id="results">Results</h2>
+<h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h2>
 <p>The results for this use case differ whether you use <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0168397">Metavisitor</a> or Metavisitor2.
 There are failed (red), empty datasets in this history. These datasets correspond to patients who didn't have any sequence matchng the viral database. You will notice that only <code>patient 0629-453</code> has contigs matching HIV sequences. However, this patient is a false positive. In support to this conclusion, you can:</p>
 <ul>

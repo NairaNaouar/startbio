@@ -1541,7 +1541,7 @@
                   <h1>Access and Control Metavisitor Galaxy instance</h1>
                 
                 <p>When you are done with the installation of your own Metavisitor Galaxy instance installation using either <a href="../metavisitor_ansible/">GalaxyKickStart</a> or <a href="metavisitor_docker">docker</a>, there are a few basic things to know for web access and basic server admin operations</p>
-<h2 id="1-connect-web-frontpage-of-your-metavisitor-galaxy">1. Connect web frontpage of your Metavisitor Galaxy</h2>
+<h2 id="1-connect-web-frontpage-of-your-metavisitor-galaxy">1. Connect web frontpage of your Metavisitor Galaxy<a class="headerlink" href="#1-connect-web-frontpage-of-your-metavisitor-galaxy" title="Permanent link">&para;</a></h2>
 <p>We assume that you know the IP address to reach the Metavisitor Galaxy webserver:</p>
 <ul>
 <li>if you used <a href="../metavisitor_ansible/#adapt-the-ansible-inventory-file">GalaxyKickStart</a>, you had to indicate this host IP in your hosts inventory file.</li>
@@ -1550,7 +1550,7 @@
 <p>Thus, to access Metavisitor Galaxy webserver, just type this IP address in your web browser.</p>
 <p>If you did not installed yourself the Metavisitor Galaxy instance, ask the IP address to the person who did it.</p>
 <p>In case you decided to get the Metavisitor Galaxy served on a subdirectory do not forget to append this <code>/subdirectory</code> in your url which then looks like <code>http://&lt;IP&gt;/subdirectory</code></p>
-<h2 id="2-log-to-the-galaxy-server-using-the-admin-credentials">2. Log to the Galaxy server using the admin credentials:</h2>
+<h2 id="2-log-to-the-galaxy-server-using-the-admin-credentials">2. Log to the Galaxy server using the admin credentials:<a class="headerlink" href="#2-log-to-the-galaxy-server-using-the-admin-credentials" title="Permanent link">&para;</a></h2>
 <p>If everything goes well, you should now see the Galaxy Metavisitor home page in your web browser.</p>
 <ul>
 <li>You have to log as the admin.</li>
@@ -1561,9 +1561,9 @@
 <p><strong>However</strong> for security, immediately change the admin password. To do this, go again in the Users menu, <code>Preferences</code></p>
 <p><img alt="preference panel" src="../images/preferences.png" /></p>
 <p>And click the <code>Change your password</code> item in the User preferences.</p>
-<h2 id="basic-admin-operation-restart-the-metavisitor-galaxy-instance">Basic admin operation: restart the Metavisitor Galaxy instance</h2>
+<h2 id="basic-admin-operation-restart-the-metavisitor-galaxy-instance">Basic admin operation: restart the Metavisitor Galaxy instance<a class="headerlink" href="#basic-admin-operation-restart-the-metavisitor-galaxy-instance" title="Permanent link">&para;</a></h2>
 <p>As we will see in the <a href="../metavisitor_configure_references/">next chapter</a>, installations of reference genomes or additional tools in the Galaxy Metavisitor instance imply a Galaxy restart for completion. Here is how to do it.</p>
-<h4 id="restart-metavisitor-galaxy-instance-deployed-with-galaxykickstart">restart Metavisitor Galaxy instance deployed with <a href="../metavisitor_ansible/">GalaxyKickStart</a></h4>
+<h4 id="restart-metavisitor-galaxy-instance-deployed-with-galaxykickstart">restart Metavisitor Galaxy instance deployed with <a href="../metavisitor_ansible/">GalaxyKickStart</a><a class="headerlink" href="#restart-metavisitor-galaxy-instance-deployed-with-galaxykickstart" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p>Connect to the server where the Galaxy instance has been installed either through the ssh connection you have used with <a href="../metavisitor_ansible/">GalaxyKickStart</a></p>
@@ -1572,18 +1572,24 @@
 <p>in your terminal, type <code>sudo supervisorctl restart galaxy:</code></p>
 </li>
 </ul>
-<p>If everything went fine you should see in your terminal</p>
-<pre><code># supervisorctl restart galaxy:
-galaxy_web: stopped
-handler0: stopped
-handler1: stopped
-handler0: started
-handler1: started
-galaxy_web: started
-</code></pre>
-
-<p>That's it, the Galaxy instance has restarted.</p>
-<h4 id="restart-metavisitor-galaxy-instance-deployed-with-docker">restart Metavisitor Galaxy instance deployed with <a href="metavisitor_docker">docker</a></h4>
+<p>If everything went fine you should see in your terminal
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span> <span class="n">supervisorctl</span> <span class="k">restart</span> <span class="n">galaxy</span><span class="p">:</span>
+<span class="n">galaxy_web</span><span class="p">:</span> <span class="n">stopped</span>
+<span class="n">handler0</span><span class="p">:</span> <span class="n">stopped</span>
+<span class="n">handler1</span><span class="p">:</span> <span class="n">stopped</span>
+<span class="n">handler0</span><span class="p">:</span> <span class="n">started</span>
+<span class="n">handler1</span><span class="p">:</span> <span class="n">started</span>
+<span class="n">galaxy_web</span><span class="p">:</span> <span class="n">started</span>
+</pre></div>
+</td></tr></table>
+That's it, the Galaxy instance has restarted.</p>
+<h4 id="restart-metavisitor-galaxy-instance-deployed-with-docker">restart Metavisitor Galaxy instance deployed with <a href="metavisitor_docker">docker</a><a class="headerlink" href="#restart-metavisitor-galaxy-instance-deployed-with-docker" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p>Connect to the server where the Galaxy instance has been installed either through the ssh connection you have used with <a href="../metavisitor_ansible/">GalaxyKickStart</a></p>
@@ -1596,17 +1602,23 @@ galaxy_web: started
 </ul>
 <p><code>docker exec -it &lt;name_of_the_container&gt; bash</code>
 - in the docker session you can now type <code>sudo supervisorctl restart galaxy:</code></p>
-<p>and see also, within the container:</p>
-<pre><code># supervisorctl restart galaxy:
-galaxy_web: stopped
-handler0: stopped
-handler1: stopped
-handler0: started
-handler1: started
-galaxy_web: started
-</code></pre>
-
-<p>That's it, the Galaxy instance has restarted. you can leave the container by typing <code>exit</code></p>
+<p>and see also, within the container:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span> <span class="n">supervisorctl</span> <span class="k">restart</span> <span class="n">galaxy</span><span class="p">:</span>
+<span class="n">galaxy_web</span><span class="p">:</span> <span class="n">stopped</span>
+<span class="n">handler0</span><span class="p">:</span> <span class="n">stopped</span>
+<span class="n">handler1</span><span class="p">:</span> <span class="n">stopped</span>
+<span class="n">handler0</span><span class="p">:</span> <span class="n">started</span>
+<span class="n">handler1</span><span class="p">:</span> <span class="n">started</span>
+<span class="n">galaxy_web</span><span class="p">:</span> <span class="n">started</span>
+</pre></div>
+</td></tr></table>
+That's it, the Galaxy instance has restarted. you can leave the container by typing <code>exit</code></p>
                 
                   
                 

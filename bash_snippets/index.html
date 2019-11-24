@@ -1660,48 +1660,56 @@
                 
                   <h1>Terminal Bash</h1>
                 
-                <h3 id="diff">diff</h3>
-<h5 id="differences-of-2-stdout-outputs">differences of 2 stdout outputs</h5>
-<pre><code>diff &lt;(egrep --color &quot;&lt;regexp&gt;&quot; &lt;pathtofile1&gt;) &lt;(egrep --color &quot;&lt;regexp&gt;&quot; &lt;pathtofile2&gt;)
-</code></pre>
+                <h3 id="diff">diff<a class="headerlink" href="#diff" title="Permanent link">&para;</a></h3>
+<h5 id="differences-of-2-stdout-outputs">differences of 2 stdout outputs<a class="headerlink" href="#differences-of-2-stdout-outputs" title="Permanent link">&para;</a></h5>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="gh">diff &lt;(egrep --color &quot;&lt;regexp&gt;&quot; &lt;pathtofile1&gt;) &lt;(egrep --color &quot;&lt;regexp&gt;&quot; &lt;pathtofile2&gt;)</span>
+</pre></div>
+</td></tr></table>
 
-<h3 id="egrep">egrep</h3>
-<pre><code>egrep --color &quot;&lt;regexp&gt;&quot; &lt;pathtofile&gt;
-</code></pre>
+<h3 id="egrep">egrep<a class="headerlink" href="#egrep" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">egrep</span> <span class="c1">--color &quot;&lt;regexp&gt;&quot; &lt;pathtofile&gt;</span>
+</pre></div>
+</td></tr></table>
 
-<h3 id="remove-lines-before-and-after-some-strings-in-a-file">Remove lines before and after some strings in a file</h3>
-<h5 id="remove-before-somestring-retaining-somestring">remove before somestring, retaining somestring</h5>
+<h3 id="remove-lines-before-and-after-some-strings-in-a-file">Remove lines before and after some strings in a file<a class="headerlink" href="#remove-lines-before-and-after-some-strings-in-a-file" title="Permanent link">&para;</a></h3>
+<h5 id="remove-before-somestring-retaining-somestring">remove before somestring, retaining somestring<a class="headerlink" href="#remove-before-somestring-retaining-somestring" title="Permanent link">&para;</a></h5>
 <p><code>awk '/somestring/,0' &lt;pathtofile&gt; &gt; &lt;pathtodeleted_file&gt;</code></p>
-<h5 id="remove-after-someotherstring-including-someotherstring">remove after someotherstring, including someotherstring</h5>
+<h5 id="remove-after-someotherstring-including-someotherstring">remove after someotherstring, including someotherstring<a class="headerlink" href="#remove-after-someotherstring-including-someotherstring" title="Permanent link">&para;</a></h5>
 <p><code>sed -n '/someotherstring/q;p' &lt;pathtofile &gt; &lt;pathtodeleted_file&gt;</code></p>
-<h3 id="check-which-ports-are-busy-and-which-ports-are-free">Check which ports are busy and which ports are free</h3>
-<pre><code>sudo netstat -tulpn
-sudo netstat -antup
-sudo lsof -i -n -P
-# You can verify process using port /proc:
-ls -l /proc/&lt;PID&gt;/exe
-</code></pre>
+<h3 id="check-which-ports-are-busy-and-which-ports-are-free">Check which ports are busy and which ports are free<a class="headerlink" href="#check-which-ports-are-busy-and-which-ports-are-free" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">netstat</span> <span class="o">-</span><span class="n">tulpn</span>
+<span class="n">sudo</span> <span class="n">netstat</span> <span class="o">-</span><span class="n">antup</span>
+<span class="n">sudo</span> <span class="n">lsof</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">n</span> <span class="o">-</span><span class="n">P</span>
+<span class="o">#</span> <span class="n">You</span> <span class="n">can</span> <span class="n">verify</span> <span class="n">process</span> <span class="k">using</span> <span class="n">port</span> <span class="o">/</span><span class="n">proc</span><span class="p">:</span>
+<span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">proc</span><span class="o">/&lt;</span><span class="n">PID</span><span class="o">&gt;/</span><span class="n">exe</span>
+</pre></div>
+</td></tr></table>
 
-<h3 id="list-open-files-for-process">List Open Files For Process</h3>
+<h3 id="list-open-files-for-process">List Open Files For Process<a class="headerlink" href="#list-open-files-for-process" title="Permanent link">&para;</a></h3>
 <p>First you need to find out PID of process. Simply use any one of the following command to obtain process id:
 <code>ps aux | grep {program-name}</code> OR <code>ps -C {program-name} -o pid=</code></p>
 <p>To list open files for firefox process, enter:
 <code>ls -l /proc/&lt;PID&gt;/fd</code></p>
-<h5 id="lsof">lsof</h5>
+<h5 id="lsof">lsof<a class="headerlink" href="#lsof" title="Permanent link">&para;</a></h5>
 <p>lsof command list open files under all Linux distributions or UNIX like operating system.</p>
 <p>Type the following command to list open file for process ID 351:
 <code>lsof -p 351</code></p>
-<h3 id="empty-the-content-of-a-file-without-closing-it">Empty the content of a file without closing it</h3>
-<pre><code>truncate -s 0 filename
-</code></pre>
+<h3 id="empty-the-content-of-a-file-without-closing-it">Empty the content of a file without closing it<a class="headerlink" href="#empty-the-content-of-a-file-without-closing-it" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">truncate</span> <span class="o">-</span><span class="n">s</span> <span class="mi">0</span> <span class="n">filename</span>
+</pre></div>
+</td></tr></table>
 
-<h3 id="calculate-total-used-disk-space-by-files-older-than-180-days-using-find">Calculate total used disk space by files older than 180 days using find</h3>
+<h3 id="calculate-total-used-disk-space-by-files-older-than-180-days-using-find">Calculate total used disk space by files older than 180 days using find<a class="headerlink" href="#calculate-total-used-disk-space-by-files-older-than-180-days-using-find" title="Permanent link">&para;</a></h3>
 <p>From <a href="http://stackoverflow.com/questions/17419337/calculate-total-used-disk-space-by-files-older-than-180-days-using-find">stackoverflow</a>,
-here an example for space occupied by files older than 5 years (1825 days)</p>
-<pre><code>find . -type f -mtime +1825 -printf '%s\n' | awk '{a+=$1;} END {printf &quot;%.1f GB\n&quot;, a/2**30;}'
-</code></pre>
-
-<h3 id="generate-a-privatepublic-ssh-key-pair-and-share-it-for-ssh-connection">generate a private/public ssh key pair and share it for ssh connection</h3>
+here an example for space occupied by files older than 5 years (1825 days)
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">find</span> . <span class="o">-</span><span class="nv">type</span> <span class="nv">f</span> <span class="o">-</span><span class="nv">mtime</span> <span class="o">+</span><span class="mi">1825</span> <span class="o">-</span><span class="nv">printf</span> <span class="s1">&#39;</span><span class="s">%s</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">|</span> <span class="nv">awk</span> <span class="s1">&#39;</span><span class="s">{a+=$1;} END {printf &quot;%.1f GB</span><span class="se">\n</span><span class="s">&quot;, a/2**30;}</span><span class="s1">&#39;</span>
+</pre></div>
+</td></tr></table></p>
+<h3 id="generate-a-privatepublic-ssh-key-pair-and-share-it-for-ssh-connection">generate a private/public ssh key pair and share it for ssh connection<a class="headerlink" href="#generate-a-privatepublic-ssh-key-pair-and-share-it-for-ssh-connection" title="Permanent link">&para;</a></h3>
                 
                   
                 

@@ -1578,8 +1578,8 @@
                 
                   <h1>Filter VCF file for visualization</h1>
                 
-                <h2 id="reformat-the-vcf-output-of-lumpy-sv">Reformat the vcf output of lumpy-sv</h2>
-<h3 id="1-save-the-header-of-the-vcf">1. Save the header of the vcf</h3>
+                <h2 id="reformat-the-vcf-output-of-lumpy-sv">Reformat the vcf output of lumpy-sv<a class="headerlink" href="#reformat-the-vcf-output-of-lumpy-sv" title="Permanent link">&para;</a></h2>
+<h3 id="1-save-the-header-of-the-vcf">1. Save the header of the vcf<a class="headerlink" href="#1-save-the-header-of-the-vcf" title="Permanent link">&para;</a></h3>
 <p>This is just done using the tool <code>Select lines that match an expression (Galaxy Version 1.0.1)</code> with the parameter</p>
 <ul>
 <li><code>Dataset collection</code></li>
@@ -1588,14 +1588,14 @@
 <li>the pattern: <code>^#</code></li>
 </ul>
 <p><img alt="" src="../images/filter.png" /></p>
-<h3 id="2-save-the-rest-of-the-vcf-file-in-another-dataset">2. Save the rest of the vcf file in another Dataset</h3>
+<h3 id="2-save-the-rest-of-the-vcf-file-in-another-dataset">2. Save the rest of the vcf file in another Dataset<a class="headerlink" href="#2-save-the-rest-of-the-vcf-file-in-another-dataset" title="Permanent link">&para;</a></h3>
 <p>Here we use the same <code>Select lines that match an expression</code> tools, this time with the parameters:</p>
 <ul>
 <li>Select lines from: <code>9: Variant Lumpy Calling</code></li>
 <li>that: <code>matching</code></li>
 <li>the pattern: <code>SVTYPE=BND</code></li>
 </ul>
-<h5 id="tip">TIP !</h5>
+<h5 id="tip">TIP !<a class="headerlink" href="#tip" title="Permanent link">&para;</a></h5>
 <p>Just re-play the previous tool run, and just change the pattern from <code>^#</code> to <code>SVTYPE=BND</code></p>
 <p><img alt="" src="../images/filter2.png" /></p>
 <p>This allows to kill two birds with the same stone:</p>
@@ -1603,7 +1603,7 @@
 <li>Selecting non-header part of the vcf</li>
 <li>filtering out the variations that are not of type <code>BND</code> (Bondaries)</li>
 </ul>
-<h3 id="3-reorder-the-vcf-lines-in-the-previous-dataset">3. Reorder the vcf lines in the previous dataset</h3>
+<h3 id="3-reorder-the-vcf-lines-in-the-previous-dataset">3. Reorder the vcf lines in the previous dataset<a class="headerlink" href="#3-reorder-the-vcf-lines-in-the-previous-dataset" title="Permanent link">&para;</a></h3>
 <p>To do that, we use the tool <code>Sort data in ascending or descending order (Galaxy Version 1.1.0)</code></p>
 <ul>
 <li>Sort Query: <code>Dataset collection</code> and <code>16: Select on collection 9</code></li>
@@ -1628,7 +1628,7 @@
 <li>Ignore case: No</li>
 </ul>
 <p><img alt="" src="../images/sort.png" /></p>
-<h3 id="4-reassemble-the-saved-header-with-the-sortedfiltered-vcf-lines">4. Reassemble the saved header with the sorted/filtered vcf lines</h3>
+<h3 id="4-reassemble-the-saved-header-with-the-sortedfiltered-vcf-lines">4. Reassemble the saved header with the sorted/filtered vcf lines<a class="headerlink" href="#4-reassemble-the-saved-header-with-the-sortedfiltered-vcf-lines" title="Permanent link">&para;</a></h3>
 <p>To do that, we use the tool <code>Concatenate datasets tail-to-head (Galaxy Version 1.0.0)</code>
 Pay extra attention to the version of the tool, because there is a number of concatenate tools with the same name.</p>
 <ul>
@@ -1638,7 +1638,7 @@ Pay extra attention to the version of the tool, because there is a number of con
 <li>1: Column selections</li>
 </ul>
 <p><img alt="" src="../images/concatenate.png" /></p>
-<h3 id="5-rename-the-dataset-within-the-last-dataset-collection">5. Rename the dataset within the last dataset collection.</h3>
+<h3 id="5-rename-the-dataset-within-the-last-dataset-collection">5. Rename the dataset within the last dataset collection.<a class="headerlink" href="#5-rename-the-dataset-within-the-last-dataset-collection" title="Permanent link">&para;</a></h3>
 <p>Here we will rename the dataset of the last dataset collection. Here, there is something that maybe
 tricky to understand.</p>
 <p>A dataset collection is a kind of dictionary whose elements, the datasets, have as labels the key of this dictionary.

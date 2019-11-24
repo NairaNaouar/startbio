@@ -1483,12 +1483,12 @@ workflows was implemented as the Metavisitor package in the Galaxy framework. Us
 graphical Galaxy workflow editor, users with minimal computational skills can use existing
 Metavisitor workflows or adapt them to suit specific needs by adding or modifying analysis
 modules.</p>
-<h1 id="reference-viral-database">Reference viral database</h1>
+<h1 id="reference-viral-database">Reference viral database<a class="headerlink" href="#reference-viral-database" title="Permanent link">&para;</a></h1>
 <p>Metavisitor's workflows use a home-made reference viral database <strong>vir2</strong>. This database was
 made using <em>Galaxy-Workflow-Metavisitor__Workflow_for_nucleic_vir2_generation</em> and
 <em>Galaxy-Workflow-Metavisitor__Workflow_for_proteic_vir2_generation</em>, that can both be found
 in <a href="https://github.com/ARTbio/metavisitor/tree/master/extra-files/metavisitor">Metavisitor's Github</a>.</p>
-<h4 id="how-was-nucleic-vir2-generated">How was <em>nucleic vir2</em> generated?</h4>
+<h4 id="how-was-nucleic-vir2-generated">How was <em>nucleic vir2</em> generated?<a class="headerlink" href="#how-was-nucleic-vir2-generated" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Downloading every viral sequence from NCBI's <em>nuccore</em> database with the following
   queries (2018/03/21):</li>
@@ -1501,17 +1501,17 @@ in <a href="https://github.com/ARTbio/metavisitor/tree/master/extra-files/metavi
 <li>Clustering sequences with 95% identity and shorter than 10 001 bp using vclust.</li>
 </ul>
 <p><strong>vir2</strong> is  available for download in <a href="https://figshare.com/articles/vir2_NCBI_21-03-2018/6106892">Figshare</a></p>
-<h1 id="quick-start">Quick Start</h1>
+<h1 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h1>
 <p>Users who want to use Metavisitor on the <a href="https://mississippi.snv.jussieu.fr">Galaxy Mississippi Server</a>,
 or got already the Metavisitor suite of tools installed in their own Galaxy server, can
 jump to the next chapter <a href="use_cases_input_data">Prepare input data histories</a>.</p>
-<h2 id="availability-of-metavisitor-tools-and-workflows">Availability of Metavisitor tools and workflows</h2>
+<h2 id="availability-of-metavisitor-tools-and-workflows">Availability of Metavisitor tools and workflows<a class="headerlink" href="#availability-of-metavisitor-tools-and-workflows" title="Permanent link">&para;</a></h2>
 <p>Metavisitor has been developed at the <a href="http://artbio.fr">ARTbio platform</a>. Its tools are
 primarily available in <a href="https://github.com/ARTbio/tools-artbio">GitHub</a>. Its workflows are
 primarily available in the
 <a href="https://github.com/ARTbio/metavisitor/tree/master/extra-files/metavisitor">metavisitor repository</a></p>
 <p>Metavisitor tools and workflows are also available in the <a href="https://toolshed.g2.bx.psu.edu/">toolshed</a></p>
-<h4 id="metavisitor-tools-developed-by-artbio-in-the-artbio-github">Metavisitor tools developed by ARTbio in the <a href="https://github.com/ARTbio/tools-artbio">ARTbio GitHub</a></h4>
+<h4 id="metavisitor-tools-developed-by-artbio-in-the-artbio-github">Metavisitor tools developed by ARTbio in the <a href="https://github.com/ARTbio/tools-artbio">ARTbio GitHub</a><a class="headerlink" href="#metavisitor-tools-developed-by-artbio-in-the-artbio-github" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://github.com/ARTbio/tools-artbio/tree/master/tools/blast_to_scaffold"><code>blast_to_scaffold</code></a></li>
 <li><a href="https://github.com/ARTbio/tools-artbio/tree/master/tools/blastx_to_scaffold"><code>blastx_to_scaffold</code></a></li>
@@ -1529,22 +1529,37 @@ primarily available in the
 </ul>
 <p>Tools from other developers are used in the suite metavisitor-2. These tools are
 available from the <a href="https://toolshed.g2.bx.psu.edu/">main Galaxy toolshed</a>:</p>
-<pre><code> name="bowtie2" owner="devteam"
- name="data_manager_bowtie2_index_builder" owner="devteam"
- name="data_manager_fetch_genome_dbkeys_all_fasta" owner="devteam"
- name="fasta_compute_length" owner="devteam"
- name="fasta_filter_by_length" owner="devteam"
- name="fastx_trimmer" owner="devteam"
- name="ncbi_blast_plus" owner="devteam"
- name="data_manager_bowtie_index_builder" owner="iuc"
- name="khmer_normalize_by_median" owner="iuc"
- name="sra_tools" owner="iuc"
- name="trinity" owner="iuc"
- name="vsearch" owner="iuc"
- name="regex_find_replace" owner="galaxyp"
- name="spades" owner="nml"
-</code></pre>
-<h4 id="availability-of-metavisitor-tools-and-workflows-for-galaxy-instance-administrators">Availability of Metavisitor tools and workflows for <strong>Galaxy instance administrators</strong></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span> <span class="n">name</span><span class="o">=</span><span class="ss">&quot;bowtie2&quot;</span> <span class="k">owner</span><span class="o">=</span><span class="ss">&quot;devteam&quot;</span>
+ <span class="n">name</span><span class="o">=</span><span class="ss">&quot;data_manager_bowtie2_index_builder&quot;</span> <span class="k">owner</span><span class="o">=</span><span class="ss">&quot;devteam&quot;</span>
+ <span class="n">name</span><span class="o">=</span><span class="ss">&quot;data_manager_fetch_genome_dbkeys_all_fasta&quot;</span> <span class="k">owner</span><span class="o">=</span><span class="ss">&quot;devteam&quot;</span>
+ <span class="n">name</span><span class="o">=</span><span class="ss">&quot;fasta_compute_length&quot;</span> <span class="k">owner</span><span class="o">=</span><span class="ss">&quot;devteam&quot;</span>
+ <span class="n">name</span><span class="o">=</span><span class="ss">&quot;fasta_filter_by_length&quot;</span> <span class="k">owner</span><span class="o">=</span><span class="ss">&quot;devteam&quot;</span>
+ <span class="n">name</span><span class="o">=</span><span class="ss">&quot;fastx_trimmer&quot;</span> <span class="k">owner</span><span class="o">=</span><span class="ss">&quot;devteam&quot;</span>
+ <span class="n">name</span><span class="o">=</span><span class="ss">&quot;ncbi_blast_plus&quot;</span> <span class="k">owner</span><span class="o">=</span><span class="ss">&quot;devteam&quot;</span>
+ <span class="n">name</span><span class="o">=</span><span class="ss">&quot;data_manager_bowtie_index_builder&quot;</span> <span class="k">owner</span><span class="o">=</span><span class="ss">&quot;iuc&quot;</span>
+ <span class="n">name</span><span class="o">=</span><span class="ss">&quot;khmer_normalize_by_median&quot;</span> <span class="k">owner</span><span class="o">=</span><span class="ss">&quot;iuc&quot;</span>
+ <span class="n">name</span><span class="o">=</span><span class="ss">&quot;sra_tools&quot;</span> <span class="k">owner</span><span class="o">=</span><span class="ss">&quot;iuc&quot;</span>
+ <span class="n">name</span><span class="o">=</span><span class="ss">&quot;trinity&quot;</span> <span class="k">owner</span><span class="o">=</span><span class="ss">&quot;iuc&quot;</span>
+ <span class="n">name</span><span class="o">=</span><span class="ss">&quot;vsearch&quot;</span> <span class="k">owner</span><span class="o">=</span><span class="ss">&quot;iuc&quot;</span>
+ <span class="n">name</span><span class="o">=</span><span class="ss">&quot;regex_find_replace&quot;</span> <span class="k">owner</span><span class="o">=</span><span class="ss">&quot;galaxyp&quot;</span>
+ <span class="n">name</span><span class="o">=</span><span class="ss">&quot;spades&quot;</span> <span class="k">owner</span><span class="o">=</span><span class="ss">&quot;nml&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="availability-of-metavisitor-tools-and-workflows-for-galaxy-instance-administrators">Availability of Metavisitor tools and workflows for <strong>Galaxy instance administrators</strong><a class="headerlink" href="#availability-of-metavisitor-tools-and-workflows-for-galaxy-instance-administrators" title="Permanent link">&para;</a></h4>
 <p>All metavisitor tools are available from the
 <a href="https://toolshed.g2.bx.psu.edu/view/artbio/suite_metavisitor_2/1570b18266be">suite_metavisitor_2</a>
 Galaxy Admin can just install this suite of tools by using the <code>Install new tools</code> menu in
@@ -1553,12 +1568,12 @@ tool suite.</p>
 <p>Galaxy Admins can install the workflows from the <code>metavisitor_workflows</code> repository in the
 <a href="https://toolshed.g2.bx.psu.edu/">main Galaxy toolshed</a>, which will
 install in addition all tools needed for Metavisitor.</p>
-<h4 id="availability-of-metavisitors-workflows-for-any-galaxy-instance-user">Availability of Metavisitors workflows for any Galaxy instance user.</h4>
+<h4 id="availability-of-metavisitors-workflows-for-any-galaxy-instance-user">Availability of Metavisitors workflows for any Galaxy instance user.<a class="headerlink" href="#availability-of-metavisitors-workflows-for-any-galaxy-instance-user" title="Permanent link">&para;</a></h4>
 <p>We have deposited the Metavisitors workflows in the
 <a href="http://www.myexperiment.org/workflows #TODO: this will need to be updated too">myexperiment server</a>,
 where they are searchable with "metavisitor" keyword and can be downloaded and reuploaded
 to the Galaxy instance.</p>
-<h2 id="starting-a-metavisitor-galaxy-server-from-scratch">Starting a Metavisitor Galaxy server from scratch</h2>
+<h2 id="starting-a-metavisitor-galaxy-server-from-scratch">Starting a Metavisitor Galaxy server from scratch<a class="headerlink" href="#starting-a-metavisitor-galaxy-server-from-scratch" title="Permanent link">&para;</a></h2>
 <p>In the <a href="https://artbio.github.io/metavisitor/install_metavisitor/">last section</a> of this
 documentation, we provide instructions to set up Galaxy server instances <em>from scratch</em>
 with <em>pre-installed</em> Metavisitor tools and workflows:</p>

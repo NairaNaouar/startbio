@@ -1714,13 +1714,13 @@
                 
                   <h1>Grep and Regex (1)</h1>
                 
-                <h4 id="credit-this-tutorial-is-extracted-from-regex-tutorial-a-quick-cheatsheet-by-examples">Credit: this tutorial is extracted from <a href="https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285">Regex tutorial — A quick cheatsheet by examples</a></h4>
+                <h4 id="credit-this-tutorial-is-extracted-from-regex-tutorial-a-quick-cheatsheet-by-examples">Credit: this tutorial is extracted from <a href="https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285">Regex tutorial — A quick cheatsheet by examples</a><a class="headerlink" href="#credit-this-tutorial-is-extracted-from-regex-tutorial-a-quick-cheatsheet-by-examples" title="Permanent link">&para;</a></h4>
 <p>Regular expressions (regex or regexp) are extremely useful in <strong>extracting information from any text</strong> by searching for one or more matches of a specific search pattern (i.e. a specific sequence of ASCII or unicode characters).</p>
 <p>Fields of application range from validation to parsing/replacing strings, passing through translating data to other formats and web scraping.</p>
 <p>One of the most interesting features is that once you’ve learned the syntax, you can actually use this tool in (almost) all programming languages ​​(JavaScript, Java, VB, C #, C / C++, Python, Perl, Ruby, Delphi, R, Tcl, and many others) with the slightest distinctions about the support of the most advanced features and syntax versions supported by the engines).</p>
 <p>Let’s start by looking at some examples and explanations.</p>
-<h2 id="basic-topics">Basic topics</h2>
-<h3 id="anchors-and">Anchors — ^ and $</h3>
+<h2 id="basic-topics">Basic topics<a class="headerlink" href="#basic-topics" title="Permanent link">&para;</a></h2>
+<h3 id="anchors-and">Anchors — ^ and $<a class="headerlink" href="#anchors-and" title="Permanent link">&para;</a></h3>
 <table>
   <tr>
    <td><strong><code>^The</code></strong>
@@ -1748,7 +1748,7 @@
   </tr>
 </table>
 
-<h3 id="quantifiers-and">Quantifiers — * + ? and {}</h3>
+<h3 id="quantifiers-and">Quantifiers — * + ? and {}<a class="headerlink" href="#quantifiers-and" title="Permanent link">&para;</a></h3>
 <table>
   <tr>
    <td><code>abc<strong>*</strong></code>
@@ -1800,7 +1800,7 @@
   </tr>
 </table>
 
-<h3 id="or-operator-or">OR operator — | or [ ]</h3>
+<h3 id="or-operator-or">OR operator — | or [ ]<a class="headerlink" href="#or-operator-or" title="Permanent link">&para;</a></h3>
 <table>
   <tr>
    <td><strong><code>a(b|c)</code></strong>
@@ -1816,7 +1816,7 @@
   </tr>
 </table>
 
-<h3 id="character-classes-d-w-s-and"><code></code>Character classes — \d \w \s and .</h3>
+<h3 id="character-classes-d-w-s-and"><code></code>Character classes — \d \w \s and .<a class="headerlink" href="#character-classes-d-w-s-and" title="Permanent link">&para;</a></h3>
 <table>
   <tr>
    <td><strong><code>\d</code></strong>
@@ -1872,7 +1872,7 @@
   </tr>
 </table>
 
-<h3 id="flags">Flags</h3>
+<h3 id="flags">Flags<a class="headerlink" href="#flags" title="Permanent link">&para;</a></h3>
 <p>We are learning how to construct a regex but forgetting a fundamental concept: <strong>flags</strong>.</p>
 <p>A regex usually comes within this form **<code>/abc/</code></strong>, where the search pattern is delimited by two slash characters <code>/</code>. At the end we can specify a flag with these values (we can also combine them each other):</p>
 <ul>
@@ -1887,8 +1887,8 @@
 </li>
 </ul>
 <hr />
-<h2 id="intermediate-topics">Intermediate topics</h2>
-<h3 id="grouping-and-capturing">Grouping and capturing — ()</h3>
+<h2 id="intermediate-topics">Intermediate topics<a class="headerlink" href="#intermediate-topics" title="Permanent link">&para;</a></h2>
+<h3 id="grouping-and-capturing">Grouping and capturing — ()<a class="headerlink" href="#grouping-and-capturing" title="Permanent link">&para;</a></h3>
 <table>
   <tr>
    <td><code>a<strong>(</strong>bc<strong>)</strong></code>
@@ -1912,7 +1912,7 @@
 
 <p>This operator is very useful when we need to extract information from strings or data using your preferred programming language. Any multiple occurrences captured by several groups will be exposed in the form of a classical array: we will access their values specifying using an index on the result of the match.</p>
 <p>If we choose to put a name to the groups (using <code>(<strong>?<foo></strong>...)</code>) we will be able to retrieve the group values using the match result like a dictionary where the keys will be the name of each group.</p>
-<h3 id="bracket-expressions">Bracket expressions — [ ]</h3>
+<h3 id="bracket-expressions">Bracket expressions — [ ]<a class="headerlink" href="#bracket-expressions" title="Permanent link">&para;</a></h3>
 <table>
   <tr>
    <td><strong><code>[abc]</code></strong>
@@ -1947,17 +1947,17 @@
 </table>
 
 <p>Remember that inside bracket expressions all special characters (including the backslash <code>\</code>) lose their special powers: thus we will not apply the “escape rule”.</p>
-<h3 id="greedy-and-lazy-match">Greedy and Lazy match</h3>
+<h3 id="greedy-and-lazy-match">Greedy and Lazy match<a class="headerlink" href="#greedy-and-lazy-match" title="Permanent link">&para;</a></h3>
 <p>The quantifiers ( <code>* + {}</code>) are greedy operators, so they expand the match as far as they can through the provided text.</p>
 <p>For example, <code>&lt;.+&gt;</code> matches <code>&lt;div&gt;simple div&lt;/div&gt;</code> in <code>This is a &lt;strong&gt;&lt;div&gt; simple div&lt;/div&gt;&lt;/strong&gt; test</code>.</p>
 <hr />
 <p>In order to catch only the <code>div</code> tag we can use a <code>?</code> to make it lazy:</p>
-<p><code>&lt;.+?&gt;</code> matches <strong>any character one or more</strong> times included <strong>inside &lt;</strong> and <strong>&gt;</strong>, expanding as needed --&gt; <a href="https://regex101.com/r/cO8lqs/24" target="_blank">Try it!</a></p>
+<p><code>&lt;.+?&gt;</code> matches <strong>any character one or more</strong> times included <strong>inside &lt;</strong> and <strong>&gt;</strong>, expanding as needed &rarr; <a href="https://regex101.com/r/cO8lqs/24" target="_blank">Try it!</a></p>
 <p>Notice that a better solution should avoid the usage of <code>.</code> in favor of a more strict regex:</p>
 <p><code>&lt;[^&lt;&gt;]+&gt;</code> matches <strong>any character except &lt; or &gt; one or more</strong> times included <strong>inside &lt; and &gt;</strong> -&gt; <a href="https://regex101.com/r/cO8lqs/23" target="_blank">Try it!</a></p>
 <hr />
-<h2 id="advanced-topics">Advanced topics</h2>
-<h3 id="boundaries-b-and-b">Boundaries — \b and \B</h3>
+<h2 id="advanced-topics">Advanced topics<a class="headerlink" href="#advanced-topics" title="Permanent link">&para;</a></h2>
+<h3 id="boundaries-b-and-b">Boundaries — \b and \B<a class="headerlink" href="#boundaries-b-and-b" title="Permanent link">&para;</a></h3>
 <table>
   <tr>
    <td><strong><code>\babc\b</code></strong>
@@ -1978,7 +1978,7 @@
   </tr>
 </table>
 
-<h3 id="back-references-1">Back-references — \1</h3>
+<h3 id="back-references-1">Back-references — \1<a class="headerlink" href="#back-references-1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -2005,7 +2005,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="look-ahead-and-look-behind-and">Look-ahead and Look-behind — (?=) and (?&lt;=)</h3>
+<h3 id="look-ahead-and-look-behind-and">Look-ahead and Look-behind — (?=) and (?&lt;=)<a class="headerlink" href="#look-ahead-and-look-behind-and" title="Permanent link">&para;</a></h3>
 <table>
   <tr>
    <td><code>d<strong>(?=</strong>r<strong>)</strong></code>
@@ -2043,7 +2043,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="summary">Summary</h2>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>As you’ve seen, the application fields of regex can be multiple and I’m sure that you’ve recognized at least one of these tasks among those seen in your developer career, here a quick list:</p>
 <ul>
 <li>

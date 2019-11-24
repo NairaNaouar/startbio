@@ -1714,42 +1714,42 @@
                 
                   <h1>Install a minimal standalone galaxy server</h1>
                 
-                <h2 id="install-a-minimal-galaxy-server-with-git">Install a minimal galaxy server with git</h2>
-<h3 id="spin-off-a-virtual-machine-bare-galaxy">Spin off a virtual Machine <code>bare-galaxy</code></h3>
+                <h2 id="install-a-minimal-galaxy-server-with-git">Install a minimal galaxy server with git<a class="headerlink" href="#install-a-minimal-galaxy-server-with-git" title="Permanent link">&para;</a></h2>
+<h3 id="spin-off-a-virtual-machine-bare-galaxy">Spin off a virtual Machine <code>bare-galaxy</code><a class="headerlink" href="#spin-off-a-virtual-machine-bare-galaxy" title="Permanent link">&para;</a></h3>
 <p>You may have already done this in the <a href="../spin_off_VM/">previous section</a>. If not, refer to this <a href="../spin_off_VM/">section</a></p>
 <p>We are going to use a GCE Virtual Machine with: 
 -  <code>Ubuntu 16.04 LTS</code> as OS
 - <code>2</code> processors
 - <code>7.5</code> Gb RAM
 - a <code>50 Gb</code> Volume (more than enough)</p>
-<h3 id="connect-to-the-vm-as-explained-in-this-section-using-the-ssh-web-console">Connect to the VM as explained in <a href="../spin_off_VM/">this section</a> using the ssh web console</h3>
-<h3 id="installation-of-dependencies">Installation of dependencies</h3>
+<h3 id="connect-to-the-vm-as-explained-in-this-section-using-the-ssh-web-console">Connect to the VM as explained in <a href="../spin_off_VM/">this section</a> using the ssh web console<a class="headerlink" href="#connect-to-the-vm-as-explained-in-this-section-using-the-ssh-web-console" title="Permanent link">&para;</a></h3>
+<h3 id="installation-of-dependencies">Installation of dependencies<a class="headerlink" href="#installation-of-dependencies" title="Permanent link">&para;</a></h3>
 <p>To install Galaxy, we only need a few dependencies (i.e. pre-installed programs which Galaxy needs) and a limited number of command lines.</p>
 <p>We are going to execute these instruction as the <code>root</code> unix user. This is easier because installation
 of new programs as well as manipulations of network interfaces is generally permitted only
 to users with administration rights.</p>
 <p>So let's do this, step by step:</p>
-<h5 id="1-sudo-i">1. <code>sudo -i</code></h5>
+<h5 id="1-sudo-i">1. <code>sudo -i</code><a class="headerlink" href="#1-sudo-i" title="Permanent link">&para;</a></h5>
 <p>This command open a new "shell" where you are root. You can check this by typing <code>pwd</code> that
 should return <code>/root/</code>, meaning that you are now working in the directory of the <code>root</code> user.</p>
-<h4 id="2-apt-update-y">2. <code>apt update -y</code></h4>
+<h4 id="2-apt-update-y">2. <code>apt update -y</code><a class="headerlink" href="#2-apt-update-y" title="Permanent link">&para;</a></h4>
 <p>This command will just trigger an update of the installed programs database in the Ubuntu OS.</p>
-<h5 id="3-apt-install-y-python-dev-python-pip-nano-git">3. <code>apt install -y python-dev python-pip nano git</code></h5>
+<h5 id="3-apt-install-y-python-dev-python-pip-nano-git">3. <code>apt install -y python-dev python-pip nano git</code><a class="headerlink" href="#3-apt-install-y-python-dev-python-pip-nano-git" title="Permanent link">&para;</a></h5>
 <p>This command install some python programs (python-dev and python-pip) that are intensively used by Galaxy,
 <code>nano</code>, a simple text editor we need, and the <code>git</code> program which is the software to fetch or
 and update Galaxy (i.e. a sort of "installer" program). The <code>-y</code> option specifies to the <code>apt</code>
 package installer that no manual confirmation is needed for this command.</p>
-<h5 id="4-git-clone-httpsgithubcomgalaxyprojectgalaxygit-b-release_1905">4. <code>git clone https://github.com/galaxyproject/galaxy.git -b release_19.05</code></h5>
+<h5 id="4-git-clone-httpsgithubcomgalaxyprojectgalaxygit-b-release_1905">4. <code>git clone https://github.com/galaxyproject/galaxy.git -b release_19.05</code><a class="headerlink" href="#4-git-clone-httpsgithubcomgalaxyprojectgalaxygit-b-release_1905" title="Permanent link">&para;</a></h5>
 <p>This command says to use <code>git</code> to <code>clone</code> the code repository located at <code>https://github.com/galaxyproject/galaxy.git</code>.
 In addition the <code>-b release_19.05</code> option specifies that only the version <code>release_19.05</code> will be cloned locally in your virtual machine.
 You may try to visualize the URL <a href="https://github.com/galaxyproject/galaxy.git">https://github.com/galaxyproject/galaxy.git</a>
 in your web browser. You will, literally, see the code of Galaxy. It is Open Source, as you can notice.</p>
-<h5 id="5-cd-galaxy">5. <code>cd galaxy</code></h5>
+<h5 id="5-cd-galaxy">5. <code>cd galaxy</code><a class="headerlink" href="#5-cd-galaxy" title="Permanent link">&para;</a></h5>
 <p>This command shift you in the <code>galaxy</code> directory that was created by git and the <code>git clone</code> command in 4.</p>
-<h5 id="6-cp-configgalaxyymlsample-configgalaxyyml">6. <code>cp config/galaxy.yml.sample config/galaxy.yml</code></h5>
+<h5 id="6-cp-configgalaxyymlsample-configgalaxyyml">6. <code>cp config/galaxy.yml.sample config/galaxy.yml</code><a class="headerlink" href="#6-cp-configgalaxyymlsample-configgalaxyyml" title="Permanent link">&para;</a></h5>
 <p>This command makes a copie of the <code>galaxy.yml.sample</code> file into <code>galaxy.yml</code> - in the
 directory <code>config</code> that is in the <code>galaxy</code> directory.</p>
-<h5 id="7-nano-configgalaxyyml">7. <code>nano config/galaxy.yml</code></h5>
+<h5 id="7-nano-configgalaxyyml">7. <code>nano config/galaxy.yml</code><a class="headerlink" href="#7-nano-configgalaxyyml" title="Permanent link">&para;</a></h5>
 <p>Using this command, we are going to edit some important settings that are required to run our Galaxy fresh instance.</p>
 <ul>
 <li>Find the line <code>http: 127.0.0.1:8080</code> and edit it to <code>http: 0.0.0.0:80</code></li>
@@ -1758,12 +1758,12 @@ directory <code>config</code> that is in the <code>galaxy</code> directory.</p>
 <ul>
 <li>Find the line <code>#admin_users: ''</code>, delete the <code>#</code> character and type your email address between the two single quotes.</li>
 </ul>
-<p>Any email address is ok (me@myname.fr if you want). It is just used here as an admin identifier.</p>
+<p>Any email address is ok (<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#101;&#64;&#109;&#121;&#110;&#97;&#109;&#101;&#46;&#102;&#114;">&#109;&#101;&#64;&#109;&#121;&#110;&#97;&#109;&#101;&#46;&#102;&#114;</a> if you want). It is just used here as an admin identifier.</p>
 <ul>
 <li>save your changes by pressing the key combination <code>Ctrl</code>+<code>o</code></li>
 <li>quit nano by pressing the key combination <code>Ctrl</code>+<code>x</code></li>
 </ul>
-<h5 id="8-ready-for-deploying-galaxy">8. Ready for deploying Galaxy ?</h5>
+<h5 id="8-ready-for-deploying-galaxy">8. Ready for deploying Galaxy ?<a class="headerlink" href="#8-ready-for-deploying-galaxy" title="Permanent link">&para;</a></h5>
 <p>Then type <code>sh run.sh</code> and press the <code>enter</code> key !</p>
 <p>You should see an abundant log scrolling down. Don't worry !
 - All Galaxy dependencies required for the Galaxy server instance are being downloaded and installed
@@ -1772,21 +1772,23 @@ directory <code>config</code> that is in the <code>galaxy</code> directory.</p>
 - The Galaxy database is automatically upgraded to its latest structure/model
 - Various tools are upgraded.</p>
 <p>After 9 minute or so, you should see the log stopping with:</p>
-<pre><code>Starting server in PID 3813.
-serving on http://127.0.0.1:80
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">Starting</span> <span class="n">server</span> <span class="k">in</span> <span class="n">PID</span> <span class="mi">3813</span><span class="p">.</span>
+<span class="n">serving</span> <span class="k">on</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mi">127</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">:</span><span class="mi">80</span>
+</pre></div>
+</td></tr></table>
 
-<h5 id="8-connect-to-your-living-galaxy-instance">8. Connect to your living Galaxy instance</h5>
+<h5 id="8-connect-to-your-living-galaxy-instance">8. Connect to your living Galaxy instance<a class="headerlink" href="#8-connect-to-your-living-galaxy-instance" title="Permanent link">&para;</a></h5>
 <p>If so, this is all good, and you can now access to you Galaxy instance in a you web browser window:</p>
 <p>Go back to your Google Cloud Engine control panel. Find the <code>External IP address</code> / <code>Adresse IP externe</code>
-in the 7th column of the Dashbord (to the left of the ssh menu that you used before. And just click on the hyperlink.</p>
-<h5 id="9-connect-as-an-admin-of-your-galaxy-server-instance">9. Connect as an admin of your Galaxy server instance</h5>
+in the 7<sup>th</sup> column of the Dashbord (to the left of the ssh menu that you used before. And just click on the hyperlink.</p>
+<h5 id="9-connect-as-an-admin-of-your-galaxy-server-instance">9. Connect as an admin of your Galaxy server instance<a class="headerlink" href="#9-connect-as-an-admin-of-your-galaxy-server-instance" title="Permanent link">&para;</a></h5>
 <ul>
-<li>Register to your instance using the email address you put in the galaxy.yml at step 7 (menu "Authentification et enregistrement --&gt; Enregistrement)</li>
+<li>Register to your instance using the email address you put in the galaxy.yml at step 7 (menu "Authentification et enregistrement &rarr; Enregistrement)</li>
 <li>Now that you are registered, you can log in using the same login and password you have chosen.</li>
 <li>After login, you will see the admin tab in the top menu of the Galaxy interface.</li>
 </ul>
-<h6 id="you-are-connected-to-galaxy-as-an-admin">You are connected to Galaxy as an admin !</h6>
+<h6 id="you-are-connected-to-galaxy-as-an-admin">You are connected to Galaxy as an admin !<a class="headerlink" href="#you-are-connected-to-galaxy-as-an-admin" title="Permanent link">&para;</a></h6>
                 
                   
                 

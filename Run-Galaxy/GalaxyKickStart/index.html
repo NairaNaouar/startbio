@@ -1564,8 +1564,8 @@
                 
                   <h1>Install a Galaxy server with Ansible and GalaxyKickStart</h1>
                 
-                <h2 id="installation-of-a-galaxy-server-with-ansible-and-the-galaxykickstart-playbook">Installation of a Galaxy server with Ansible and the GalaxyKickStart playbook</h2>
-<h3 id="what-is-ansible">What is Ansible ?</h3>
+                <h2 id="installation-of-a-galaxy-server-with-ansible-and-the-galaxykickstart-playbook">Installation of a Galaxy server with Ansible and the GalaxyKickStart playbook<a class="headerlink" href="#installation-of-a-galaxy-server-with-ansible-and-the-galaxykickstart-playbook" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-ansible">What is Ansible ?<a class="headerlink" href="#what-is-ansible" title="Permanent link">&para;</a></h3>
 <p><img alt="Ansible" src="../images/ansible.png" /></p>
 <p>Ansible is an automation engine that automates configuration management and application
 deployment.</p>
@@ -1578,7 +1578,7 @@ from the abstraction of complex suite of commands in the Ansible syntax.
 Moreover, automation allows to reproduce exactly the desired configuration.
 Finally, Ansible is <code>idempotent</code>: whatever the initial configuration, it brings the target
 to the exact same final state. This is useful to repair a broken configuration.</p>
-<h3 id="ansible-playbook-galaxykickstart">Ansible playbook - GalaxyKickStart</h3>
+<h3 id="ansible-playbook-galaxykickstart">Ansible playbook - GalaxyKickStart<a class="headerlink" href="#ansible-playbook-galaxykickstart" title="Permanent link">&para;</a></h3>
 <p>The Ansible "language" (Striclty speaking, Ansible language is <em>not</em> a programming language)
 is structured. Thus a playbook is not necessarily a single flat file. Multiple tasks can be gathered in a file, a "role" is the execution of a set of tasks, and a playbook can execute multiple roles.</p>
 <p>GalaxyKickStart is an Ansible playbook that will</p>
@@ -1597,24 +1597,23 @@ is structured. Thus a playbook is not necessarily a single flat file. Multiple t
 </ul>
 <p>The code of the GalaxyKickStart playbook is freely available at the ARTbio GitHub
 Repository <a href="https://github.com/ARTbio/GalaxyKickStart">https://github.com/ARTbio/GalaxyKickStart</a>.</p>
-<h3 id="deployment">Deployment</h3>
+<h3 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h3>
 <ul>
 <li>start a GCE VM <code>2 procs, 7.5Gb RAM, Ubuntu 16.04, 50 Go disk, http enabled</code></li>
 <li>connect to you VM using the Google ssh console</li>
 <li>start an interactive session as root using the command <code>sudo -i</code></li>
-<li>download the script <code>run_galaxykickstart.sh</code> using the command</li>
-</ul>
-<pre><code>wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/run_galaxykickstart.sh
-</code></pre>
-
-<ul>
-<li>run the script using the command</li>
-</ul>
-<pre><code>sh run_galaxykickstart.sh analyseGenomes_2019
-</code></pre>
-
-<p>The installation is expected to take about ~40 min.</p>
-<ul>
+<li>
+<p>download the script <code>run_galaxykickstart.sh</code> using the command
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">ARTbio</span><span class="o">/</span><span class="n">Run</span><span class="o">-</span><span class="n">Galaxy</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">deployment_scripts</span><span class="o">/</span><span class="n">run_galaxykickstart</span><span class="p">.</span><span class="n">sh</span>
+</pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>run the script using the command
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">sh</span> <span class="n">run_galaxykickstart</span><span class="p">.</span><span class="n">sh</span> <span class="n">analyseGenomes_2019</span>
+</pre></div>
+</td></tr></table></p>
+</li>
 <li>
 <p>When the deployment is finished, connect to your ansible-deployed "GalaxyKickStart" instance:</p>
 <p>Just click on the url displayed in your Google Cloud Engine Console.</p>
@@ -1626,49 +1625,54 @@ an admin user. Just use the <code>admin@galaxy.org:admin</code> as credentials (
 <p>When logged in, see that required tools as well as workflows are already installed !</p>
 </li>
 </ul>
-<h3 id="transfert-input-data-to-you-newly-deployed-galaxy-instance-for-you-incoming-analyses">Transfert input data to you newly deployed Galaxy instance (for you incoming analyses)</h3>
+<h3 id="transfert-input-data-to-you-newly-deployed-galaxy-instance-for-you-incoming-analyses">Transfert input data to you newly deployed Galaxy instance (for you incoming analyses)<a class="headerlink" href="#transfert-input-data-to-you-newly-deployed-galaxy-instance-for-you-incoming-analyses" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Click on the small wheel at the top right of your Galaxy interface (history menu)</li>
 <li>select the <code>importer depuis un fichier</code> menu (or <code>import from a file</code> if you have the English interface)</li>
-<li>copy this url :</li>
-<li><a href="https://galaxy.pasteur.fr/history/export_archive?id=4c5da5ad7355ff42">https://galaxy.pasteur.fr/history/export_archive?id=4c5da5ad7355ff42</a></li>
-<li>repeat the same operation with: </li>
-<li><a href="https://galaxy.pasteur.fr/history/export_archive?id=eb4c1d5564c9f78c">https://galaxy.pasteur.fr/history/export_archive?id=eb4c1d5564c9f78c</a></li>
+<li>
+<p>copy this url :
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">galaxy</span><span class="p">.</span><span class="n">pasteur</span><span class="p">.</span><span class="n">fr</span><span class="o">/</span><span class="n">history</span><span class="o">/</span><span class="n">export_archive</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">4</span><span class="n">c5da5ad7355ff42</span><span class="p">](</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">galaxy</span><span class="p">.</span><span class="n">pasteur</span><span class="p">.</span><span class="n">fr</span><span class="o">/</span><span class="n">history</span><span class="o">/</span><span class="n">export_archive</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">4</span><span class="n">c5da5ad7355ff42</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>repeat the same operation with: 
+<a href="https://galaxy.pasteur.fr/history/export_archive?id=eb4c1d5564c9f78c">https://galaxy.pasteur.fr/history/export_archive?id=eb4c1d5564c9f78c</a></p>
+<ul>
 <li><a href="https://galaxy.pasteur.fr/history/export_archive?id=69a1b70d1c4a6bdb">https://galaxy.pasteur.fr/history/export_archive?id=69a1b70d1c4a6bdb</a></li>
 </ul>
-<h4 id="the-run_galaxykickstartsh-script-explained">the run_galaxykickstart.sh script explained</h4>
-<p>NB: in the following code, numbers in line heads should be removed to run the script.</p>
-<p>.. code-block:: bash
-   :linenos:</p>
-<p>#!/usr/bin/env bash
-   set -e
-   apt update -y
-   apt install -y python-pip python-dev python-setuptools git htop
-   echo "Upgrading pip"
-   pip install -U pip
-   pip --version
-   pip install ansible==2.4
-   ansible --version
-   git clone https://github.com/ARTbio/GalaxyKickStart.git -b $1
-   cd GalaxyKickStart/
-   ansible-galaxy install -r requirements_roles.yml -p roles/ -f
-   ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
-   echo "end of deployment\n"</p>
-<pre><code>#!/usr/bin/env bash
-set -e
+</li>
+</ul>
+<h4 id="the-run_galaxykickstartsh-script-explained">the run_galaxykickstart.sh script explained<a class="headerlink" href="#the-run_galaxykickstartsh-script-explained" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="nb">set</span> -e
 apt update -y
 apt install -y python-pip python-dev python-setuptools git htop
-echo &quot;Upgrading pip&quot;
+<span class="nb">echo</span> <span class="s2">&quot;Upgrading pip&quot;</span>
 pip install -U pip
 pip --version
-pip install ansible==2.4
+pip install <span class="nv">ansible</span><span class="o">==</span><span class="m">2</span>.4
 ansible --version
-git clone https://github.com/ARTbio/GalaxyKickStart.git -b $1
-cd GalaxyKickStart/
+git clone https://github.com/ARTbio/GalaxyKickStart.git -b <span class="nv">$1</span>
+<span class="nb">cd</span> GalaxyKickStart/
 ansible-galaxy install -r requirements_roles.yml -p roles/ -f
 ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
-echo &quot;end of deployment\n&quot;
-</code></pre>
+<span class="nb">echo</span> <span class="s2">&quot;end of deployment\n&quot;</span>
+</pre></div>
+</td></tr></table>
 
 <ol>
 <li>The shebang line (<code>#!</code>) says that it is a script code that has to be executed
@@ -1687,7 +1691,7 @@ installed with installation of <code>python-pip</code>, <code>python-dev</code> 
 <li>will prompt the version of pip in the console</li>
 <li>install <code>ansible</code>, version 2.4, using <code>pip</code> !</li>
 <li>will prompt the version of ansible in the console</li>
-<li>clone the GalaxyKickStart Repository available at https://github.com/ARTbio/GalaxyKickStart.git,
+<li>clone the GalaxyKickStart Repository available at <a href="https://github.com/ARTbio/GalaxyKickStart.git">https://github.com/ARTbio/GalaxyKickStart.git</a>,
 branch indicated as a parameter in the command line, creating locally the <code>GalaxyKickStart</code> folder.</li>
 <li>Change directory, ie goes to /root/GalaxyKickStart</li>
 <li>says to ansible to install additional roles (collection of files to control ansible)

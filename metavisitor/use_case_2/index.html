@@ -1530,13 +1530,13 @@
                   <a href="https://github.com/ARTbio/startbio/edit/master/docs/metavisitor/use_case_2.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="histories-for-use-cases-2-1-2-2">Histories for Use Cases 2-1, 2-2</h1>
+                <h1 id="histories-for-use-cases-2-1-2-2">Histories for Use Cases 2-1, 2-2<a class="headerlink" href="#histories-for-use-cases-2-1-2-2" title="Permanent link">&para;</a></h1>
 <p>Now that are more familiar with manipulations in Galaxy with the Use Cases 1-1 to 1-4, we will
 describe the other Use Case analyses more concisely. If you experience lack of skills in basic
 Galaxy operations (tool usage, copy of datasets, etc), do not hesitate to go back and
 examine the previous chapters step by step.</p>
 <hr />
-<h4 id="discovery-of-novel-viruses">Discovery of novel viruses</h4>
+<h4 id="discovery-of-novel-viruses">Discovery of novel viruses<a class="headerlink" href="#discovery-of-novel-viruses" title="Permanent link">&para;</a></h4>
 <p>Here we are going to use Metavisitor workflows to discover new viruses infecting a
 laboratory colony of <em>Anopheles coluzzii</em> mosquitoes.</p>
 <ul>
@@ -1553,7 +1553,7 @@ contigs to align them to the <em>Drosophila</em> C virus (DCV) genome and integr
 <hr />
 </li>
 </ul>
-<h2 id="input-data-for-use-cases-2-1-and-2-2">Input data for Use Cases 2-1 and 2-2</h2>
+<h2 id="input-data-for-use-cases-2-1-and-2-2">Input data for Use Cases 2-1 and 2-2<a class="headerlink" href="#input-data-for-use-cases-2-1-and-2-2" title="Permanent link">&para;</a></h2>
 <p>As for the previous Use Case 1, the first step is to collect all input data in an history
 that we will name <code>Input data for Use Cases 2-1 and 2-2</code></p>
 <ul>
@@ -1607,25 +1607,27 @@ the sequencing runs "IP-isoT-1_AGTCAA_L001_R_1.fastq", "IP-isoT-1_AGTCAA_L001_R_
  (step 3)</li>
 </ul>
 <p><strong><em>Your are now ready for generating Uses Cases 2-1 and 2-2</em></strong></p>
-<h2 id="history-for-use-case-2-1">History for Use Case 2-1</h2>
+<h2 id="history-for-use-case-2-1">History for Use Case 2-1<a class="headerlink" href="#history-for-use-case-2-1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Stay in the current history <code>Input data for Use Cases 2-1 and 2-2</code> !</li>
 <li>In the <code>Workflow</code> menu, select the workflow <code>Metavisitor: Workflow for Use Case 2-1</code> and
 directly select <code>Run</code> (you may also look at the workflow using the <code>edit</code> option).</li>
 <li>Be careful at selecting <code>Small RNA reads ERP012577</code> in step 1 (Input Dataset Collection).</li>
 <li><strong>Be careful</strong> in selecting <code>P. berghei</code> in <strong>step 2</strong>.</li>
-<li><strong>Be careful</strong> in <strong>step 3</strong> select :</li>
-</ul>
-<pre><code>Retrieve FASTA from NCBI (Nucleotide) with queryString 'phix174[title]'
-</code></pre>
-
-<ul>
-<li>In step 4, the option <code>protein vir2 blast database</code> is forced, because the workflow is expecting of protein blast database in this step and only one dataset with this datatype is available in the history</li>
+<li>
+<p><strong>Be careful</strong> in <strong>step 3</strong> select :
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">Retrieve</span><span class="w"> </span><span class="n">FASTA</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">NCBI</span><span class="w"> </span><span class="p">(</span><span class="n">Nucleotide</span><span class="p">)</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">queryString</span><span class="w"> </span><span class="s1">&#39;phix174[title]&#39;</span><span class="w"></span>
+</pre></div>
+</td></tr></table></p>
+</li>
+<li>
+<p>In step 4, the option <code>protein vir2 blast database</code> is forced, because the workflow is expecting of protein blast database in this step and only one dataset with this datatype is available in the history</p>
+</li>
 <li>Click the <code>Send results to a new history</code> checkbox and rename the history to "History for Use Case 2-1".</li>
 <li>Run Workflow !</li>
 </ul>
 <p>You may follow the link to the new history when the workflow has started.</p>
-<h2 id="history-for-use-case-2-2">History for Use Case 2-2</h2>
+<h2 id="history-for-use-case-2-2">History for Use Case 2-2<a class="headerlink" href="#history-for-use-case-2-2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>If you are not already in, go back to the history <code>Input data for Use Cases 2-1 and 2-2</code></li>
 <li>In the <code>Workflow</code> menu, select the workflow <code>Metavisitor: Workflow for Use Case 2-2</code> and
@@ -1638,7 +1640,7 @@ is available in the history</li>
 for Use Case 2-2".</li>
 <li>Run Workflow.</li>
 </ul>
-<h2 id="re-mapping-of-the-small-rna-reads-erp012577-to-the-ancv-genome-ku169878">Re-mapping of the small RNA reads (ERP012577) to the AnCV genome (KU169878).</h2>
+<h2 id="re-mapping-of-the-small-rna-reads-erp012577-to-the-ancv-genome-ku169878">Re-mapping of the small RNA reads (ERP012577) to the AnCV genome (KU169878).<a class="headerlink" href="#re-mapping-of-the-small-rna-reads-erp012577-to-the-ancv-genome-ku169878" title="Permanent link">&para;</a></h2>
 <p>The previous Workflow for Use Case 2-2 allowed to assemble a large contig of 8919 nt which
 significantly matched structural and non-structural polyproteins of Drosophila C Virus and
 Cricket Paralysis Virus in blastx alignments (see the dataset

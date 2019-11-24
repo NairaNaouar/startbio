@@ -1586,18 +1586,18 @@ to import and configure reference data (reference genomes and databases) so that
 directly available to all Galaxy users for running tools and workflows.</p>
 <p>Here we provide the step-by-step description of what we did to prepare our Metavisitor
 instance before performing the analyses described <a href="http://dx.doi.org/10.1101/048983">here</a>.</p>
-<h2 id="1-connect-to-your-metavisitor-galaxy-admin-account-with-your-web-browser">1. Connect to your Metavisitor Galaxy admin account with your web browser</h2>
-<h2 id="2-import-reference-data-in-an-history-references">2. Import reference data in an history "References"</h2>
+<h2 id="1-connect-to-your-metavisitor-galaxy-admin-account-with-your-web-browser">1. Connect to your Metavisitor Galaxy admin account with your web browser<a class="headerlink" href="#1-connect-to-your-metavisitor-galaxy-admin-account-with-your-web-browser" title="Permanent link">&para;</a></h2>
+<h2 id="2-import-reference-data-in-an-history-references">2. Import reference data in an history "References"<a class="headerlink" href="#2-import-reference-data-in-an-history-references" title="Permanent link">&para;</a></h2>
 <p>At first, you need to import and prepare the reference datasets you will need for most of
 the Metavisitor analyses. As a Galaxy admin you will make latter some of these references
 directly accessible to the Galaxy tools, and/or accessible to any other users by putting
 them in a Galaxy public library.</p>
-<h4 id="a-preliminary-actions">a. Preliminary actions</h4>
+<h4 id="a-preliminary-actions">a. Preliminary actions<a class="headerlink" href="#a-preliminary-actions" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Click on the <code>Analyze Data</code> menu</li>
 <li>rename the <code>Unnamed history</code> to <code>References</code></li>
 </ul>
-<h4 id="b-upload-nucleotide-vir2-fasta-file">b. Upload nucleotide vir2 fasta file</h4>
+<h4 id="b-upload-nucleotide-vir2-fasta-file">b. Upload nucleotide vir2 fasta file<a class="headerlink" href="#b-upload-nucleotide-vir2-fasta-file" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Click on the <img alt="upload_button" src="../images/upload_button.png" /> button on top of the tool bar (left handside of the Galaxy interface)</li>
 <li>In the open window, click on the <code>Rule-based</code> tab <img alt="rule-based" src="../images/rule_based_tab.png" /></li>
@@ -1614,27 +1614,27 @@ them in a Galaxy public library.</p>
 <tbody>
 <tr>
 <td><code>nucleotide vir2</code></td>
-<td>https://ndownloader.figshare.com/files/11005121</td>
+<td><a href="https://ndownloader.figshare.com/files/11005121">https://ndownloader.figshare.com/files/11005121</a></td>
 </tr>
 <tr>
 <td><code>protein vir2</code></td>
-<td>https://ndownloader.figshare.com/files/11005124</td>
+<td><a href="https://ndownloader.figshare.com/files/11005124">https://ndownloader.figshare.com/files/11005124</a></td>
 </tr>
 <tr>
 <td><code>dm6</code></td>
-<td>ftp://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.10_FB2016_02/fasta/dmel-all-chromosome-r6.10.fasta.gz</td>
+<td><a href="ftp://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.10_FB2016_02/fasta/dmel-all-chromosome-r6.10.fasta.gz">ftp://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.10_FB2016_02/fasta/dmel-all-chromosome-r6.10.fasta.gz</a></td>
 </tr>
 <tr>
 <td><code>AgamP4</code></td>
-<td>https://www.vectorbase.org/sites/default/files/ftp/downloads/Anopheles-gambiae-PEST_CHROMOSOMES_AgamP4.fa.gz</td>
+<td><a href="https://www.vectorbase.org/sites/default/files/ftp/downloads/Anopheles-gambiae-PEST_CHROMOSOMES_AgamP4.fa.gz">https://www.vectorbase.org/sites/default/files/ftp/downloads/Anopheles-gambiae-PEST_CHROMOSOMES_AgamP4.fa.gz</a></td>
 </tr>
 <tr>
 <td><code>P. berghei</code></td>
-<td>ftp://ftp.ensemblgenomes.org/pub/release-28/protists/fasta/plasmodium_berghei/dna/Plasmodium_berghei.May_2010.28.dna_sm.genome.fa.gz</td>
+<td><a href="ftp://ftp.ensemblgenomes.org/pub/release-28/protists/fasta/plasmodium_berghei/dna/Plasmodium_berghei.May_2010.28.dna_sm.genome.fa.gz">ftp://ftp.ensemblgenomes.org/pub/release-28/protists/fasta/plasmodium_berghei/dna/Plasmodium_berghei.May_2010.28.dna_sm.genome.fa.gz</a></td>
 </tr>
 <tr>
 <td><code>hg38</code></td>
-<td>ftp://ftp.ensembl.org/pub/release-84/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz</td>
+<td><a href="ftp://ftp.ensembl.org/pub/release-84/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz">ftp://ftp.ensembl.org/pub/release-84/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz</a></td>
 </tr>
 </tbody>
 </table>
@@ -1647,7 +1647,7 @@ them in a Galaxy public library.</p>
 <li>Click the <code>Apply</code> button. Finally click the <code>Upload</code> button in the bottom right</li>
 </ul>
 <p>The reference genomes should be uploaded shortly to Galaxy.</p>
-<h2 id="3-prepare-blast-databases">3. Prepare Blast databases</h2>
+<h2 id="3-prepare-blast-databases">3. Prepare Blast databases<a class="headerlink" href="#3-prepare-blast-databases" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Use the tool <code>NCBI BLAST+ makeblastdb</code></li>
 </ul>
@@ -1681,7 +1681,7 @@ them in a Galaxy public library.</p>
 <li>Leave the rest of the form unchanged and click the <code>Execute</code> button</li>
 <li>Rename the generated datasets "<em>nucleotide vir2 blast database</em>" and "<em>protein vir2 blast database</em>" for clarity</li>
 </ul>
-<h2 id="4-creating-galaxy-dbkey-and-fasta-references-accessible-to-tools-for-every-user">4. Creating Galaxy dbkey and fasta references accessible to tools for every user</h2>
+<h2 id="4-creating-galaxy-dbkey-and-fasta-references-accessible-to-tools-for-every-user">4. Creating Galaxy dbkey and fasta references accessible to tools for every user<a class="headerlink" href="#4-creating-galaxy-dbkey-and-fasta-references-accessible-to-tools-for-every-user" title="Permanent link">&para;</a></h2>
 <p>Be sure that the <code>References</code> history is selected in the background, otherwise the uploaded genomes will not be available.</p>
 <ul>
 <li>Go to the <code>admin</code> panel</li>
@@ -1735,7 +1735,7 @@ them in a Galaxy public library.</p>
 <p><strong>Tip:</strong> <em>Once you have run the first job. You can expand the new dataset that appeared in
 your history and click on the</em> <img alt="redo" src="../images/redo.png" /> <em>button, instead of going back to
 the admin panel.</em></p>
-<h2 id="5-creating-galaxy-bowtie-indexes-accessible-to-tools-for-every-user">5. Creating Galaxy bowtie indexes accessible to tools for every user</h2>
+<h2 id="5-creating-galaxy-bowtie-indexes-accessible-to-tools-for-every-user">5. Creating Galaxy bowtie indexes accessible to tools for every user<a class="headerlink" href="#5-creating-galaxy-bowtie-indexes-accessible-to-tools-for-every-user" title="Permanent link">&para;</a></h2>
 <p>Now we are going to generate the bowtie indexes using another data manager tool.</p>
 <ul>
 <li>Go to the <code>admin</code> panel</li>
@@ -1748,7 +1748,7 @@ the admin panel.</em></p>
 </ul>
 <hr />
 <p><strong>Note that the preparation of bowtie indexes can be long (several hours for the vir2 bowtie index for instance)</strong></p>
-<h2 id="6-creating-galaxy-bowtie2-indexes-accessible-to-tools-for-every-user">6. Creating Galaxy bowtie2 indexes accessible to tools for every user</h2>
+<h2 id="6-creating-galaxy-bowtie2-indexes-accessible-to-tools-for-every-user">6. Creating Galaxy bowtie2 indexes accessible to tools for every user<a class="headerlink" href="#6-creating-galaxy-bowtie2-indexes-accessible-to-tools-for-every-user" title="Permanent link">&para;</a></h2>
 <p>Finally, we are going to generate the bowtie2 indexes using another data manager tool.</p>
 <ul>
 <li>Go to the <code>admin</code> panel</li>

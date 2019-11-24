@@ -1431,119 +1431,138 @@
                   <a href="https://github.com/ARTbio/startbio/edit/master/docs/metavisitor/metavisitor_ansible.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="installing-metavisitor-with-galaxykickstart-and-ansible">Installing Metavisitor with GalaxyKickStart and Ansible</h1>
+                <h1 id="installing-metavisitor-with-galaxykickstart-and-ansible">Installing Metavisitor with GalaxyKickStart and Ansible<a class="headerlink" href="#installing-metavisitor-with-galaxykickstart-and-ansible" title="Permanent link">&para;</a></h1>
 <hr />
 <p>Here, a <code>Deployment Machine</code> will install a Metavisitor Galaxy server on <code>Target Machine</code>. Note that <code>Deployment Machine</code> and <code>Target Machine</code> can both be local or remote machines, and that they can be the same machine.</p>
-<h1 id="requirements">Requirements</h1>
+<h1 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h1>
 <hr />
 <ul>
 <li>On the <code>Deployment Machine</code>, <a href="https://git-scm.com/downloads">git</a> and <a href="https://docs.ansible.com/ansible/intro_installation.html">ansible</a> need to be installed.</li>
 <li>The <code>Target Machine</code> has to be accessible through ssh connection by the user (you) with <code>root</code> privileges. This implies that a correct ssh private key file is available on your <code>Deployment Machine</code>, for instance <code>~/.ssh/id_rsa</code>. This key will be used for secure transactions managed by ansible between the <code>Deployment Machine</code> and the <code>Target Machine</code>.</li>
 <li>see the <a href="https://artbio.github.io/GalaxyKickStart/getting_started/">GalaxyKickStart manual</a> for more detailed informations on how to install appropriate version of Ansible.</li>
 </ul>
-<h1 id="getting-the-ansible-playbook">Getting the ansible playbook</h1>
+<h1 id="getting-the-ansible-playbook">Getting the ansible playbook<a class="headerlink" href="#getting-the-ansible-playbook" title="Permanent link">&para;</a></h1>
 <hr />
 <p>This is done on the <code>Deployment Machine</code> by cloning the <a href="https://github.com/ARTbio/GalaxyKickStart.git">GalaxyKickStart (GalaxyKickStart) repository</a> hosted by <a href="https://github.com/ARTbio">the ARTbio organization</a>:</p>
-<p>In your terminal, type:</p>
-<pre><code>git clone https://github.com/ARTbio/GalaxyKickStart.git
-</code></pre>
-
-<p>and navigate in the GalaxyKickStart folder:</p>
-<pre><code>cd GalaxyKickStart
-</code></pre>
-
+<p>In your terminal, type:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">ARTbio</span><span class="o">/</span><span class="n">GalaxyKickStart</span><span class="p">.</span><span class="n">git</span>
+</pre></div>
+</td></tr></table>
+and navigate in the GalaxyKickStart folder:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">cd</span> <span class="n">GalaxyKickStart</span>
+</pre></div>
+</td></tr></table></p>
 <p>GalaxyKickStart makes use of other Ansible roles -- referenced in the <code>requirements_roles.yml file</code> -- that need to be downloaded as part of the installation step:</p>
-<pre><code>ansible-galaxy install -r requirements_roles.yml -p roles
-</code></pre>
-
-<p>This command installs additional roles in the <code>roles</code> folder.</p>
-<h1 id="adapting-the-galaxykickstart-folder-to-your-deployment">Adapting the GalaxyKickStart folder to your deployment</h1>
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ansible</span><span class="o">-</span><span class="n">galaxy</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements_roles</span><span class="p">.</span><span class="n">yml</span> <span class="o">-</span><span class="n">p</span> <span class="n">roles</span>
+</pre></div>
+</td></tr></table>
+This command installs additional roles in the <code>roles</code> folder.</p>
+<h1 id="adapting-the-galaxykickstart-folder-to-your-deployment">Adapting the GalaxyKickStart folder to your deployment<a class="headerlink" href="#adapting-the-galaxykickstart-folder-to-your-deployment" title="Permanent link">&para;</a></h1>
 <hr />
 <p>There are only few things to change in the <code>GalaxyKickStart</code> folder before running ansible.</p>
-<h2 id="adapt-the-ansible-inventory-file">Adapt the ansible inventory file</h2>
+<h2 id="adapt-the-ansible-inventory-file">Adapt the ansible inventory file<a class="headerlink" href="#adapt-the-ansible-inventory-file" title="Permanent link">&para;</a></h2>
 <p>In the GalaxyKickStart/inventory_files folder, there is a file called the <code>metavisitor</code>.
 For deploying Metavisitor, you need to edit this file so that it just contains</p>
-<pre><code>
-[metavisitor]
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">metavisitor</span><span class="o">]</span><span class="w"></span>
 
-&lt;ip address&gt; ansible_ssh_user=&quot;root&quot; ansible_ssh_private_key_file=&quot;&lt;path/to/the/ssh/private/key&gt;&quot;
-
-</code></pre>
+<span class="o">&lt;</span><span class="n">ip</span><span class="w"> </span><span class="n">address</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ansible_ssh_user</span><span class="o">=</span><span class="ss">&quot;root&quot;</span><span class="w"> </span><span class="n">ansible_ssh_private_key_file</span><span class="o">=</span><span class="ss">&quot;&lt;path/to/the/ssh/private/key&gt;&quot;</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
 
 <p>The <code>&lt;ip address&gt;</code> is the address of the <code>Target Machine</code>. The <code>&lt;path/to/the/ssh/private/key&gt;</code> is the path <em>on the <code>Deployment Machine</code></em> to your ssh key, to be recognized by the <code>Target Machine</code>.</p>
 <p>Thus, a practical exemple of the final content on the inventory file <code>metavisitor</code> is:</p>
-<pre><code>
-[metavisitor]
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">metavisitor</span><span class="o">]</span><span class="w"></span>
 
-192.54.201.126 ansible_ssh_user=&quot;root&quot; ansible_ssh_private_key_file=&quot;~/.ssh/id_rsa&quot;
-
-</code></pre>
+<span class="mf">192.54.201.126</span><span class="w"> </span><span class="n">ansible_ssh_user</span><span class="o">=</span><span class="ss">&quot;root&quot;</span><span class="w"> </span><span class="n">ansible_ssh_private_key_file</span><span class="o">=</span><span class="ss">&quot;~/.ssh/id_rsa&quot;</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
 
 <p>where <code>192.54.201.126</code> is the ip address of the <code>Target machine</code> and <code>~/.ssh/id_rsa</code> the path to the private ssh key.</p>
-<h4 id="note-that-you-can-also-install-locally-metavisitor-by-letting-the-metavisitor-inventory-file-as-is">Note that you can also install locally Metavisitor by letting the <code>metavisitor</code> inventory file as is:</h4>
-<pre><code>
-[metavisitor]
+<h4 id="note-that-you-can-also-install-locally-metavisitor-by-letting-the-metavisitor-inventory-file-as-is">Note that you can also install locally Metavisitor by letting the <code>metavisitor</code> inventory file as is:<a class="headerlink" href="#note-that-you-can-also-install-locally-metavisitor-by-letting-the-metavisitor-inventory-file-as-is" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">metavisitor</span><span class="o">]</span><span class="w"></span>
 
-localhost ansible_connection=local
+<span class="n">localhost</span><span class="w"> </span><span class="n">ansible_connection</span><span class="o">=</span><span class="k">local</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
 
-</code></pre>
-
-<h3 id="adapt-the-ansible-inventory-file-to-an-amazon-web-service-aws-virtual-machine">Adapt the ansible inventory file to an Amazon Web Service (AWS) virtual machine</h3>
+<h3 id="adapt-the-ansible-inventory-file-to-an-amazon-web-service-aws-virtual-machine">Adapt the ansible inventory file to an Amazon Web Service (AWS) virtual machine<a class="headerlink" href="#adapt-the-ansible-inventory-file-to-an-amazon-web-service-aws-virtual-machine" title="Permanent link">&para;</a></h3>
 <p>In this specific case, add in the hosts inventory file:</p>
-<pre><code>[metavisitor]
-192.54.201.126 ansible_ssh_user=&quot;ubuntu&quot; ansible_ssh_private_key_file=&quot;~/.ssh/aws_private_key.pem&quot;
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">[metavisitor]</span>
+<span class="na">192.54.201.126 ansible_ssh_user</span><span class="o">=</span><span class="s">&quot;ubuntu&quot; ansible_ssh_private_key_file=&quot;~/.ssh/aws_private_key.pem&quot;</span>
 
-[aws]
-192.54.201.126
-</code></pre>
-
-<p>In that case <code>aws_private_key.pem</code> is the private ssh key for interacting with aws instances, and the [aws] section will trigger additional actions for accessing the Metavisitor Galaxy instance in the Amazon cloud.</p>
+<span class="k">[aws]</span>
+<span class="na">192.54.201.126</span>
+</pre></div>
+</td></tr></table>
+In that case <code>aws_private_key.pem</code> is the private ssh key for interacting with aws instances, and the [aws] section will trigger additional actions for accessing the Metavisitor Galaxy instance in the Amazon cloud.</p>
 <p>Note that in addition the settings of the security group associated to the AWS instance should be as follows:</p>
-<pre><code>Type            |Protocole|   Port Range  |  Source   | #comment
-__________________________________________________________________________________________
-HTTP            |   TCP   |      80       | 0.0.0.0/0 | for Galaxy web access
-SSH             |   TCP   |      22       | 0.0.0.0/0 | for ssh access to the AWS instance
-Custom TCP Rule |   TCP   |      21       | 0.0.0.0/0 | for FTP upload to Galaxy
-Custom TCP Rule |   TCP   | 49152 - 65534 | 0.0.0.0/0 | for FTP upload to Galaxy
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">Type</span>            <span class="o">|</span><span class="nv">Protocole</span><span class="o">|</span>   <span class="nv">Port</span> <span class="nv">Range</span>  <span class="o">|</span>  <span class="nv">Source</span>   <span class="o">|</span> #<span class="nv">comment</span>
+<span class="nv">__________________________________________________________________________________________</span>
+<span class="nv">HTTP</span>            <span class="o">|</span>   <span class="nv">TCP</span>   <span class="o">|</span>      <span class="mi">80</span>       <span class="o">|</span> <span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">0</span> <span class="o">|</span> <span class="k">for</span> <span class="nv">Galaxy</span> <span class="nv">web</span> <span class="nv">access</span>
+<span class="nv">SSH</span>             <span class="o">|</span>   <span class="nv">TCP</span>   <span class="o">|</span>      <span class="mi">22</span>       <span class="o">|</span> <span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">0</span> <span class="o">|</span> <span class="k">for</span> <span class="nv">ssh</span> <span class="nv">access</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">AWS</span> <span class="nv">instance</span>
+<span class="nv">Custom</span> <span class="nv">TCP</span> <span class="nv">Rule</span> <span class="o">|</span>   <span class="nv">TCP</span>   <span class="o">|</span>      <span class="mi">21</span>       <span class="o">|</span> <span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">0</span> <span class="o">|</span> <span class="k">for</span> <span class="nv">FTP</span> <span class="nv">upload</span> <span class="nv">to</span> <span class="nv">Galaxy</span>
+<span class="nv">Custom</span> <span class="nv">TCP</span> <span class="nv">Rule</span> <span class="o">|</span>   <span class="nv">TCP</span>   <span class="o">|</span> <span class="mi">49152</span> <span class="o">-</span> <span class="mi">65534</span> <span class="o">|</span> <span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">0</span> <span class="o">|</span> <span class="k">for</span> <span class="nv">FTP</span> <span class="nv">upload</span> <span class="nv">to</span> <span class="nv">Galaxy</span>
+</pre></div>
+</td></tr></table>
 
 <p>The ports 21 and  49152 - 65534 should be open for FTP uploads to the AWS instance, and port 80 should be open for accessing galaxy.</p>
-<h2 id="adapt-the-group_varsall-file-for-persisting-data-if-needed">Adapt the group_vars/all file for persisting data, if needed.</h2>
+<h2 id="adapt-the-group_varsall-file-for-persisting-data-if-needed">Adapt the group_vars/all file for persisting data, if needed.<a class="headerlink" href="#adapt-the-group_varsall-file-for-persisting-data-if-needed" title="Permanent link">&para;</a></h2>
 <p>In cases where your <code>Target machine</code> has volumes where you wish the Galaxy data to be persisted in, you have to edit the <code>GalaxyKickStart/group_vars/all</code> file, to indicate the path to this volume on the <code>Target machine</code>.</p>
 <p>If you don't understand the previous statement, no worries, just don't do anything and skip this step.</p>
 <p>For others, find the lines</p>
-<pre><code>#persistent data
-galaxy_persistent_directory: /export # for IFB it's /root/mydisk, by default, /export
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#<span class="nv">persistent</span> <span class="nv">data</span>
+<span class="nv">galaxy_persistent_directory</span>: <span class="o">/</span><span class="nv">export</span> # <span class="k">for</span> <span class="nv">IFB</span> <span class="nv">it</span><span class="s1">&#39;</span><span class="s">s /root/mydisk, by default, /export</span>
+</pre></div>
+</td></tr></table>
 
 <p>in the <code>GalaxyKickStart/group_vars/all</code> file, and change /export to the path of your persistent volume.</p>
 <p>Note that if <code>/export</code> is not changed, nothing will happen and the deployed galaxy server and all associated data files will be in the <code>/home/galaxy/galaxy</code> folder of the <code>Target Machine</code>.</p>
-<h1 id="deploying-metavisitor-galaxy-on-the-target-machine">Deploying Metavisitor Galaxy on the <code>Target Machine</code></h1>
+<h1 id="deploying-metavisitor-galaxy-on-the-target-machine">Deploying Metavisitor Galaxy on the <code>Target Machine</code><a class="headerlink" href="#deploying-metavisitor-galaxy-on-the-target-machine" title="Permanent link">&para;</a></h1>
 <hr />
 <p>You are almost done.</p>
 <p>Navigate with your terminal to your <code>GalaxyKickStart</code> folder and type the following command to run the ansible playbook for deploying metavisitor Galaxy on the <code>Target Machine</code>:</p>
-<pre><code>ansible-playbook --inventory-file=hosts galaxy.yml
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ansible</span><span class="o">-</span><span class="n">playbook</span> <span class="c1">--inventory-file=hosts galaxy.yml</span>
+</pre></div>
+</td></tr></table>
 
 <p>If everything is ok, you may be asked to authorize the access to the <code>Target Machine</code> by typing yes in the terminal, and you will see ansible orchestrating the serveur deployment on the <code>Target Machine</code> in this terminal.</p>
 <p>When the process is finished, you should be able to access the <code>Target Machine</code> by typing its IP address in your web browser.</p>
 <p>By default the admin login/password is <code>admin@galaxy.org</code> / <code>admin</code>. You should change the password for safety.</p>
-<h1 id="re-deploying-metavisitor-galaxy-on-the-target-machine">Re-deploying Metavisitor Galaxy on the <code>Target Machine</code></h1>
+<h1 id="re-deploying-metavisitor-galaxy-on-the-target-machine">Re-deploying Metavisitor Galaxy on the <code>Target Machine</code><a class="headerlink" href="#re-deploying-metavisitor-galaxy-on-the-target-machine" title="Permanent link">&para;</a></h1>
 <hr />
 <p>If you are experimented in using ansible, you may customize your Metavisitor Galaxy instance deployed with GalaxyKickStart by editing the content of <code>GalaxyKickStart</code>.</p>
 <p>In that case, when your changes are done, just run again the command</p>
-<pre><code>ansible-playbook --inventory-file=hosts galaxy.yml
-</code></pre>
-
-<p>When you run the playbook a second time, the process will be much faster, since steps that have already been executed are skipped.
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ansible</span><span class="o">-</span><span class="n">playbook</span> <span class="c1">--inventory-file=hosts galaxy.yml</span>
+</pre></div>
+</td></tr></table>
+When you run the playbook a second time, the process will be much faster, since steps that have already been executed are skipped.
 Whenever you change a variable (see <a href="https://artbio.github.io/GalaxyKickStart/customizations/">customizations</a>), you need to run the playbook again.</p>
 <p>You can put multiple machines in your inventory: a simple way to do this is just copying the line the required number of times with the appropriate ip addresses:</p>
-<pre><code>[metavisitor]
-192.54.201.126 ansible_ssh_user=&quot;root&quot; ansible_ssh_private_key_file=&quot;~/.ssh/id_rsa&quot;
-192.54.201.127 ansible_ssh_user=&quot;root&quot; ansible_ssh_private_key_file=&quot;~/.ssh/id_rsa&quot;
-192.54.201.128 ansible_ssh_user=&quot;root&quot; ansible_ssh_private_key_file=&quot;~/.ssh/id_rsa&quot;
-
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">[metavisitor]</span>
+<span class="na">192.54.201.126 ansible_ssh_user</span><span class="o">=</span><span class="s">&quot;root&quot; ansible_ssh_private_key_file=&quot;~/.ssh/id_rsa&quot;</span>
+<span class="na">192.54.201.127 ansible_ssh_user</span><span class="o">=</span><span class="s">&quot;root&quot; ansible_ssh_private_key_file=&quot;~/.ssh/id_rsa&quot;</span>
+<span class="na">192.54.201.128 ansible_ssh_user</span><span class="o">=</span><span class="s">&quot;root&quot; ansible_ssh_private_key_file=&quot;~/.ssh/id_rsa&quot;</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
