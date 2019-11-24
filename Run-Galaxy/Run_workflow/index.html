@@ -1573,7 +1573,7 @@
                 <h1 id="running-a-workflow-in-galaxy">Running a workflow in Galaxy</h1>
 <h2 id="in-this-use-case-we-are-going-to">In this use case, we are going to</h2>
 <ul>
-<li>Upload 2 workflow description files in the Galaxy server instance</li>
+<li>Upload 3 workflow description files in the Galaxy server instance</li>
 <li>Visualise these workflows and see that tools to execute the workflows are missing</li>
 <li><em>since you are administrating the instance</em>, install the missing tools</li>
 <li>Eventually run the workflows on input data obtained from a remote public repository.</li>
@@ -1587,18 +1587,26 @@ registered for the first time)</li>
 <li>Click the "Upload or import workflow" button at the top right</li>
 <li>In the <code>Galaxy workflow URL:</code> field, paste the url of the workflow file:</li>
 </ul>
-<p><code>https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/workflows/Galaxy-Workflow-canonical_transposons.gtf_from_transposon_sequence_set.txt.ga</code></p>
-<p>Note that this file is in the <a href="https://github.com/ARTbio/Run-Galaxy">Run-Galaxy</a> repository where all the material for this training
-is hosted</p>
+<pre><code>https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/workflows/Galaxy-Workflow-canonical_transposons.gtf_from_transposon_sequence_set.txt.ga
+</code></pre>
+
+<p>Note that this file is in the <a href="https://github.com/ARTbio/Run-Galaxy">Run-Galaxy</a> repository where
+a part of the material for this training is hosted</p>
 <ul>
 <li>
 <p>Click on the <code>Import</code> button</p>
 </li>
 <li>
-<p>repeat the same operation with the other workflow 
-<code>https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/workflows/Galaxy-Workflow-Extract_canonical_transposons_fasta.ga</code></p>
+<p>repeat the same operation with the other workflows</p>
 </li>
 </ul>
+<pre><code>https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/workflows/Galaxy-Workflow-Extract_canonical_transposons_fasta.ga
+
+and
+
+https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/workflows/Galaxy-Workflow-workflow_of_workflows.ga
+</code></pre>
+
 <p>(alternatively, you could upload the workflow files from you computer instead of uploading them by URL)</p>
 <ul>
 <li>Now, click on the workflows that are showing up in the workflow list:</li>
@@ -1610,7 +1618,7 @@ is hosted</p>
 </ul>
 <p><img alt="import workflow failure" src="../images/failed_import_workflow.png" /></p>
 <p>When you read the warnings, you will see that the workflow was indeed successfully imported.
-However, tools are missing, namely:</p>
+However, some tools are missing, namely:</p>
 <pre><code>toolshed.g2.bx.psu.edu/repos/kellrott/regex_replace/regex_replace/1.0.0, version 1.0.0
 toolshed.g2.bx.psu.edu/repos/blankenberg/column_regex_substitution/column_regex_substitution/0.1.0, version 0.1.0
 toolshed.g2.bx.psu.edu/repos/jjohnson/regex_find_replace/regex_find_replace/0.1.0, version 0.1.0
@@ -1627,11 +1635,11 @@ we will come back to the workflow editor when the missing tools are installed in
 </li>
 <li>
 <p>So far, so good, the missing tools are reported in the <a href="https://github.com/ARTbio/Run-Galaxy/blob/master/workflows/tools.yml">tools.yml</a>
-file in the Run-Galaxy repository (or just above in a more complex format)</p>
+file in the Run-Galaxy repository, and just bellow in yaml format)</p>
 </li>
 </ul>
 <h4 id="installing-missing-tools">Installing missing tools</h4>
-<p>Thus, we have to install our first three tools in our Galaxy instance:</p>
+<p>Thus, we have to install the following three tools in our Galaxy instance:</p>
 <p>tools:
 - name: regex_replace
   owner: kellrott
@@ -1681,12 +1689,12 @@ Thus, the tools will appears in the section <code>Text Manipulation</code> of th
 installed tool <code>regex_find_replace</code> in the list.</p>
 </li>
 <li>
-<p>Repeat the same operations for the tool <code>regex_find_replace</code> owned by <code>jjohnson</code>(version <code>1.1.0</code>).
-<em>Do not take the tool with the same name but owned by <code>galaxyp</code></em></p>
+<p>Repeat the same operations for the tool <code>regex_find_replace</code> owned by <code>jjohnson</code>(version <code>1.1.0</code>).</p>
 </li>
-<li>
-<p>Repeat the same operations for the tool <code>column_regex_substitution</code> owned by <code>blankenberg</code> (version <code>0.0.1</code>)</p>
-</li>
+</ul>
+<p><em>Do not take the tool with the same name but owned by <code>galaxyp</code></em></p>
+<ul>
+<li>Repeat the same operations for the tool <code>column_regex_substitution</code> owned by <code>blankenberg</code> (version <code>0.0.1</code>)</li>
 </ul>
 <p>For this last installation, you will see a different panel after clicking <code>Install to Galaxy</code>:
    If you scroll down a little bit, you should see a list of uninstalled tool dependencies like this:
@@ -1695,11 +1703,13 @@ installed tool <code>regex_find_replace</code> in the list.</p>
    The required package (python 2.7) will be installed by the package manager <code>conda</code>.
    You can further check this by clicking the <code>Display Details</code> button bellow the Dependency list.</p>
 <p>At this stage, avoid further distraction and do not forget to select tool panel section
-   <code>Text Manipulation</code>, and finally click the <code>Install</code> button.
-   This time, the <code>Monitor installing tool shed repositories</code> will display new steps (in yellow),
+   <code>Text Manipulation</code>, and finally click the <code>Install</code> button.</p>
+<p>This time, the <code>Monitor installing tool shed repositories</code> will display new steps (in yellow/orange),
    including the <code>Installing tool dependencies</code> step. The whole process may take longer,
-   but not too long in this specific case.
-- Finally go back a last time to the <code>Manage tools</code> panel:</p>
+   but not too long in this specific case.</p>
+<ul>
+<li>Finally go back a last time to the <code>Manage tools</code> panel:</li>
+</ul>
 <p><img alt="Installed tools" src="../images/installed_tools.png" /></p>
 <pre><code>There you see all three tools needed to properly run the imported workflow.
 </code></pre>
@@ -1714,17 +1724,20 @@ from input data that has been tagged <code>transposon_set_embl.txt</code> and pr
 dataset that is renamed <code>canonical_transposons.gtf</code>.</p>
 <p>The second workflow uses the same input data file <code>transposon_set_embl.txt</code> to generate
 a fasta file of canonical_transposon sequences</p>
+<p>The third workflow is a workflow of the two previous workflows !</p>
 <p>We will come back to all these steps after the workflows execution. However, we need to
-retrieve the input data set before running the workflow on these data.</p>
+retrieve the input data set before running the workflows on these data.</p>
 <h4 id="retrieve-the-transposon_set_embltxt-dataset">Retrieve the <code>transposon_set_embl.txt</code> dataset</h4>
 <ul>
 <li>Create a new history and name it <code>transposon_set_embl.txt manipulation</code></li>
 <li>import the dataset using the <code>Paste/Fetch data</code> mode of the upload manager (the small
-bottom-top arrow icone at the top left of the Galaxy interface). Copy the URL
-<code>https://github.com/cbergman/transposons/raw/master/current/transposon_sequence_set.embl.txt</code>
-in the open field and click the <code>Start</code> button.</li>
-<li>have a close look at the file</li>
+bottom-top arrow icone at the top left of the Galaxy interface). Copy the URL</li>
 </ul>
+<pre><code>https://github.com/cbergman/transposons/raw/master/current/transposon_sequence_set.embl.txt
+</code></pre>
+
+<p>in the open field and click the <code>Start</code> button.
+- have a close look at the file</p>
 <h4 id="run-the-workflow">Run the workflow</h4>
 <ul>
 <li>Click on the workflow menu</li>
