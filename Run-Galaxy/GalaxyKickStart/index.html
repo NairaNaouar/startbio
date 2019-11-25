@@ -1683,24 +1683,25 @@ ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
 <ol>
 <li>The shebang line (<code>#!</code>) says that it is a script code that has to be executed
 by the shell bash which can be found in the /usr/bin/env environment</li>
-<li>set -e says to the bash interpreter to exit the run at first error (to avoid catastrophes)</li>
+<li><code>set -e</code> says to the bash interpreter to exit the run at first error (to avoid catastrophes)</li>
 <li>update apt package database</li>
-<li>install <code>python-pip</code>, <code>python-dev</code>, <code>python-setuptools</code> (these 3 packages are required to
+<li>installs <code>python-pip</code>, <code>python-dev</code>, <code>python-setuptools</code> (these 3 packages are required to
 install pip), <code>git</code> (to clone and manage GitHub repositories) and <code>htop</code> (a monitoring tool)
-using the package installer <code>apt-get</code></li>
+using the package installer <code>apt</code></li>
 <li>Is just a command to inform the user about run state. This will prompt
 "Upgrading pip version" in the console</li>
-<li>does what is stated before ! : this is the command to upgrade the pip program that was
-installed with installation of <code>python-pip</code>, <code>python-dev</code> and <code>python-setuptools</code>.
+<li>does what is echoed before by the previous line : this is the command to upgrade the pip program that was
+installed with installation of <code>python-pip</code>.
 <code>pip</code> is a recursive acronym that can stand for either "Pip Installs Packages" or
 "Pip Installs Python".</li>
 <li>will prompt the version of pip in the console</li>
-<li>install <code>ansible</code>, version 2.4, using <code>pip</code> !</li>
+<li>install <code>ansible</code>, version 2.7.4, using <code>pip</code></li>
 <li>will prompt the version of ansible in the console</li>
 <li>clone the GalaxyKickStart Repository available at <a href="https://github.com/ARTbio/GalaxyKickStart.git">https://github.com/ARTbio/GalaxyKickStart.git</a>,
-branch indicated as a parameter in the command line, creating locally the <code>GalaxyKickStart</code> folder.</li>
-<li>Change directory, ie goes to /root/GalaxyKickStart</li>
-<li>says to ansible to install additional roles (collection of files to control ansible)
+creating locally the <code>GalaxyKickStart</code> folder. The repository <code>branch</code> that is cloned is indicated
+as a parameter in the command line (the <code>$1</code>).</li>
+<li>Changes directory, i.e. goes to /root/GalaxyKickStart</li>
+<li>Says to ansible to install additional roles (collection of files to control ansible)
 which are not the the GalaxyKickStart repository but whose address is stated in the file
 <code>requirements_roles.yml</code>. These roles will be installed in the subdirectory
 <code>/root/GalaxyKickStart/roles/</code>. NB: <code>ansible-galaxy</code> has <em>nothing</em> to do with Galaxy,
@@ -1708,7 +1709,10 @@ the name of this ansible command is serendipitous.</li>
 <li>triggers the play of the playbook <code>galaxy.yml</code> by ansible. The target host of the playbook
 is defined in the file <code>inventory_files/galaxy-kickstart</code>, as well as how ansible will interact with the target.
 Here, we play the playbook on the same computer (localhost).</li>
-<li>Prompt the end of deployment. Galaxy should be up and running.</li>
+<li>A commented line (start with <code>#</code>) &rarr; will not operate in the script</li>
+<li>Prompts the end of the deployment</li>
+<li>A commented line (start with <code>#</code>) &rarr; will not operate in the script</li>
+<li>A commented line (start with <code>#</code>) &rarr; will not operate in the script</li>
 </ol>
                 
                   
