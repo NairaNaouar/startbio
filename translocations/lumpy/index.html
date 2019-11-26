@@ -1496,21 +1496,21 @@ in a vcf file (vcf stands for variant calling format), with statistical signific
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="mi">1</span>. <span class="nv">launch</span> <span class="nv">the</span> <span class="nv">lumpy</span><span class="o">-</span><span class="nv">sv</span> <span class="nv">tool</span>
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="mi">1</span><span class="p">.</span> <span class="n">launch</span> <span class="n">the</span> <span class="n">lumpy</span><span class="o">-</span><span class="n">sv</span> <span class="n">tool</span>
 
-<span class="mi">2</span>. <span class="nv">review</span> <span class="nv">the</span> <span class="nv">parameters</span>:
-    <span class="o">-</span> <span class="nv">input</span><span class="ss">(</span><span class="nv">s</span><span class="ss">)</span> : <span class="nv">One</span> <span class="nv">sample</span> <span class="ss">(</span><span class="nv">because</span> <span class="nv">we</span> <span class="nv">are</span> <span class="nv">not</span> <span class="nv">comparing</span> <span class="nv">the</span> <span class="nv">alignments</span> <span class="nv">with</span> <span class="nv">a</span> <span class="nv">reference</span> <span class="nv">alignment</span><span class="ss">)</span>
-    <span class="o">-</span> <span class="nv">One</span> <span class="nv">BAM</span> <span class="nv">alignment</span> <span class="nv">file</span> <span class="nv">produced</span> <span class="nv">by</span> <span class="nv">BWA</span><span class="o">-</span><span class="nv">mem</span>: <span class="nv">be</span> <span class="nv">sure</span> <span class="nv">to</span> <span class="nv">toggle</span> <span class="nv">the</span> <span class="nv">dataset</span> <span class="nv">collection</span> <span class="nv">mode</span>
-    <span class="ss">(</span><span class="nv">arrow</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">screen</span> <span class="nv">shot</span> <span class="nv">below</span><span class="ss">)</span>.
-    <span class="o">-</span> <span class="nv">sequencing</span> <span class="nv">method</span>: <span class="nv">paired</span><span class="o">-</span><span class="k">end</span> <span class="nv">sequencing</span>
-    <span class="o">-</span> <span class="nv">variant</span> <span class="nv">calling</span> <span class="nv">format</span>: <span class="nv">vcf</span>
+<span class="mi">2</span><span class="p">.</span> <span class="n">review</span> <span class="n">the</span> <span class="k">parameters</span><span class="p">:</span>
+    <span class="o">-</span> <span class="k">input</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">:</span> <span class="n">One</span> <span class="n">sample</span> <span class="p">(</span><span class="n">because</span> <span class="n">we</span> <span class="k">are</span> <span class="k">not</span> <span class="n">comparing</span> <span class="n">the</span> <span class="n">alignments</span> <span class="k">with</span> <span class="n">a</span> <span class="n">reference</span> <span class="n">alignment</span><span class="p">)</span>
+    <span class="o">-</span> <span class="n">One</span> <span class="n">BAM</span> <span class="n">alignment</span> <span class="n">file</span> <span class="n">produced</span> <span class="k">by</span> <span class="n">BWA</span><span class="o">-</span><span class="n">mem</span><span class="p">:</span> <span class="n">be</span> <span class="n">sure</span> <span class="k">to</span> <span class="n">toggle</span> <span class="n">the</span> <span class="n">dataset</span> <span class="n">collection</span> <span class="k">mode</span>
+    <span class="p">(</span><span class="n">arrow</span> <span class="k">in</span> <span class="n">the</span> <span class="n">screen</span> <span class="n">shot</span> <span class="n">below</span><span class="p">).</span>
+    <span class="o">-</span> <span class="n">sequencing</span> <span class="k">method</span><span class="p">:</span> <span class="n">paired</span><span class="o">-</span><span class="k">end</span> <span class="n">sequencing</span>
+    <span class="o">-</span> <span class="n">variant</span> <span class="n">calling</span> <span class="n">format</span><span class="p">:</span> <span class="n">vcf</span>
 
-<span class="mi">3</span>. <span class="nv">run</span> <span class="nv">the</span> <span class="nv">tool</span> <span class="o">!</span>
+<span class="mi">3</span><span class="p">.</span> <span class="n">run</span> <span class="n">the</span> <span class="n">tool</span> <span class="o">!</span>
 </pre></div>
 </td></tr></table>
 
 <p><img alt="" src="../images/lumpy.png" /></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="mi">4</span><span class="p">.</span> <span class="n">Look</span> <span class="k">at</span> <span class="n">the</span> <span class="n">vcf</span> <span class="n">returned</span> <span class="k">by</span> <span class="n">lumpy</span><span class="o">-</span><span class="n">sv</span><span class="p">.</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">4. Look at the vcf returned by lumpy-sv.</span>
 </pre></div>
 </td></tr></table>
 

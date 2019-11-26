@@ -1525,17 +1525,17 @@
 <p>You need to have docker installed and configured for your user.</p>
 <h2 id="running-images-from-the-dockerhub">Running images from the dockerhub<a class="headerlink" href="#running-images-from-the-dockerhub" title="Permanent link">&para;</a></h2>
 <p>You can search for pre-built docker images from the dockerhub by typing in the terminal of the machine where you want to run the docker container:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">docker</span> <span class="k">search</span> <span class="n">metavisitor</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">docker search metavisitor</span>
 </pre></div>
 </td></tr></table>
 
 <p>Then, to get the docker image, type:</p>
-<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">artbio</span><span class="o">/</span><span class="n">metavisitor</span><span class="o">-</span><span class="mi">2</span>
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">docker pull artbio/metavisitor-2</span>
 </pre></div>
 </td></tr></table>
 In this documentation, we recommend to use the <code>artbio/metavisitor-2</code> which better corresponds to the environment described in our <a href="http://dx.doi.org/10.1101/048983">Metavisitor preprint</a></p>
 <p>When this pull is done (may take a few minutes depending on your connection speed to the dockerhub), you can start the container by typing:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">p</span> <span class="mi">80</span><span class="p">:</span><span class="mi">80</span> <span class="n">artbio</span><span class="o">/</span><span class="n">metavisitor</span><span class="o">-</span><span class="mi">2</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">docker run -d -p 80:80 artbio/metavisitor-2</span>
 </pre></div>
 </td></tr></table>
 
@@ -1544,12 +1544,12 @@ In this documentation, we recommend to use the <code>artbio/metavisitor-2</code>
 <h2 id="runtime-changes-to-pre-built-docker-images">Runtime changes to pre-built docker images<a class="headerlink" href="#runtime-changes-to-pre-built-docker-images" title="Permanent link">&para;</a></h2>
 <p>If you wish to reach the container on a subdirectory, add <code>-e NGINX_GALAXY_LOCATION="/my-subdirectory"</code> to the docker call.</p>
 <p>For instance,
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">e</span> <span class="n">NGINX_GALAXY_LOCATION</span><span class="o">=</span><span class="ss">&quot;/my-subdirectory&quot;</span> <span class="o">-</span><span class="n">p</span> <span class="mi">80</span><span class="p">:</span><span class="mi">80</span> <span class="n">artbio</span><span class="o">/</span><span class="n">metavisitor</span><span class="o">-</span><span class="mi">2</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">docker run -d -e NGINX_GALAXY_LOCATION=&quot;/my-subdirectory&quot; -p 80:80 artbio/metavisitor-2</span>
 </pre></div>
 </td></tr></table></p>
 <p>will get the metavisitor docker container serving at <code>http://127.0.0.1:80/my-subdirectory</code>.</p>
 <p>We recommend also changing the default admin user as well, so the command becomes:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">docker</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="n">NGINX_GALAXY_LOCATION</span><span class="o">=</span><span class="ss">&quot;/my-subdirectory&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="n">GALAXY_CONFIG_ADMIN_USERS</span><span class="o">=</span><span class="k">admin</span><span class="nv">@artbio</span><span class="p">.</span><span class="n">fr</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="mi">80</span><span class="err">:</span><span class="mi">80</span><span class="w"> </span><span class="n">artbio</span><span class="o">/</span><span class="n">galaxy</span><span class="o">-</span><span class="n">kickstart</span><span class="o">-</span><span class="n">base</span><span class="w"></span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">docker run -d -e NGINX_GALAXY_LOCATION=&quot;/my-subdirectory&quot; -e GALAXY_CONFIG_ADMIN_USERS=admin@artbio.fr -p 80:80 artbio/galaxy-kickstart-base</span>
 </pre></div>
 </td></tr></table>
 Note that if you do not make this latest change, the admin login for the metavisitor container is by default <code>admin@galaxy.org</code> and the password is <code>admin</code>.</p>
@@ -1559,7 +1559,7 @@ To persist data (this includes the postgresql database, galaxy's config files an
 the containers /export folder.
 Due to the persistance mechanism (we use bind-mounts inside the container), you need to privilege the container.
 Thus, assuming you would like to mount your local <code>/my/data</code> folder and persist you Galaxy data in this folder, run
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="c1">--privileged -v /my/data:/export -p 80:80 artbio/metavisitor-2</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">docker run -d --privileged -v /my/data:/export -p 80:80 artbio/metavisitor-2</span>
 </pre></div>
 </td></tr></table>
 This will run through the persistence tags of the galaxy.yml and export the required files to /export (now on your machine's /my/data).

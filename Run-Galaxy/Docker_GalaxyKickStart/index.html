@@ -1620,8 +1620,9 @@ you have just built.</p>
 <li>There is actually no need for a new VM, the ansible already installed the docker service
 in the VM used to deploy GalaxyKickStart.</li>
 <li>If not already, be connected to you VM as root user using the Google ssh console (<code>sudo -i</code>)</li>
-<li>download the script <code>docker_galaxy.sh</code> using the command <code>wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/docker_galaxy.sh</code></li>
-<li>run the script using the command <code>sh docker_galaxy.sh artbio/rna-biologie-genome</code> or <code>sh docker_galaxy.sh artbio/rna-biologie-genome artbio/biologiegenome</code></li>
+<li>download the script <code>run_docker_analyse_genomes_2019.sh</code> using the command
+<code>wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/run_docker_analyse_genomes_2019.sh</code></li>
+<li>run the script using the command <code>sh run_docker_analyse_genomes_2019.sh</code></li>
 <li>
 <p>Connect to your docker-deployed "GalaxyKickStart" instance:</p>
 <p>Just click on the url displayed in your Google Cloud Engine Console
@@ -1653,30 +1654,30 @@ and connect using the login:password <code>admin@galaxy.org:admin</code></p>
 21
 22
 23
-24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span> <span class="mi">1</span> #<span class="o">!/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">bin</span><span class="o">/</span><span class="nv">env</span> <span class="nv">sh</span>
- <span class="mi">2</span> <span class="nv">set</span> <span class="o">-</span><span class="nv">e</span>
- <span class="mi">3</span> <span class="nv">echo</span> <span class="s2">&quot;</span><span class="s">Now pulling the galaxykickstart docker image from DockerHub</span><span class="se">\n</span><span class="s2">&quot;</span>
- <span class="mi">4</span> <span class="nv">supervisorctl</span> <span class="nv">stop</span> <span class="nv">all</span>
- <span class="mi">5</span> <span class="nv">docker</span> <span class="nv">pull</span> <span class="mh">$1</span>
- <span class="mi">6</span> <span class="nv">echo</span> <span class="s2">&quot;</span><span class="s">Running galaxykickstart docker container</span><span class="se">\n</span><span class="s2">&quot;</span>
- <span class="mi">7</span> <span class="nv">export</span> <span class="nv">DOCKER_INSTANCE</span><span class="o">=</span>`<span class="nv">docker</span> <span class="nv">run</span> <span class="o">-</span><span class="nv">d</span> <span class="o">-</span><span class="nv">p</span> <span class="mi">80</span>:<span class="mi">80</span> <span class="o">-</span><span class="nv">p</span> <span class="mi">21</span>:<span class="mi">21</span> <span class="o">-</span><span class="nv">p</span> <span class="mi">8800</span>:<span class="mi">8800</span> \
- <span class="mi">8</span>           <span class="o">--</span><span class="nv">privileged</span><span class="o">=</span><span class="nv">true</span> \
- <span class="mi">9</span>           <span class="o">-</span><span class="nv">e</span> <span class="nv">GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE</span><span class="o">=</span><span class="nv">True</span> \
-<span class="mi">10</span>           <span class="o">-</span><span class="nv">e</span> <span class="nv">GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE</span><span class="o">=</span><span class="nv">True</span> \
-<span class="mi">11</span>           <span class="o">-</span><span class="nv">e</span> <span class="nv">GALAXY_CONFIG_ENABLE_USER_DELETION</span><span class="o">=</span><span class="nv">True</span> \
-<span class="mi">12</span>           <span class="o">-</span><span class="nv">e</span> <span class="nv">GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES</span><span class="o">=</span><span class="nv">True</span> \
-<span class="mi">13</span>           <span class="o">-</span><span class="nv">v</span> <span class="o">/</span><span class="nv">tmp</span><span class="o">/</span>:<span class="o">/</span><span class="nv">tmp</span><span class="o">/</span> \
-<span class="mi">14</span>           <span class="o">-</span><span class="nv">v</span> <span class="o">/</span><span class="nv">export</span><span class="o">/</span>:<span class="o">/</span><span class="nv">export</span> \
-<span class="mi">15</span>           <span class="mh">$1</span>`
-<span class="mi">16</span> <span class="nv">echo</span> <span class="s2">&quot;</span><span class="s">The $1 docker container is deploying...</span><span class="se">\n</span><span class="s2">&quot;</span>
-<span class="mi">17</span> <span class="nv">sleep</span> <span class="mi">90</span>
-<span class="mi">18</span> <span class="nv">echo</span> <span class="s2">&quot;</span><span class="s">The $1 docker container is up and running</span><span class="se">\n</span><span class="s2">&quot;</span>
-<span class="mi">19</span> <span class="nv">docker</span> <span class="nv">logs</span>  <span class="mh">$D</span><span class="nv">OCKER_INSTANCE</span>
-<span class="mi">20</span> <span class="nv">docker</span> <span class="k">exec</span> <span class="mh">$D</span><span class="nv">OCKER_INSTANCE</span> <span class="nv">sudo</span> <span class="nv">su</span> <span class="nv">galaxy</span> <span class="o">-</span><span class="nv">c</span> <span class="s1">&#39;</span><span class="s">/home/galaxy/galaxy/.venv/bin/pip install cryptography==2.2.2</span><span class="s1">&#39;</span>
-<span class="mi">21</span> <span class="nv">docker</span> <span class="k">exec</span> <span class="mh">$D</span><span class="nv">OCKER_INSTANCE</span> <span class="nv">sudo</span> <span class="nv">su</span> <span class="nv">galaxy</span> <span class="o">-</span><span class="nv">c</span> <span class="s1">&#39;</span><span class="s">cd ~/galaxy/config &amp;&amp; wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/sanitize_whitelist.txt</span><span class="s1">&#39;</span>
-<span class="mi">22</span> <span class="nv">echo</span> <span class="s2">&quot;</span><span class="s">Galaxy in container will restart to take into account new settings</span><span class="se">\n</span><span class="s2">&quot;</span>
-<span class="mi">23</span> <span class="nv">sleep</span> <span class="mi">120</span>
-<span class="mi">24</span> <span class="nv">docker</span> <span class="k">exec</span> <span class="mh">$D</span><span class="nv">OCKER_INSTANCE</span> <span class="nv">sudo</span> <span class="nv">supervisorctl</span> <span class="nv">restart</span> <span class="nv">galaxy</span>:
+24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err"> 1 #!/usr/bin/env sh</span>
+<span class="err"> 2 set -e</span>
+<span class="err"> 3 echo &quot;Now pulling the galaxykickstart docker image from DockerHub\n&quot;</span>
+<span class="err"> 4 supervisorctl stop all</span>
+<span class="err"> 5 docker pull $1</span>
+<span class="err"> 6 echo &quot;Running galaxykickstart docker container\n&quot;</span>
+<span class="err"> 7 export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \</span>
+<span class="err"> 8           --privileged=true \</span>
+<span class="err"> 9           -e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True \</span>
+<span class="err">10           -e GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE=True \</span>
+<span class="err">11           -e GALAXY_CONFIG_ENABLE_USER_DELETION=True \</span>
+<span class="err">12           -e GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES=True \</span>
+<span class="err">13           -v /tmp/:/tmp/ \</span>
+<span class="err">14           -v /export/:/export \</span>
+<span class="err">15           $1`</span>
+<span class="err">16 echo &quot;The $1 docker container is deploying...\n&quot;</span>
+<span class="err">17 sleep 90</span>
+<span class="err">18 echo &quot;The $1 docker container is up and running\n&quot;</span>
+<span class="err">19 docker logs  $DOCKER_INSTANCE</span>
+<span class="err">20 docker exec $DOCKER_INSTANCE sudo su galaxy -c &#39;/home/galaxy/galaxy/.venv/bin/pip install cryptography==2.2.2&#39;</span>
+<span class="err">21 docker exec $DOCKER_INSTANCE sudo su galaxy -c &#39;cd ~/galaxy/config &amp;&amp; wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/sanitize_whitelist.txt&#39;</span>
+<span class="err">22 echo &quot;Galaxy in container will restart to take into account new settings\n&quot;</span>
+<span class="err">23 sleep 120</span>
+<span class="err">24 docker exec $DOCKER_INSTANCE sudo supervisorctl restart galaxy:</span>
 </pre></div>
 </td></tr></table>
 

@@ -1445,15 +1445,15 @@
 <hr />
 <p>This is done on the <code>Deployment Machine</code> by cloning the <a href="https://github.com/ARTbio/GalaxyKickStart.git">GalaxyKickStart (GalaxyKickStart) repository</a> hosted by <a href="https://github.com/ARTbio">the ARTbio organization</a>:</p>
 <p>In your terminal, type:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">ARTbio</span><span class="o">/</span><span class="n">GalaxyKickStart</span><span class="p">.</span><span class="n">git</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">git clone https://github.com/ARTbio/GalaxyKickStart.git</span>
 </pre></div>
 </td></tr></table>
 and navigate in the GalaxyKickStart folder:
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">cd</span> <span class="n">GalaxyKickStart</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">cd GalaxyKickStart</span>
 </pre></div>
 </td></tr></table></p>
 <p>GalaxyKickStart makes use of other Ansible roles -- referenced in the <code>requirements_roles.yml file</code> -- that need to be downloaded as part of the installation step:</p>
-<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ansible</span><span class="o">-</span><span class="n">galaxy</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements_roles</span><span class="p">.</span><span class="n">yml</span> <span class="o">-</span><span class="n">p</span> <span class="n">roles</span>
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">ansible-galaxy install -r requirements_roles.yml -p roles</span>
 </pre></div>
 </td></tr></table>
 This command installs additional roles in the <code>roles</code> folder.</p>
@@ -1511,12 +1511,12 @@ In that case <code>aws_private_key.pem</code> is the private ssh key for interac
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">Type</span>            <span class="o">|</span><span class="nv">Protocole</span><span class="o">|</span>   <span class="nv">Port</span> <span class="nv">Range</span>  <span class="o">|</span>  <span class="nv">Source</span>   <span class="o">|</span> #<span class="nv">comment</span>
-<span class="nv">__________________________________________________________________________________________</span>
-<span class="nv">HTTP</span>            <span class="o">|</span>   <span class="nv">TCP</span>   <span class="o">|</span>      <span class="mi">80</span>       <span class="o">|</span> <span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">0</span> <span class="o">|</span> <span class="k">for</span> <span class="nv">Galaxy</span> <span class="nv">web</span> <span class="nv">access</span>
-<span class="nv">SSH</span>             <span class="o">|</span>   <span class="nv">TCP</span>   <span class="o">|</span>      <span class="mi">22</span>       <span class="o">|</span> <span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">0</span> <span class="o">|</span> <span class="k">for</span> <span class="nv">ssh</span> <span class="nv">access</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">AWS</span> <span class="nv">instance</span>
-<span class="nv">Custom</span> <span class="nv">TCP</span> <span class="nv">Rule</span> <span class="o">|</span>   <span class="nv">TCP</span>   <span class="o">|</span>      <span class="mi">21</span>       <span class="o">|</span> <span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">0</span> <span class="o">|</span> <span class="k">for</span> <span class="nv">FTP</span> <span class="nv">upload</span> <span class="nv">to</span> <span class="nv">Galaxy</span>
-<span class="nv">Custom</span> <span class="nv">TCP</span> <span class="nv">Rule</span> <span class="o">|</span>   <span class="nv">TCP</span>   <span class="o">|</span> <span class="mi">49152</span> <span class="o">-</span> <span class="mi">65534</span> <span class="o">|</span> <span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">0</span> <span class="o">|</span> <span class="k">for</span> <span class="nv">FTP</span> <span class="nv">upload</span> <span class="nv">to</span> <span class="nv">Galaxy</span>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">Type            |Protocole|   Port Range  |  Source   | #comment</span>
+<span class="err">__________________________________________________________________________________________</span>
+<span class="err">HTTP            |   TCP   |      80       | 0.0.0.0/0 | for Galaxy web access</span>
+<span class="err">SSH             |   TCP   |      22       | 0.0.0.0/0 | for ssh access to the AWS instance</span>
+<span class="err">Custom TCP Rule |   TCP   |      21       | 0.0.0.0/0 | for FTP upload to Galaxy</span>
+<span class="err">Custom TCP Rule |   TCP   | 49152 - 65534 | 0.0.0.0/0 | for FTP upload to Galaxy</span>
 </pre></div>
 </td></tr></table>
 
@@ -1526,8 +1526,8 @@ In that case <code>aws_private_key.pem</code> is the private ssh key for interac
 <p>If you don't understand the previous statement, no worries, just don't do anything and skip this step.</p>
 <p>For others, find the lines</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#<span class="nv">persistent</span> <span class="nv">data</span>
-<span class="nv">galaxy_persistent_directory</span>: <span class="o">/</span><span class="nv">export</span> # <span class="k">for</span> <span class="nv">IFB</span> <span class="nv">it</span><span class="s1">&#39;</span><span class="s">s /root/mydisk, by default, /export</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">#persistent data</span>
+<span class="c">galaxy_persistent_directory: /export # for IFB it&#39;s /root/mydisk, by default, /export</span>
 </pre></div>
 </td></tr></table>
 
@@ -1537,7 +1537,7 @@ In that case <code>aws_private_key.pem</code> is the private ssh key for interac
 <hr />
 <p>You are almost done.</p>
 <p>Navigate with your terminal to your <code>GalaxyKickStart</code> folder and type the following command to run the ansible playbook for deploying metavisitor Galaxy on the <code>Target Machine</code>:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ansible</span><span class="o">-</span><span class="n">playbook</span> <span class="c1">--inventory-file=hosts galaxy.yml</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">ansible-playbook --inventory-file=hosts galaxy.yml</span>
 </pre></div>
 </td></tr></table>
 
@@ -1548,7 +1548,7 @@ In that case <code>aws_private_key.pem</code> is the private ssh key for interac
 <hr />
 <p>If you are experimented in using ansible, you may customize your Metavisitor Galaxy instance deployed with GalaxyKickStart by editing the content of <code>GalaxyKickStart</code>.</p>
 <p>In that case, when your changes are done, just run again the command</p>
-<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">ansible</span><span class="o">-</span><span class="n">playbook</span> <span class="c1">--inventory-file=hosts galaxy.yml</span>
+<p><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">ansible-playbook --inventory-file=hosts galaxy.yml</span>
 </pre></div>
 </td></tr></table>
 When you run the playbook a second time, the process will be much faster, since steps that have already been executed are skipped.
