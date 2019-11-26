@@ -1603,8 +1603,8 @@ Repository <a href="https://github.com/ARTbio/GalaxyKickStart">https://github.co
 <li>connect to you VM using the Google ssh console</li>
 <li>start an interactive session as root using the command <code>sudo -i</code></li>
 <li>
-<p>download the script <code>run_galaxykickstart.sh</code> using the command
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">ARTbio</span><span class="o">/</span><span class="n">Run</span><span class="o">-</span><span class="n">Galaxy</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">deployment_scripts</span><span class="o">/</span><span class="n">run_galaxykickstart</span><span class="p">.</span><span class="n">sh</span>
+<p>download the script <code>run_ansible_analyse_genomes_2019.sh</code> using the command
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">ARTbio</span><span class="o">/</span><span class="n">Run</span><span class="o">-</span><span class="n">Galaxy</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">deployment_scripts</span><span class="o">/</span><span class="n">run_ansible_analyse_genomes_2019</span><span class="p">.</span><span class="n">sh</span>
 </pre></div>
 </td></tr></table></p>
 </li>
@@ -1660,8 +1660,7 @@ an admin user. Just use the <code>admin@galaxy.org:admin</code> as credentials (
 13
 14
 15
-16
-17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="nb">set</span> -e
 apt update -y
 apt install -y python-pip python-dev python-setuptools git htop
@@ -1673,16 +1672,15 @@ ansible --version
 git clone https://github.com/ARTbio/GalaxyKickStart.git -b <span class="nv">$1</span>
 <span class="nb">cd</span> GalaxyKickStart/
 ansible-galaxy install -r requirements_roles.yml -p roles/ -f
-ansible-playbook -i inventory_files/galaxy-kickstart galaxy.yml
-<span class="c1"># su galaxy -c &#39;cd ~/galaxy/config &amp;&amp; wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/sanitize_whitelist.txt&#39;</span>
+cp scripts/8cpu_job_conf.xml roles/galaxyprojectdotorg.galaxy-extras/templates/job_conf.xml.j2
+cp scripts/configure_slurm.py.j2 roles/galaxyprojectdotorg.galaxy-extras/templates/configure_slurm.py.j2
+ansible-playbook -i inventory_files/analyseGenomes galaxy.yml
 <span class="nb">echo</span> <span class="s2">&quot;end of deployment\n&quot;</span>
-<span class="c1"># echo &quot;Galaxy will restart to take into account last settings\n&quot;</span>
-<span class="c1"># supervisorctl restart galaxy:</span>
 </pre></div>
 </td></tr></table>
 
 <div class="admonition info">
-<p class="admonition-title">the <code>run_galaxykickstart.sh</code> script explained</p>
+<p class="admonition-title">the <code>run_ansible_analyse_genomes_2019.sh</code> script explained</p>
 <ol>
 <li>The shebang line (<code>#!</code>) says that it is a script code that has to be executed
 by the shell bash which can be found in the /usr/bin/env environment</li>
@@ -1712,10 +1710,7 @@ the name of this ansible command is serendipitous.</li>
 <li>triggers the play of the playbook <code>galaxy.yml</code> by ansible. The target host of the playbook
 is defined in the file <code>inventory_files/galaxy-kickstart</code>, as well as how ansible will interact with the target.
 Here, we play the playbook on the same computer (localhost).</li>
-<li>A commented line (start with <code>#</code>) &rarr; will not operate in the script</li>
 <li>Prompts the end of the deployment</li>
-<li>A commented line (start with <code>#</code>) &rarr; will not operate in the script</li>
-<li>A commented line (start with <code>#</code>) &rarr; will not operate in the script</li>
 </ol>
 </div>
                 
