@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.1">
     
     
       
@@ -394,8 +394,7 @@
     2. apt update -y
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#3-apt-install-y-python-dev-python-pip-nano-git" class="md-nav__link">
@@ -451,23 +450,12 @@
     9. Connect as an admin of your Galaxy server instance
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#you-are-connected-to-galaxy-as-an-admin" class="md-nav__link">
     You are connected to Galaxy as an admin !
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1606,8 +1594,7 @@
     2. apt update -y
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#3-apt-install-y-python-dev-python-pip-nano-git" class="md-nav__link">
@@ -1663,23 +1650,12 @@
     9. Connect as an admin of your Galaxy server instance
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#you-are-connected-to-galaxy-as-an-admin" class="md-nav__link">
     You are connected to Galaxy as an admin !
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1729,27 +1705,27 @@
 of new programs as well as manipulations of network interfaces is generally permitted only
 to users with administration rights.</p>
 <p>So let's do this, step by step:</p>
-<h5 id="1-sudo-i">1. <code>sudo -i</code><a class="headerlink" href="#1-sudo-i" title="Permanent link">&para;</a></h5>
+<h4 id="1-sudo-i">1. <code>sudo -i</code><a class="headerlink" href="#1-sudo-i" title="Permanent link">&para;</a></h4>
 <p>This command open a new "shell" where you are root. You can check this by typing <code>pwd</code> that
 should return <code>/root/</code>, meaning that you are now working in the directory of the <code>root</code> user.</p>
 <h4 id="2-apt-update-y">2. <code>apt update -y</code><a class="headerlink" href="#2-apt-update-y" title="Permanent link">&para;</a></h4>
 <p>This command will just trigger an update of the installed programs database in the Ubuntu OS.</p>
-<h5 id="3-apt-install-y-python-dev-python-pip-nano-git">3. <code>apt install -y python-dev python-pip nano git</code><a class="headerlink" href="#3-apt-install-y-python-dev-python-pip-nano-git" title="Permanent link">&para;</a></h5>
+<h4 id="3-apt-install-y-python-dev-python-pip-nano-git">3. <code>apt install -y python-dev python-pip nano git</code><a class="headerlink" href="#3-apt-install-y-python-dev-python-pip-nano-git" title="Permanent link">&para;</a></h4>
 <p>This command install some python programs (python-dev and python-pip) that are intensively used by Galaxy,
 <code>nano</code>, a simple text editor we need, and the <code>git</code> program which is the software to fetch or
 and update Galaxy (i.e. a sort of "installer" program). The <code>-y</code> option specifies to the <code>apt</code>
 package installer that no manual confirmation is needed for this command.</p>
-<h5 id="4-git-clone-httpsgithubcomgalaxyprojectgalaxygit-b-release_1905">4. <code>git clone https://github.com/galaxyproject/galaxy.git -b release_19.05</code><a class="headerlink" href="#4-git-clone-httpsgithubcomgalaxyprojectgalaxygit-b-release_1905" title="Permanent link">&para;</a></h5>
+<h4 id="4-git-clone-httpsgithubcomgalaxyprojectgalaxygit-b-release_1905">4. <code>git clone https://github.com/galaxyproject/galaxy.git -b release_19.05</code><a class="headerlink" href="#4-git-clone-httpsgithubcomgalaxyprojectgalaxygit-b-release_1905" title="Permanent link">&para;</a></h4>
 <p>This command says to use <code>git</code> to <code>clone</code> the code repository located at <code>https://github.com/galaxyproject/galaxy.git</code>.
 In addition the <code>-b release_19.05</code> option specifies that only the version <code>release_19.05</code> will be cloned locally in your virtual machine.
 You may try to visualize the URL <a href="https://github.com/galaxyproject/galaxy.git">https://github.com/galaxyproject/galaxy.git</a>
 in your web browser. You will, literally, see the code of Galaxy. It is Open Source, as you can notice.</p>
-<h5 id="5-cd-galaxy">5. <code>cd galaxy</code><a class="headerlink" href="#5-cd-galaxy" title="Permanent link">&para;</a></h5>
+<h4 id="5-cd-galaxy">5. <code>cd galaxy</code><a class="headerlink" href="#5-cd-galaxy" title="Permanent link">&para;</a></h4>
 <p>This command shift you in the <code>galaxy</code> directory that was created by git and the <code>git clone</code> command in 4.</p>
-<h5 id="6-cp-configgalaxyymlsample-configgalaxyyml">6. <code>cp config/galaxy.yml.sample config/galaxy.yml</code><a class="headerlink" href="#6-cp-configgalaxyymlsample-configgalaxyyml" title="Permanent link">&para;</a></h5>
+<h4 id="6-cp-configgalaxyymlsample-configgalaxyyml">6. <code>cp config/galaxy.yml.sample config/galaxy.yml</code><a class="headerlink" href="#6-cp-configgalaxyymlsample-configgalaxyyml" title="Permanent link">&para;</a></h4>
 <p>This command makes a copie of the <code>galaxy.yml.sample</code> file into <code>galaxy.yml</code> - in the
 directory <code>config</code> that is in the <code>galaxy</code> directory.</p>
-<h5 id="7-nano-configgalaxyyml">7. <code>nano config/galaxy.yml</code><a class="headerlink" href="#7-nano-configgalaxyyml" title="Permanent link">&para;</a></h5>
+<h4 id="7-nano-configgalaxyyml">7. <code>nano config/galaxy.yml</code><a class="headerlink" href="#7-nano-configgalaxyyml" title="Permanent link">&para;</a></h4>
 <p>Using this command, we are going to edit some important settings that are required to run our Galaxy fresh instance.</p>
 <ul>
 <li>Find the line <code>http: 127.0.0.1:8080</code> and edit it to <code>http: 0.0.0.0:80</code></li>
@@ -1763,7 +1739,7 @@ directory <code>config</code> that is in the <code>galaxy</code> directory.</p>
 <li>save your changes by pressing the key combination <code>Ctrl</code>+<code>o</code></li>
 <li>quit nano by pressing the key combination <code>Ctrl</code>+<code>x</code></li>
 </ul>
-<h5 id="8-ready-for-deploying-galaxy">8. Ready for deploying Galaxy ?<a class="headerlink" href="#8-ready-for-deploying-galaxy" title="Permanent link">&para;</a></h5>
+<h4 id="8-ready-for-deploying-galaxy">8. Ready for deploying Galaxy ?<a class="headerlink" href="#8-ready-for-deploying-galaxy" title="Permanent link">&para;</a></h4>
 <p>Then type <code>sh run.sh</code> and press the <code>enter</code> key !</p>
 <p>You should see an abundant log scrolling down. Don't worry !
 - All Galaxy dependencies required for the Galaxy server instance are being downloaded and installed
@@ -1778,17 +1754,17 @@ directory <code>config</code> that is in the <code>galaxy</code> directory.</p>
 </pre></div>
 </td></tr></table>
 
-<h5 id="8-connect-to-your-living-galaxy-instance">8. Connect to your living Galaxy instance<a class="headerlink" href="#8-connect-to-your-living-galaxy-instance" title="Permanent link">&para;</a></h5>
+<h4 id="8-connect-to-your-living-galaxy-instance">8. Connect to your living Galaxy instance<a class="headerlink" href="#8-connect-to-your-living-galaxy-instance" title="Permanent link">&para;</a></h4>
 <p>If so, this is all good, and you can now access to you Galaxy instance in a you web browser window:</p>
 <p>Go back to your Google Cloud Engine control panel. Find the <code>External IP address</code> / <code>Adresse IP externe</code>
 in the 7<sup>th</sup> column of the Dashbord (to the left of the ssh menu that you used before. And just click on the hyperlink.</p>
-<h5 id="9-connect-as-an-admin-of-your-galaxy-server-instance">9. Connect as an admin of your Galaxy server instance<a class="headerlink" href="#9-connect-as-an-admin-of-your-galaxy-server-instance" title="Permanent link">&para;</a></h5>
+<h4 id="9-connect-as-an-admin-of-your-galaxy-server-instance">9. Connect as an admin of your Galaxy server instance<a class="headerlink" href="#9-connect-as-an-admin-of-your-galaxy-server-instance" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Register to your instance using the email address you put in the galaxy.yml at step 7 (menu "Authentification et enregistrement &rarr; Enregistrement)</li>
 <li>Now that you are registered, you can log in using the same login and password you have chosen.</li>
 <li>After login, you will see the admin tab in the top menu of the Galaxy interface.</li>
 </ul>
-<h6 id="you-are-connected-to-galaxy-as-an-admin">You are connected to Galaxy as an admin !<a class="headerlink" href="#you-are-connected-to-galaxy-as-an-admin" title="Permanent link">&para;</a></h6>
+<h4 id="you-are-connected-to-galaxy-as-an-admin">You are connected to Galaxy as an admin !<a class="headerlink" href="#you-are-connected-to-galaxy-as-an-admin" title="Permanent link">&para;</a></h4>
                 
                   
                 
@@ -1858,7 +1834,7 @@ in the 7<sup>th</sup> column of the Dashbord (to the left of the ssh menu that y
       
     </div>
     
-      <script src="../../assets/javascripts/application.a8b5e56f.js"></script>
+      <script src="../../assets/javascripts/application.8e03edeb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
