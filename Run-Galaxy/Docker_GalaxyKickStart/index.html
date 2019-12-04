@@ -401,8 +401,7 @@
     What is Docker ?
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#virtual-machines" class="md-nav__link">
@@ -418,14 +417,9 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#galaxykickstart-docker-container" class="md-nav__link">
-    GalaxyKickStart Docker Container
+  <a href="#a-galaxykickstart-docker-container-for-the-analyse-des-genomes" class="md-nav__link">
+    A GalaxyKickStart Docker Container for the Analyse des génomes
   </a>
   
 </li>
@@ -435,18 +429,19 @@
     Deployment
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown-on-the-docker-container-and-clear-disk-space" class="md-nav__link">
+    Shutdown on the docker container and clear disk space
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#the-docker_galaxysh-script-explained" class="md-nav__link">
     The docker_galaxy.sh script explained
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1515,8 +1510,7 @@
     What is Docker ?
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#virtual-machines" class="md-nav__link">
@@ -1532,14 +1526,9 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-        
           <li class="md-nav__item">
-  <a href="#galaxykickstart-docker-container" class="md-nav__link">
-    GalaxyKickStart Docker Container
+  <a href="#a-galaxykickstart-docker-container-for-the-analyse-des-genomes" class="md-nav__link">
+    A GalaxyKickStart Docker Container for the Analyse des génomes
   </a>
   
 </li>
@@ -1549,18 +1538,19 @@
     Deployment
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown-on-the-docker-container-and-clear-disk-space" class="md-nav__link">
+    Shutdown on the docker container and clear disk space
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#the-docker_galaxysh-script-explained" class="md-nav__link">
     The docker_galaxy.sh script explained
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1593,18 +1583,18 @@
                 <h2 id="installation-of-a-galaxy-server-with-docker">Installation of a Galaxy server with Docker<a class="headerlink" href="#installation-of-a-galaxy-server-with-docker" title="Permanent link">&para;</a></h2>
 <h3 id="what-is-docker">What is Docker ?<a class="headerlink" href="#what-is-docker" title="Permanent link">&para;</a></h3>
 <p><img alt="Docker" src="../images/docker.png" /></p>
-<h4 id="virtual-machines">Virtual machines<a class="headerlink" href="#virtual-machines" title="Permanent link">&para;</a></h4>
+<h3 id="virtual-machines">Virtual machines<a class="headerlink" href="#virtual-machines" title="Permanent link">&para;</a></h3>
 <p>Virtual machines (VMs) are an abstraction of physical hardware turning one server into
 many servers. The hypervisor allows multiple VMs to run on a single machine.
 Each VM includes a full copy of an operating system, one or more apps, necessary binaries
 and libraries - taking up tens of GBs. VMs can also be slow to boot.</p>
-<h4 id="containers">Containers<a class="headerlink" href="#containers" title="Permanent link">&para;</a></h4>
+<h3 id="containers">Containers<a class="headerlink" href="#containers" title="Permanent link">&para;</a></h3>
 <p>Containers are an abstraction at the app layer that packages code and dependencies
 together. Multiple containers can run on the same machine and share the OS kernel with
 other containers, each running as isolated processes in user space. Containers take up
 less space than VMs (container images are typically tens of MBs in size), and start
 almost instantly.</p>
-<h3 id="galaxykickstart-docker-container">GalaxyKickStart Docker <strong>Container</strong><a class="headerlink" href="#galaxykickstart-docker-container" title="Permanent link">&para;</a></h3>
+<h3 id="a-galaxykickstart-docker-container-for-the-analyse-des-genomes">A GalaxyKickStart Docker <strong>Container</strong> for the <em>Analyse des génomes</em><a class="headerlink" href="#a-galaxykickstart-docker-container-for-the-analyse-des-genomes" title="Permanent link">&para;</a></h3>
 <p>Instead of using the GalaxyKickStart playbook in a VM, the playbook can be used to build
 a Docker container image that will be an almost exact mirror of the GalaxyKickStart VM
 you have just built.</p>
@@ -1615,21 +1605,34 @@ you have just built.</p>
 <li>pull the GalaxyKickStart docker container that is deposited in the <a href="https://hub.docker.com/u/artbio/"><code>Docker Hub</code></a></li>
 <li>run this docker container and connect to the deployed GalaxyKickStart server instance</li>
 </ul>
+<hr />
 <h3 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h3>
 <ul>
 <li>There is actually no need for a new VM, the ansible already installed the docker service
 in the VM used to deploy GalaxyKickStart.</li>
 <li>If not already, be connected to you VM as root user using the Google ssh console (<code>sudo -i</code>)</li>
 <li>download the script <code>run_docker_analyse_genomes_2019.sh</code> using the command
-<code>wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/run_docker_analyse_genomes_2019.sh</code></li>
-<li>run the script using the command <code>sh run_docker_analyse_genomes_2019.sh</code></li>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/run_docker_analyse_genomes_2019.sh</span>
+</pre></div>
+</td></tr></table></li>
+<li>run the script using the command
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">sh run_docker_analyse_genomes_2019.sh</span>
+</pre></div>
+</td></tr></table></li>
 <li>
 <p>Connect to your docker-deployed "GalaxyKickStart" instance:</p>
 <p>Just click on the url displayed in your Google Cloud Engine Console
 and connect using the login:password <code>admin@galaxy.org:admin</code></p>
 </li>
 </ul>
-<h4 id="the-docker_galaxysh-script-explained">The docker_galaxy.sh script explained<a class="headerlink" href="#the-docker_galaxysh-script-explained" title="Permanent link">&para;</a></h4>
+<h3 id="shutdown-on-the-docker-container-and-clear-disk-space">Shutdown on the docker container and clear disk space<a class="headerlink" href="#shutdown-on-the-docker-container-and-clear-disk-space" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Following this procedure you will recover about 50 Go of free disk space
+This is significant !</p>
+</div>
+<hr />
+<h3 id="the-docker_galaxysh-script-explained">The docker_galaxy.sh script explained<a class="headerlink" href="#the-docker_galaxysh-script-explained" title="Permanent link">&para;</a></h3>
 <p>NB: in the following code, numbers in line heads should be removed to run the script.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
@@ -1650,48 +1653,40 @@ and connect using the login:password <code>admin@galaxy.org:admin</code></p>
 17
 18
 19
-20
-21
-22
-23
-24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err"> 1 #!/usr/bin/env sh</span>
-<span class="err"> 2 set -e</span>
-<span class="err"> 3 echo &quot;Now pulling the galaxykickstart docker image from DockerHub\n&quot;</span>
-<span class="err"> 4 supervisorctl stop all</span>
-<span class="err"> 5 docker pull $1</span>
-<span class="err"> 6 echo &quot;Running galaxykickstart docker container\n&quot;</span>
-<span class="err"> 7 export DOCKER_INSTANCE=`docker run -d -p 80:80 -p 21:21 -p 8800:8800 \</span>
-<span class="err"> 8           --privileged=true \</span>
-<span class="err"> 9           -e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True \</span>
-<span class="err">10           -e GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE=True \</span>
-<span class="err">11           -e GALAXY_CONFIG_ENABLE_USER_DELETION=True \</span>
-<span class="err">12           -e GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES=True \</span>
-<span class="err">13           -v /tmp/:/tmp/ \</span>
-<span class="err">14           -v /export/:/export \</span>
-<span class="err">15           $1`</span>
-<span class="err">16 echo &quot;The $1 docker container is deploying...\n&quot;</span>
-<span class="err">17 sleep 90</span>
-<span class="err">18 echo &quot;The $1 docker container is up and running\n&quot;</span>
-<span class="err">19 docker logs  $DOCKER_INSTANCE</span>
-<span class="err">20 docker exec $DOCKER_INSTANCE sudo su galaxy -c &#39;/home/galaxy/galaxy/.venv/bin/pip install cryptography==2.2.2&#39;</span>
-<span class="err">21 docker exec $DOCKER_INSTANCE sudo su galaxy -c &#39;cd ~/galaxy/config &amp;&amp; wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/sanitize_whitelist.txt&#39;</span>
-<span class="err">22 echo &quot;Galaxy in container will restart to take into account new settings\n&quot;</span>
-<span class="err">23 sleep 120</span>
-<span class="err">24 docker exec $DOCKER_INSTANCE sudo supervisorctl restart galaxy:</span>
+20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1"># run `bash run_docker_analyse_genomes_2019`</span>
+<span class="nb">set</span> -e
+<span class="nb">echo</span> <span class="s2">&quot;Now pulling the artbio/analyse_genomes:2019 docker image from DockerHub\n&quot;</span>
+supervisorctl stop all
+docker pull artbio/analyse_genomes:2019
+<span class="nb">echo</span> <span class="s2">&quot;Running artbio/analyse_genomes:2019 docker container\n&quot;</span>
+mkdir /galaxy_export /galaxy_tmp <span class="o">&amp;&amp;</span> chown <span class="m">1450</span>:1450 /galaxy_export /galaxy_tmp
+<span class="nb">export</span> <span class="nv">DOCKER_INSTANCE</span><span class="o">=</span><span class="sb">`</span>docker run -d -p <span class="m">80</span>:80 -p <span class="m">21</span>:21 -p <span class="m">8800</span>:8800 <span class="se">\</span>
+          --privileged<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+          -e <span class="nv">GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE</span><span class="o">=</span>True <span class="se">\</span>
+          -e <span class="nv">GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE</span><span class="o">=</span>True <span class="se">\</span>
+          -e <span class="nv">GALAXY_CONFIG_ENABLE_USER_DELETION</span><span class="o">=</span>True <span class="se">\</span>
+          -e <span class="nv">GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES</span><span class="o">=</span>True <span class="se">\</span>
+          -v /galaxy_tmp:/tmp <span class="se">\</span>
+          -v /galaxy_export:/export <span class="se">\</span>
+          artbio/analyse_genomes:2019<span class="sb">`</span>
+<span class="nb">echo</span> <span class="s2">&quot;The analyse_genomes:2019 docker container is deploying...\n&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;Press Ctrl-C to interrupt this log and start using the container...\n&quot;</span>
+docker logs -f  <span class="nv">$DOCKER_INSTANCE</span>
 </pre></div>
 </td></tr></table>
 
 <ol>
 <li>The shebang line. Says that it is a script code and that the interpreter to execute the
 code is sh and can be found in the /usr/bin/env environment</li>
-<li>set -e says to the sh interpreter to exit the run at first error (to avoid catastrophes)</li>
+<li>a commented line to explain the script usage</li>
+<li><code>set -e</code> says to the bash interpreter to exit the run at first error (to avoid catastrophes)</li>
 <li>prompts "Now pulling the galaxykickstart docker image from DockerHub"</li>
 <li>stop the galaxy services (galaxy, postgresql, slurm, nginx,...) that were deployed before with ansible (to liberate ports)</li>
-<li>Pulls (Downloads) the Docker Image specified as parameter to the script (either<code>artbio/biologiegenome</code>
-or <code>artbio/rna-biologie-genome</code>) from the <a href="https://hub.docker.com/r/artbio/biologiegenome/">DockerHub repository</a></li>
+<li>Pulls (Downloads) the Docker Image specified as parameter to the <code>docker pull</code> statement (<em>artbio/analyse_genomes:2019</em>)</li>
 <li>reports this action to the terminal</li>
 <li>
-<p>Lines 7 to 15 are actually a single command to run an instance of the galaxykickstart
+<p>creates the /galaxy_export and /galaxy_tmp directory to export automatically data produced by the docker container
 docker image. Note the <code>\</code> at ends of lines 7 to 14: this character <code>\</code> specify that the
 code line is continued without line break for the bash interpreter.</p>
 <p>The line 7 starts with an <code>export DOCKER_INSTANCE=</code> instruction. This means that the result
@@ -1728,10 +1723,10 @@ the docker container with the value <code>True</code></p>
 You are not obliged to understand the details to get the container properly running.
 13. Now the -v is important, better to understand it !</p>
 <p>-v stands for "volume". the <code>-v</code> option says to export the /tmp directory of the docker container
-to the /tmp directory of the host.
+to the /galaxy_tmp directory of the host.
 14. we also export the /export directory of the container (any docker container has or
-should have by default an /export directory) to an /export directory of the host (your VM here).</p>
-<p>Note that if the /export directory does not exists at docker run runtime, it will be created.</p>
+should have by default an /export directory) to an /galaxy_export directory of the host (your VM here).</p>
+<p>Note that if the /galaxy_export directory does not exists at docker run runtime, it will be created.</p>
 <p>So it is important to understand the -v magics: every directory specified by the -v option will be shared
 between the docker container filesystem and the host filesystem. It is a mapping operation, so that
 the same directory is accessible either from inside the docker container or from inside the host.</p>
@@ -1750,11 +1745,6 @@ the parameter passed to the script at runtime.</p>
 We have put this ID in the variable <code>DOCKER_INSTANCE</code>
 and we access to the content of this variable by prefixing the variable with a <code>$</code>:
 <code>docker logs $DOCKER_INSTANCE</code></li>
-<li>This is just an update of the python package <code>cryptography</code> required for the galaxy server. You see
-here an example of how a user can interact with the docker container to adjust the services it
-is providing.</li>
-<li>another update of a configuration file for galaxy (job_conf.xml)</li>
-<li>Restart Galaxy inside the container to take the setting changes into consideration</li>
 </ol>
                 
                   
