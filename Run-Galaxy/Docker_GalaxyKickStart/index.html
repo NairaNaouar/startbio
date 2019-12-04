@@ -1626,6 +1626,26 @@ and connect using the login:password <code>admin@galaxy.org:admin</code></p>
 </li>
 </ul>
 <h3 id="shutdown-on-the-docker-container-and-clear-disk-space">Shutdown on the docker container and clear disk space<a class="headerlink" href="#shutdown-on-the-docker-container-and-clear-disk-space" title="Permanent link">&para;</a></h3>
+<ul>
+<li>go back to your console</li>
+<li>type:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">docker ps</span>
+</pre></div>
+</td></tr></table></li>
+<li>copy the docker id or the docker container name</li>
+<li>type the following command while replacing <id or name> with the copied content
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">docker stop &lt;id or name&gt; &amp;&amp; docker rm &lt;id or name&gt;</span>
+</pre></div>
+</td></tr></table></li>
+<li>remove the docker image with the command
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">docker rmi artbio/analyse_genome:2019</span>
+</pre></div>
+</td></tr></table></li>
+<li>remove the exported folders by typing
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">rm -rf /galaxy_export /galaxy_tmp</span>
+</pre></div>
+</td></tr></table></li>
+</ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Following this procedure you will recover about 50 Go of free disk space
