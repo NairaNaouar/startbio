@@ -1714,9 +1714,11 @@ code is sh and can be found in the /usr/bin/env environment</li>
 docker image, and gives write rights to the container for these folders (<code>chown 1450:1450</code>)</li>
 <li>
 <p>the command invocation to run the docker container from the docker image <code>artbio/analyse_genomes:2019</code>. Note the <code>\</code> at ends of lines 9 to 17: this character <code>\</code> specifies that the code line is continued without line break for the bash interpreter.</p>
-<p>The line 9 starts with an <code>export DOCKER_INSTANCE=</code> instruction. This means that the result
+<ul>
+<li>line 9 starts with an <code>export DOCKER_INSTANCE=</code> instruction. This means that the result
 of the command between ` after the sign <code>=</code> will be put in the environmental variable
-<code>DOCKER_INSTANCE</code>, available system-wide.</p>
+<code>DOCKER_INSTANCE</code>, available system-wide.</li>
+</ul>
 <p>Now, the docker command (between `) itself:</p>
 <p>Still in line 9, we have <code>docker run -d -p 80:80 -p 21:21 -p 8800:8800</code>.</p>
 <p>This means that a container will be run as a deamon (<code>-d</code> option) and that the internal
@@ -1724,47 +1726,39 @@ TCP/IP ports 80 (web interface) and 21 (ftp interface) of the docker instance wi
 to the ports 80 and 21 of your machin (The VM in this case). Note that in the syntax <code>-p 80:80</code>,
 the host port is specified to the left of the <code>:</code> and the docker port is specified to the right
 of the <code>:</code>.</p>
-<p>in line 10 we specify that the docker container acquires the root privileges
-in line 11 <code>-e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True</code> specifies an environmental variable
-<code>GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE</code> passed (<code>e</code>xported) to the docker container with the value <code>True</code></p>
-<p><code>galaxy_manage_trackster: true</code> with the string <code>galaxy_manage_trackster: false</code>
-in the ansible configuration file <code>groups/all</code>.</p>
+<ul>
+<li>line 10 specifies that the docker container acquires the root privileges</li>
+<li>
+<p>line 11 sets the environmental variable <code>GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE</code> passed (<code>-e</code>xported) to the docker container to the value <code>True</code></p>
 </li>
 <li>
-<p>The environmental variable <code>GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE</code> is exported to
-the docker container with the value <code>True</code></p>
+<p>line 12 sets the environmental variable <code>GALAXY_CONFIG_ALLOW_LIBRARY_PATH_PASTE</code> to <code>True</code></p>
 </li>
-<li>The environmental variable <code>GALAXY_CONFIG_ENABLE_USER_DELETION</code> is exported to
-the docker container with the value <code>True</code></li>
-<li>
-<p>The environmental variable <code>GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES</code> is exported to
-the docker container with the value <code>True</code></p>
+<li>line 13 sets the environmental variable <code>GALAXY_CONFIG_ENABLE_USER_DELETION</code> to <code>True</code></li>
+<li>line 14 sets the environmental variable <code>GALAXY_CONFIG_ENABLE_BETA_WORKFLOW_MODULES</code> to <code>True</code></li>
+</ul>
 <p>Note that all these exports in the docker command correspond to advanced boiling/tuning of the docker container.
 You are not obliged to understand the details to get the container properly running.
-13. Now the -v is important, better to understand it !</p>
-<p>-v stands for "volume". the <code>-v</code> option says to export the /tmp directory of the docker container
+- line 15. -v stands for "volume". the <code>-v</code> option says to export the /tmp directory of the docker container
 to the /galaxy_tmp directory of the host.
-14. we also export the /export directory of the container (any docker container has or
-should have by default an /export directory) to an /galaxy_export directory of the host (your VM here).</p>
+- line 16. we also export the /export directory of the container (any docker container has or should have by default an /export directory) to an /galaxy_export directory of the host (your VM here).</p>
 <p>Note that if the /galaxy_export directory does not exists at docker run runtime, it will be created.</p>
 <p>So it is important to understand the -v magics: every directory specified by the -v option will be shared
 between the docker container filesystem and the host filesystem. It is a mapping operation, so that
 the same directory is accessible either from inside the docker container or from inside the host.</p>
 <p>Now, if you stop and remove the docker container, all exported directory will persist in the host.
-If you don't do that, all operations performed with a container are lost when you stop this container !</p>
-</li>
-<li>
-<p>This is the end of the docker run command. The docker image to be instantiated is specified by $1 variable,
-the parameter passed to the script at runtime.</p>
-</li>
-<li>reports to the terminal user</li>
-<li>wait 90 sec during the docker container deployment</li>
-<li>reports to the terminal user</li>
-<li>Now that the docker container is launched, you can access its logs with the command
+If you don't do that, all operations performed with a container are lost when you stop this container !
+- line 17. This is the end of the docker run command. The docker image to be instantiated is specified by $1 variable,
+the parameter passed to the script at runtime.
+18. reports to the terminal user
+17. wait 90 sec during the docker container deployment
+18. reports to the terminal user
+19. Now that the docker container is launched, you can access its logs with the command
 <code>docker logs</code> followed by the identification number of the docker container.
 We have put this ID in the variable <code>DOCKER_INSTANCE</code>
 and we access to the content of this variable by prefixing the variable with a <code>$</code>:
-<code>docker logs $DOCKER_INSTANCE</code></li>
+<code>docker logs $DOCKER_INSTANCE</code></p>
+</li>
 </ol>
                 
                   
