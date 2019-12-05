@@ -1710,29 +1710,24 @@ code is sh and can be found in the /usr/bin/env environment</li>
 <li>stop the galaxy services (galaxy, postgresql, slurm, nginx,...) that were deployed before with ansible (to liberate ports)</li>
 <li>Pulls (Downloads) the Docker Image specified as parameter to the <code>docker pull</code> statement (<em>artbio/analyse_genomes:2019</em>)</li>
 <li>reports this action to the terminal</li>
+<li>creates the /galaxy_export and /galaxy_tmp directory to export automatically data produced by the docker container
+docker image, and gives write rights to the container for these folders (<code>chown 1450:1450</code>)</li>
 <li>
-<p>creates the /galaxy_export and /galaxy_tmp directory to export automatically data produced by the docker container
-docker image. Note the <code>\</code> at ends of lines 7 to 14: this character <code>\</code> specify that the
-code line is continued without line break for the bash interpreter.</p>
-<p>The line 7 starts with an <code>export DOCKER_INSTANCE=</code> instruction. This means that the result
+<p>the command invocation to run the docker container from the docker image <code>artbio/analyse_genomes:2019</code>. Note the <code>\</code> at ends of lines 9 to 17: this character <code>\</code> specifies that the code line is continued without line break for the bash interpreter.</p>
+<p>The line 9 starts with an <code>export DOCKER_INSTANCE=</code> instruction. This means that the result
 of the command between ` after the sign <code>=</code> will be put in the environmental variable
 <code>DOCKER_INSTANCE</code>, available system-wide.</p>
 <p>Now, the docker command (between `) itself:</p>
-<p>Still in line 7, we have <code>docker run -d -p 80:80 -p 21:21 -p 8800:8800</code>.</p>
+<p>Still in line 9, we have <code>docker run -d -p 80:80 -p 21:21 -p 8800:8800</code>.</p>
 <p>This means that a container will be run as a deamon (<code>-d</code> option) and that the internal
 TCP/IP ports 80 (web interface) and 21 (ftp interface) of the docker instance will be mapped
 to the ports 80 and 21 of your machin (The VM in this case). Note that in the syntax <code>-p 80:80</code>,
 the host port is specified to the left of the <code>:</code> and the docker port is specified to the right
 of the <code>:</code>.</p>
-</li>
-<li>
-<p>docker command continued: here we specify that the docker container acquires the root privileges</p>
-</li>
-<li>
-<p>docker command continued: <code>-e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True</code>.</p>
-<p>The -e option specifies an environmental variable <code>GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE</code>
-passed (<code>e</code>xported) to the docker container with the value <code>True</code>
-<code>galaxy_manage_trackster: true</code> with the string <code>galaxy_manage_trackster: false</code>
+<p>in line 10 we specify that the docker container acquires the root privileges
+in line 11 <code>-e GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE=True</code> specifies an environmental variable
+<code>GALAXY_CONFIG_ALLOW_USER_DATASET_PURGE</code> passed (<code>e</code>xported) to the docker container with the value <code>True</code></p>
+<p><code>galaxy_manage_trackster: true</code> with the string <code>galaxy_manage_trackster: false</code>
 in the ansible configuration file <code>groups/all</code>.</p>
 </li>
 <li>
