@@ -1645,11 +1645,28 @@ Repository <a href="https://github.com/ARTbio/GalaxyKickStart">https://github.co
 </td></tr></table></p>
 </li>
 <li>
-<p>run the script using the command
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">sh run_ansible_analyse_genomes_2019.sh analyseGenomes_2019</span>
-</pre></div>
-</td></tr></table></p>
+<p>We are now ready to run this script. However this year there is bonus ! All trainees will participate to Pasteur 2019
+<strong>Ansible Racing</strong>. In order to participate, you'll just have get the <code>time</code> command just before the script invokation. Thus, run the following command.</p>
 </li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">time sh run_ansible_analyse_genomes_2019.sh analyseGenomes_2019</span>
+</pre></div>
+</td></tr></table>
+
+<div class="admonition info">
+<p class="admonition-title">The Ultimate Pasteur 2019 Ansible Racing</p>
+<p>Please copy the time info returned by your console at the end of the deploymment.
+It shoud look like this:
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">real    10m27.142s</span>
+<span class="err">user    8m22.941s</span>
+<span class="err">sys 1m16.409s</span>
+</pre></div>
+</td></tr></table>
+Then Paste this time as a comment in this <a href="https://github.com/ARTbio/Run-Galaxy/issues/25">GitHub issue</a></p>
+</div>
+<ul>
 <li>
 <p>When the deployment is finished, connect to your ansible-deployed "GalaxyKickStart" instance:</p>
 <p>Just click on the url displayed in your Google Cloud Engine Console.</p>
