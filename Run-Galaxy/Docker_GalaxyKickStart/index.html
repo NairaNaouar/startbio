@@ -439,8 +439,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-docker_galaxysh-script-explained" class="md-nav__link">
-    The docker_galaxy.sh script explained
+  <a href="#the-run_docker_analyse_genomes_2019sh-script-explained" class="md-nav__link">
+    The run_docker_analyse_genomes_2019.sh script explained
   </a>
   
 </li>
@@ -1548,8 +1548,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-docker_galaxysh-script-explained" class="md-nav__link">
-    The docker_galaxy.sh script explained
+  <a href="#the-run_docker_analyse_genomes_2019sh-script-explained" class="md-nav__link">
+    The run_docker_analyse_genomes_2019.sh script explained
   </a>
   
 </li>
@@ -1657,8 +1657,9 @@ Just click on the url displayed in your Google Cloud Engine Console and connect 
 This is significant !</p>
 </div>
 <hr />
-<h3 id="the-docker_galaxysh-script-explained">The docker_galaxy.sh script explained<a class="headerlink" href="#the-docker_galaxysh-script-explained" title="Permanent link">&para;</a></h3>
-<p>NB: in the following code, numbers in line heads should be removed to run the script.</p>
+<h3 id="the-run_docker_analyse_genomes_2019sh-script-explained">The run_docker_analyse_genomes_2019.sh script explained<a class="headerlink" href="#the-run_docker_analyse_genomes_2019sh-script-explained" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">run_docker_analyse_genomes_2019.sh</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1701,7 +1702,8 @@ docker logs -f  <span class="nv">$DOCKER_INSTANCE</span>
 </pre></div>
 </td></tr></table>
 
-<ol>
+</div>
+<details class="info"><summary>The run_docker_analyse_genomes_2019.sh script explained</summary><ol>
 <li>The shebang line. Says that it is a script code and that the interpreter to execute the
 code is sh and can be found in the /usr/bin/env environment</li>
 <li>a commented line to explain the script usage</li>
@@ -1756,7 +1758,12 @@ the same directory is accessible either from inside the docker container or from
 If you don't do that, all operations performed with a container are lost when you stop this container.</p>
 <ul>
 <li>line 17. This is the end of the docker run command. The docker image to be instantiated is specified by $1 variable,
-the parameter passed to the script at runtime.</li>
+  the parameter passed to the script at runtime.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<p><ol start="18">
 <li>reports to the terminal user</li>
 <li>wait 90 sec during the docker container deployment</li>
 <li>reports to the terminal user</li>
@@ -1765,9 +1772,8 @@ the parameter passed to the script at runtime.</li>
 We have put this ID in the variable <code>DOCKER_INSTANCE</code>
 and we access to the content of this variable by prefixing the variable with a <code>$</code>:
 <code>docker logs $DOCKER_INSTANCE</code></li>
-</ul>
-</li>
-</ol>
+</ol></p>
+</details>
                 
                   
                 
