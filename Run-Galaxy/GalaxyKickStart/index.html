@@ -405,30 +405,24 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#galaxy-administration-tasks" class="md-nav__link">
+    Galaxy administration tasks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transfert-input-data-to-you-newly-deployed-galaxy-instance" class="md-nav__link">
+    Transfert input data to you newly deployed Galaxy instance
+  </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#as-a-galaxy-admin" class="md-nav__link">
-    As a Galaxy admin
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#transfert-the-input-data-to-you-newly-deployed-galaxy-instance" class="md-nav__link">
-    Transfert the input data to you newly deployed Galaxy instance
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#content-of-the-run_galaxykickstartsh-script" class="md-nav__link">
-    Content of the run_galaxykickstart.sh script
+  <a href="#content-of-the-run_ansible_analyse_genomes_2019sh-script" class="md-nav__link">
+    Content of the run_ansible_analyse_genomes_2019.sh script
   </a>
   
 </li>
@@ -1531,30 +1525,24 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#galaxy-administration-tasks" class="md-nav__link">
+    Galaxy administration tasks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transfert-input-data-to-you-newly-deployed-galaxy-instance" class="md-nav__link">
+    Transfert input data to you newly deployed Galaxy instance
+  </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#as-a-galaxy-admin" class="md-nav__link">
-    As a Galaxy admin
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#transfert-the-input-data-to-you-newly-deployed-galaxy-instance" class="md-nav__link">
-    Transfert the input data to you newly deployed Galaxy instance
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#content-of-the-run_galaxykickstartsh-script" class="md-nav__link">
-    Content of the run_galaxykickstart.sh script
+  <a href="#content-of-the-run_ansible_analyse_genomes_2019sh-script" class="md-nav__link">
+    Content of the run_ansible_analyse_genomes_2019.sh script
   </a>
   
 </li>
@@ -1626,13 +1614,18 @@ Repository <a href="https://github.com/ARTbio/GalaxyKickStart">https://github.co
 <hr />
 <h3 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h3>
 <ul>
-<li>start a GCE VM<ul>
-<li><code>Série N2</code> &rarr; <code>n2-standard-16 (16 processeurs virtuels, 64 Go de mémoire)</code></li>
+<li>start a GCE VM</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Google Instance</p>
+<ul>
+<li><strong>Série N2</strong> &rarr; <code>n2-standard-16 (16 processeurs virtuels, 64 Go de mémoire)</code></li>
 <li><strong>Disque de démarrage</strong>  &rarr; <code>Ubuntu 16.04 LTS</code></li>
 <li><strong>Taille (Go)</strong> &rarr; <code>200</code></li>
 <li><strong>Pare-feu</strong> &rarr; <code>Autoriser le trafic HTTP</code></li>
 </ul>
-</li>
+</div>
+<ul>
 <li>connect to you VM using the Google ssh console</li>
 <li>start an interactive session as root using the command
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">sudo -i</span>
@@ -1645,15 +1638,16 @@ Repository <a href="https://github.com/ARTbio/GalaxyKickStart">https://github.co
 </td></tr></table></p>
 </li>
 <li>
-<p>We are now ready to run this script. However this year there is bonus ! All trainees will participate to Pasteur 2019
-<strong>Ansible Racing</strong>. In order to participate, you'll just have get the <code>time</code> command just before the script invokation. Thus, run the following command.</p>
+<p>We are now ready to run this script. However this year there is bonus ! All trainees will participate to <mark>Pasteur 2019
+Ansible Racing</mark>.
+In order to participate, you'll just have to put the <code>time</code> command just before the script invokation, as follows:</p>
 </li>
 </ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">time sh run_ansible_analyse_genomes_2019.sh analyseGenomes_2019</span>
 </pre></div>
 </td></tr></table>
 
-<div class="admonition info">
+<div class="admonition danger">
 <p class="admonition-title">The Ultimate Pasteur 2019 Ansible Racing</p>
 <p>Please copy the time info returned by your console at the end of the deploymment.
 It shoud look like this:
@@ -1685,8 +1679,8 @@ please c h a n g e   y o u r   p a s s w o r d
 to avoid you Galaxy server getting hacked by the end of the course.</p>
 </div>
 <hr />
-<h2 id="as-a-galaxy-admin">As a Galaxy admin<a class="headerlink" href="#as-a-galaxy-admin" title="Permanent link">&para;</a></h2>
-<h3 id="transfert-the-input-data-to-you-newly-deployed-galaxy-instance">Transfert the input data to you newly deployed Galaxy instance<a class="headerlink" href="#transfert-the-input-data-to-you-newly-deployed-galaxy-instance" title="Permanent link">&para;</a></h3>
+<h3 id="galaxy-administration-tasks">Galaxy administration tasks<a class="headerlink" href="#galaxy-administration-tasks" title="Permanent link">&para;</a></h3>
+<h4 id="transfert-input-data-to-you-newly-deployed-galaxy-instance">Transfert input data to you newly deployed Galaxy instance<a class="headerlink" href="#transfert-input-data-to-you-newly-deployed-galaxy-instance" title="Permanent link">&para;</a></h4>
 <p>that is :
     - a data set with reference sequences
     - a data set with small RNAseq files
@@ -1712,7 +1706,7 @@ and
 </li>
 </ul>
 <hr />
-<h4 id="content-of-the-run_galaxykickstartsh-script">Content of the <code>run_galaxykickstart.sh</code> script<a class="headerlink" href="#content-of-the-run_galaxykickstartsh-script" title="Permanent link">&para;</a></h4>
+<h4 id="content-of-the-run_ansible_analyse_genomes_2019sh-script">Content of the <code>run_ansible_analyse_genomes_2019.sh</code> script<a class="headerlink" href="#content-of-the-run_ansible_analyse_genomes_2019sh-script" title="Permanent link">&para;</a></h4>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -1747,9 +1741,7 @@ ansible-playbook -i inventory_files/analyseGenomes galaxy.yml
 </pre></div>
 </td></tr></table>
 
-<div class="admonition info">
-<p class="admonition-title">the <code>run_ansible_analyse_genomes_2019.sh</code> script explained</p>
-<ol>
+<details class="info"><summary>the <code>run_ansible_analyse_genomes_2019.sh</code> script explained</summary><ol>
 <li>The shebang line (<code>#!</code>) says that it is a script code that has to be executed
 by the shell bash which can be found in the /usr/bin/env environment</li>
 <li><code>set -e</code> says to the bash interpreter to exit the run at first error (to avoid catastrophes)</li>
@@ -1780,7 +1772,7 @@ is defined in the file <code>inventory_files/analyseGenomes</code>, as well as h
 Here, we play the playbook on the same computer (localhost).</li>
 <li>Prompts the end of the deployment</li>
 </ol>
-</div>
+</details>
                 
                   
                 
