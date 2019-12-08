@@ -1757,11 +1757,7 @@ If you don't do that, all operations performed with a container are lost when yo
 <ul>
 <li>line 17. This is the end of the docker run command. The docker image to be instantiated is specified by $1 variable,
 the parameter passed to the script at runtime.</li>
-</ul>
-</li>
-<li>
-<p>reports to the terminal user</p>
-</li>
+<li>reports to the terminal user</li>
 <li>wait 90 sec during the docker container deployment</li>
 <li>reports to the terminal user</li>
 <li>Now that the docker container is launched, you can access its logs with the command
@@ -1769,6 +1765,8 @@ the parameter passed to the script at runtime.</li>
 We have put this ID in the variable <code>DOCKER_INSTANCE</code>
 and we access to the content of this variable by prefixing the variable with a <code>$</code>:
 <code>docker logs $DOCKER_INSTANCE</code></li>
+</ul>
+</li>
 </ol>
                 
                   
