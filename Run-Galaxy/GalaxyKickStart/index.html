@@ -1639,13 +1639,15 @@ is structured. Thus a playbook is not necessarily a single flat file. Multiple t
 <ul>
 <li>install basic dependencies needed for Galaxy</li>
 <li>Create and manage all the linux users involved in the deployment of Galaxy</li>
-<li>Install and configure the services required for Galaxy:</li>
+<li>Install and configure the services required for Galaxy:<ul>
 <li>postgresql (database engine)</li>
 <li>nginx (web server)</li>
 <li>docker (containers)</li>
 <li>proftpd (ftp server)</li>
 <li>slurm (job manager)</li>
 <li>supervisor (service manager)</li>
+</ul>
+</li>
 <li>Configure Galaxy for using these services</li>
 <li>Install tools and workflows using the bioblend API.</li>
 </ul>
