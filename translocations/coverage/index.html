@@ -38,7 +38,7 @@
     
     
       
-        <title>Compute genome coverage - STARTbio</title>
+        <title>Compute the genome read coverage - STARTbio</title>
       
     
     
@@ -79,10 +79,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#read-coverage-using-the-bamcoverage-tool" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -105,7 +101,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Compute genome coverage
+                Compute the genome read coverage
               
             </span>
           
@@ -498,8 +494,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../import/" title="Prepare your input data history" class="md-nav__link">
-      Prepare your input data history
+    <a href="../import/" title="Prepare the input data history" class="md-nav__link">
+      Prepare the input data history
     </a>
   </li>
 
@@ -510,8 +506,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../BWA/" title="BWA mem tool" class="md-nav__link">
-      BWA mem tool
+    <a href="../BWA/" title="Align reads to the human genome" class="md-nav__link">
+      Align reads to the human genome
     </a>
   </li>
 
@@ -534,8 +530,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../filter_vcf/" title="Filter VCF file for visualization" class="md-nav__link">
-      Filter VCF file for visualization
+    <a href="../filter_vcf/" title="Reformat VCF files for visualization in the UCSC genome browser" class="md-nav__link">
+      Reformat VCF files for visualization in the UCSC genome browser
     </a>
   </li>
 
@@ -552,36 +548,9 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Compute genome coverage
-      </label>
-    
-    <a href="./" title="Compute genome coverage" class="md-nav__link md-nav__link--active">
-      Compute genome coverage
+    <a href="./" title="Compute the genome read coverage" class="md-nav__link md-nav__link--active">
+      Compute the genome read coverage
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#read-coverage-using-the-bamcoverage-tool" class="md-nav__link">
-    Read Coverage using the Bamcoverage tool
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -592,8 +561,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../workflow/" title="Generate workflow from history" class="md-nav__link">
-      Generate workflow from history
+    <a href="../visualisation/" title="Data Visualisation in UCSC Genome Browser" class="md-nav__link">
+      Data Visualisation in UCSC Genome Browser
     </a>
   </li>
 
@@ -604,8 +573,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../run_workflow/" title="Run the workflow" class="md-nav__link">
-      Run the workflow
+    <a href="../workflow/" title="Generate workflow from an history" class="md-nav__link">
+      Generate workflow from an history
     </a>
   </li>
 
@@ -616,8 +585,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../visualisation/" title="Visualisation in UCSC Genome Browser" class="md-nav__link">
-      Visualisation in UCSC Genome Browser
+    <a href="../run_workflow/" title="Run the Lumpy workflow" class="md-nav__link">
+      Run the Lumpy workflow
     </a>
   </li>
 
@@ -1431,35 +1400,6 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#read-coverage-using-the-bamcoverage-tool" class="md-nav__link">
-    Read Coverage using the Bamcoverage tool
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -1468,38 +1408,28 @@
                   <a href="https://github.com/ARTbio/startbio/edit/master/docs/translocations/coverage.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Compute genome coverage</h1>
+                  <h1>Compute the genome read coverage</h1>
                 
-                <h2 id="read-coverage-using-the-bamcoverage-tool">Read Coverage using the Bamcoverage tool<a class="headerlink" href="#read-coverage-using-the-bamcoverage-tool" title="Permanent link">&para;</a></h2>
-<p>Select the tool <code>bamCoverage generates a coverage bigWig file from a given BAM or CRAM file (Galaxy Version 3.1.2.0.0)</code></p>
+                <p>To interpretate the likelihood of translocation calls, we need to know the sequencing depth at the breakpoints.</p>
+<p>This can be done by computing the genome read coverage from the BAM alignments, using the tool:</p>
+<div class="admonition example">
+<p class="admonition-title">bamCoverage generates a coverage bigWig file from a given BAM or CRAM file (Galaxy Version 3.1.2.0.0)</p>
 <ul>
-<li>BAM/CRAM file: <code>Dataset Collection</code> and <code>Map with BWA-MEM on collection 3 (mapped reads in BAM format)</code></li>
-<li>Bin size in bases: <code>100</code></li>
-<li>Scaling/Normalization method: Do not normalize or scale</li>
-<li>Coverage file format: <code>bigWig</code></li>
-<li>Compute an exact scaling factor: <code>no</code></li>
-<li>Region of the genome to limit the operation to: <code>chr9</code></li>
-<li>Show advanced options: <code>yes</code></li>
-<li>Ignore missing data?: <code>yes</code></li>
+<li><strong>BAM/CRAM file</strong>: <code>Dataset Collection</code> and <code>Map with BWA-MEM on collection 3 (mapped reads in BAM format)</code></li>
+<li><strong>Bin size in bases</strong>: <code>100</code></li>
+<li><strong>Scaling/Normalization method</strong>: <code>Do not normalize or scale</code></li>
+<li><strong>Coverage file format</strong>: <code>bigWig</code></li>
+<li><strong>Compute an exact scaling factor</strong>: <code>no</code></li>
+<li><strong>Region of the genome to limit the operation to</strong>: Leave empty</li>
+<li><strong>Show advanced options</strong>: <code>yes</code></li>
+<li><strong>Ignore missing data?</strong>: <code>yes</code></li>
+<li>Other options unchanged</li>
 </ul>
-<p>Other options unchanged</p>
+<p><img alt="" src="../images/coverage.png" style="width:500px" /></p>
+</div>
 <ul>
-<li>
-<p>run the tool</p>
-</li>
-<li>
-<p>rerun the tool paying attention to</p>
-<ul>
-<li>reselect BAM/CRAM file: <code>Dataset Collection</code> and <code>Map with BWA-MEM on collection 3 (mapped reads in BAM format)</code></li>
-<li>
-<ul>
-<li>Region of the genome to limit the operation to: <code>chr22</code></li>
+<li>Run the tool</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><img alt="" src="../images/coverage.png" /></p>
                 
                   
                 
@@ -1521,7 +1451,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../filter_vcf/" title="Filter VCF file for visualization" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../filter_vcf/" title="Reformat VCF files for visualization in the UCSC genome browser" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1530,19 +1460,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Filter VCF file for visualization
+                Reformat VCF files for visualization in the UCSC genome browser
               </span>
             </div>
           </a>
         
         
-          <a href="../workflow/" title="Generate workflow from history" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../visualisation/" title="Data Visualisation in UCSC Genome Browser" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Generate workflow from history
+                Data Visualisation in UCSC Genome Browser
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -38,7 +38,7 @@
     
     
       
-        <title>Prepare your input data history - STARTbio</title>
+        <title>Prepare the input data history - STARTbio</title>
       
     
     
@@ -101,7 +101,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Prepare your input data history
+                Prepare the input data history
               
             </span>
           
@@ -500,8 +500,8 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
-    <a href="./" title="Prepare your input data history" class="md-nav__link md-nav__link--active">
-      Prepare your input data history
+    <a href="./" title="Prepare the input data history" class="md-nav__link md-nav__link--active">
+      Prepare the input data history
     </a>
     
   </li>
@@ -513,8 +513,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../BWA/" title="BWA mem tool" class="md-nav__link">
-      BWA mem tool
+    <a href="../BWA/" title="Align reads to the human genome" class="md-nav__link">
+      Align reads to the human genome
     </a>
   </li>
 
@@ -537,8 +537,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../filter_vcf/" title="Filter VCF file for visualization" class="md-nav__link">
-      Filter VCF file for visualization
+    <a href="../filter_vcf/" title="Reformat VCF files for visualization in the UCSC genome browser" class="md-nav__link">
+      Reformat VCF files for visualization in the UCSC genome browser
     </a>
   </li>
 
@@ -549,8 +549,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../coverage/" title="Compute genome coverage" class="md-nav__link">
-      Compute genome coverage
+    <a href="../coverage/" title="Compute the genome read coverage" class="md-nav__link">
+      Compute the genome read coverage
     </a>
   </li>
 
@@ -561,8 +561,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../workflow/" title="Generate workflow from history" class="md-nav__link">
-      Generate workflow from history
+    <a href="../visualisation/" title="Data Visualisation in UCSC Genome Browser" class="md-nav__link">
+      Data Visualisation in UCSC Genome Browser
     </a>
   </li>
 
@@ -573,8 +573,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../run_workflow/" title="Run the workflow" class="md-nav__link">
-      Run the workflow
+    <a href="../workflow/" title="Generate workflow from an history" class="md-nav__link">
+      Generate workflow from an history
     </a>
   </li>
 
@@ -585,8 +585,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../visualisation/" title="Visualisation in UCSC Genome Browser" class="md-nav__link">
-      Visualisation in UCSC Genome Browser
+    <a href="../run_workflow/" title="Run the Lumpy workflow" class="md-nav__link">
+      Run the Lumpy workflow
     </a>
   </li>
 
@@ -1408,11 +1408,11 @@
                   <a href="https://github.com/ARTbio/startbio/edit/master/docs/translocations/import.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Prepare your input data history</h1>
+                  <h1>Prepare the input data history</h1>
                 
                 <details class="example"><summary>Step-1: Transfer datasets from the Data library to a new history</summary><ol>
 <li>Rename your <code>Unnamed history</code> to
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">Input Dataset and collections</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">Input Datasets and Collections</span>
 </pre></div>
 </td></tr></table></li>
 <li>
@@ -1434,20 +1434,25 @@
 <li>After the import, navigate directly to this history by clicking the <code>green warning</code></li>
 </ol>
 </details>
-<details class="example"><summary>Step-2: Create data collections in you <code>Input Datasets and Collections</code> history</summary><ol>
-<li>Prepare two <code>collections</code> from your raw input datasets.<ol>
+<details class="example"><summary>Step-2: Create a data collections in your <code>Input Datasets and Collections</code> history</summary><ol>
 <li>Toggle the "checkbox" mode by clicking the small checkbox icon at the top of the history bar
-    <img alt="" src="../images/checkbox_mode.png" style="width:250px" /></li>
-<li>Select the 2 A fastq files OR the 2 B fasq files (not all 4 files, choose as you feel it!)</li>
+        <img alt="" src="../images/checkbox_mode.png" style="width:250px" /></li>
+<li>Select the 4 fastq files</li>
 <li>Select <code>Build List of Dataset Pairs</code> from the tab <code>Pour toute la sélection</code>
-    <img alt="" src="../images/build_paired-dataset-collection.png" style="width:250px" /></li>
+    <img alt="" src="../images/build_paired-dataset-collection.png" style="width:350px" /></li>
 <li>in the pop up window, replace <code>_1</code> by <code>_R1</code> and <code>_2</code> by <code>_R2</code></li>
-<li>Click the <code>Pair these datasets</code> tab
-    <img alt="" src="../images/pair_datasets.png" /></li>
-<li>Name your new "paired dataset" collection with a single element <code>A_fastq</code> (or <code>B_fastq</code>if you chose the B fastq file at the previous step) and click on <code>Create list</code></li>
-<li>Back to your history, that is still in "checkbox" mode, select the 4 fastq files, and repeat the operation to produce this time a collection of 2 paired-sequences element, which you will name this time <code>patient sequences</code></li>
-</ol>
+<li>
+<p>Click the <code>Pair these datasets</code> tab</p>
+<p><img alt="" src="../images/pair_datasets.png" /></p>
 </li>
+<li>
+<p>Name your new "paired dataset" collection 
+   <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">Patient data</span>
+</pre></div>
+</td></tr></table>
+   and click on <code>Create list</code></p>
+</li>
+<li>Back to your history, you can now untoggle the "checkbox" mode</li>
 </ol>
 </details>
 <details class="example"><summary>Step-3: Send dataset collections in a new history</summary><ol>
@@ -1456,10 +1461,10 @@
 <p><img alt="" src="../images/copy_datasets.png" style="width:250px" /></p>
 </li>
 <li>
-<p>Select the first collection with a single element (A or B) that you first prepared</p>
+<p>Select the collection <code>Patient data</code> which you prepared</p>
 </li>
 <li>in the <code>destination history</code> area, fill the <code>New history named</code> field with
-  <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">Single sequence dataset analysis</span>
+  <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">Translocation analysis</span>
 </pre></div>
 </td></tr></table></li>
 <li>Click the <code>Copy History Items</code></li>
@@ -1502,13 +1507,13 @@
           </a>
         
         
-          <a href="../BWA/" title="BWA mem tool" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../BWA/" title="Align reads to the human genome" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                BWA mem tool
+                Align reads to the human genome
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -38,7 +38,7 @@
     
     
       
-        <title>Filter VCF file for visualization - STARTbio</title>
+        <title>Reformat VCF files for visualization in the UCSC genome browser - STARTbio</title>
       
     
     
@@ -79,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#reformat-the-vcf-output-of-lumpy-sv" tabindex="1" class="md-skip">
+      <a href="#1-save-the-headers-of-the-vcf-files-using-the-tool" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -105,7 +105,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Filter VCF file for visualization
+                Reformat VCF files for visualization in the UCSC genome browser
               
             </span>
           
@@ -498,8 +498,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../import/" title="Prepare your input data history" class="md-nav__link">
-      Prepare your input data history
+    <a href="../import/" title="Prepare the input data history" class="md-nav__link">
+      Prepare the input data history
     </a>
   </li>
 
@@ -510,8 +510,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../BWA/" title="BWA mem tool" class="md-nav__link">
-      BWA mem tool
+    <a href="../BWA/" title="Align reads to the human genome" class="md-nav__link">
+      Align reads to the human genome
     </a>
   </li>
 
@@ -541,11 +541,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Filter VCF file for visualization
+        Reformat VCF files for visualization in the UCSC genome browser
       </label>
     
-    <a href="./" title="Filter VCF file for visualization" class="md-nav__link md-nav__link--active">
-      Filter VCF file for visualization
+    <a href="./" title="Reformat VCF files for visualization in the UCSC genome browser" class="md-nav__link md-nav__link--active">
+      Reformat VCF files for visualization in the UCSC genome browser
     </a>
     
       
@@ -557,63 +557,37 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#reformat-the-vcf-output-of-lumpy-sv" class="md-nav__link">
-    Reformat the vcf output of lumpy-sv
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-save-the-header-of-the-vcf" class="md-nav__link">
-    1. Save the header of the vcf
+  <a href="#1-save-the-headers-of-the-vcf-files-using-the-tool" class="md-nav__link">
+    1. Save the headers of the vcf files using the tool:
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-save-the-rest-of-the-vcf-file-in-another-dataset" class="md-nav__link">
-    2. Save the rest of the vcf file in another Dataset
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tip" class="md-nav__link">
-    TIP !
+      
+        <li class="md-nav__item">
+  <a href="#2-save-the-rest-of-the-vcf-files-in-another-dataset-collection-using-the-same-tool" class="md-nav__link">
+    2. Save the rest of the vcf files in another Dataset Collection using the same tool:
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-reorder-the-vcf-lines-in-the-previous-dataset" class="md-nav__link">
-    3. Reorder the vcf lines in the previous dataset
+      
+        <li class="md-nav__item">
+  <a href="#3-reorder-the-vcf-lines-describing-the-genetic-variations-using-the-tool" class="md-nav__link">
+    3. Reorder the vcf lines describing the genetic variations using the tool:
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#4-reassemble-the-saved-header-with-the-sortedfiltered-vcf-lines" class="md-nav__link">
-    4. Reassemble the saved header with the sorted/filtered vcf lines
+      
+        <li class="md-nav__item">
+  <a href="#4-reassemble-the-saved-headers-with-the-sortedfiltered-vcf-parts-using" class="md-nav__link">
+    4. Reassemble the saved headers with the sorted/filtered vcf parts using
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#5-rename-the-dataset-within-the-last-dataset-collection" class="md-nav__link">
-    5. Rename the dataset within the last dataset collection.
+      
+        <li class="md-nav__item">
+  <a href="#5-rename-the-last-generated-collection-from-concatenation-by-pairs-" class="md-nav__link">
+    5. Rename the last generated collection from Concatenation by pairs --&gt;
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -634,8 +608,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../coverage/" title="Compute genome coverage" class="md-nav__link">
-      Compute genome coverage
+    <a href="../coverage/" title="Compute the genome read coverage" class="md-nav__link">
+      Compute the genome read coverage
     </a>
   </li>
 
@@ -646,8 +620,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../workflow/" title="Generate workflow from history" class="md-nav__link">
-      Generate workflow from history
+    <a href="../visualisation/" title="Data Visualisation in UCSC Genome Browser" class="md-nav__link">
+      Data Visualisation in UCSC Genome Browser
     </a>
   </li>
 
@@ -658,8 +632,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../run_workflow/" title="Run the workflow" class="md-nav__link">
-      Run the workflow
+    <a href="../workflow/" title="Generate workflow from an history" class="md-nav__link">
+      Generate workflow from an history
     </a>
   </li>
 
@@ -670,8 +644,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../visualisation/" title="Visualisation in UCSC Genome Browser" class="md-nav__link">
-      Visualisation in UCSC Genome Browser
+    <a href="../run_workflow/" title="Run the Lumpy workflow" class="md-nav__link">
+      Run the Lumpy workflow
     </a>
   </li>
 
@@ -1497,63 +1471,37 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#reformat-the-vcf-output-of-lumpy-sv" class="md-nav__link">
-    Reformat the vcf output of lumpy-sv
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-save-the-header-of-the-vcf" class="md-nav__link">
-    1. Save the header of the vcf
+  <a href="#1-save-the-headers-of-the-vcf-files-using-the-tool" class="md-nav__link">
+    1. Save the headers of the vcf files using the tool:
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-save-the-rest-of-the-vcf-file-in-another-dataset" class="md-nav__link">
-    2. Save the rest of the vcf file in another Dataset
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tip" class="md-nav__link">
-    TIP !
+      
+        <li class="md-nav__item">
+  <a href="#2-save-the-rest-of-the-vcf-files-in-another-dataset-collection-using-the-same-tool" class="md-nav__link">
+    2. Save the rest of the vcf files in another Dataset Collection using the same tool:
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-reorder-the-vcf-lines-in-the-previous-dataset" class="md-nav__link">
-    3. Reorder the vcf lines in the previous dataset
+      
+        <li class="md-nav__item">
+  <a href="#3-reorder-the-vcf-lines-describing-the-genetic-variations-using-the-tool" class="md-nav__link">
+    3. Reorder the vcf lines describing the genetic variations using the tool:
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#4-reassemble-the-saved-header-with-the-sortedfiltered-vcf-lines" class="md-nav__link">
-    4. Reassemble the saved header with the sorted/filtered vcf lines
+      
+        <li class="md-nav__item">
+  <a href="#4-reassemble-the-saved-headers-with-the-sortedfiltered-vcf-parts-using" class="md-nav__link">
+    4. Reassemble the saved headers with the sorted/filtered vcf parts using
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#5-rename-the-dataset-within-the-last-dataset-collection" class="md-nav__link">
-    5. Rename the dataset within the last dataset collection.
+      
+        <li class="md-nav__item">
+  <a href="#5-rename-the-last-generated-collection-from-concatenation-by-pairs-" class="md-nav__link">
+    5. Rename the last generated collection from Concatenation by pairs --&gt;
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1576,77 +1524,98 @@
                   <a href="https://github.com/ARTbio/startbio/edit/master/docs/translocations/filter_vcf.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Filter VCF file for visualization</h1>
+                  <h1>Reformat VCF files for visualization in the UCSC genome browser</h1>
                 
-                <h2 id="reformat-the-vcf-output-of-lumpy-sv">Reformat the vcf output of lumpy-sv<a class="headerlink" href="#reformat-the-vcf-output-of-lumpy-sv" title="Permanent link">&para;</a></h2>
-<h3 id="1-save-the-header-of-the-vcf">1. Save the header of the vcf<a class="headerlink" href="#1-save-the-header-of-the-vcf" title="Permanent link">&para;</a></h3>
-<p>This is just done using the tool <code>Select lines that match an expression (Galaxy Version 1.0.1)</code> with the parameter</p>
+                <p>For visualisation in the UCSC genome browser, lines in the vcf file have to be sorted first
+in the order of chromosomes and secondly in the order of coordinates.</p>
+<p>In the following steps we are going to reorganising the lumpy vcf output to follow these rules.</p>
+<p>In addition, since we are going to focus on translocations, we will filter out the other
+variations we are not interested in.</p>
+<hr />
+<h3 id="1-save-the-headers-of-the-vcf-files-using-the-tool">1. Save the headers of the vcf files using the tool:<a class="headerlink" href="#1-save-the-headers-of-the-vcf-files-using-the-tool" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Select lines that match an expression (Galaxy Version 1.0.1)</p>
 <ul>
-<li><code>Dataset collection</code></li>
-<li>Select lines from: <code>9: Variant Lumpy Calling</code></li>
-<li>that: <code>matching</code></li>
-<li>the pattern: <code>^#</code></li>
+<li><strong>Select lines from</strong>: <code>9: Variant Lumpy Calling</code> (be careful to toggle the <code>Dataset collection</code> mode)</li>
+<li><strong>that</strong>: <code>matching</code></li>
+<li><strong>the pattern</strong>: <code>^#</code>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">^#</span>
+</pre></div>
+</td></tr></table>
+<img alt="" src="../images/filter.png" /></li>
 </ul>
-<p><img alt="" src="../images/filter.png" /></p>
-<h3 id="2-save-the-rest-of-the-vcf-file-in-another-dataset">2. Save the rest of the vcf file in another Dataset<a class="headerlink" href="#2-save-the-rest-of-the-vcf-file-in-another-dataset" title="Permanent link">&para;</a></h3>
-<p>Here we use the same <code>Select lines that match an expression</code> tools, this time with the parameters:</p>
+</div>
+<hr />
+<h3 id="2-save-the-rest-of-the-vcf-files-in-another-dataset-collection-using-the-same-tool">2. Save the rest of the vcf files in another Dataset Collection using the same tool:<a class="headerlink" href="#2-save-the-rest-of-the-vcf-files-in-another-dataset-collection-using-the-same-tool" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Select lines that match an expression (Galaxy Version 1.0.1)</p>
 <ul>
-<li>Select lines from: <code>9: Variant Lumpy Calling</code></li>
-<li>that: <code>matching</code></li>
-<li>the pattern: <code>SVTYPE=BND</code></li>
+<li><strong>Select lines from</strong>: <code>9: Variant Lumpy Calling</code> (be careful to toggle the <code>Dataset collection</code> mode)</li>
+<li><strong>that</strong>: <code>matching</code></li>
+<li><strong>the pattern</strong>: <code>SVTYPE=BND</code>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">SVTYPE=BND</span>
+</pre></div>
+</td></tr></table>
+<img alt="" src="../images/filter2.png" /></li>
 </ul>
-<h5 id="tip">TIP !<a class="headerlink" href="#tip" title="Permanent link">&para;</a></h5>
-<p>Just re-play the previous tool run, and just change the pattern from <code>^#</code> to <code>SVTYPE=BND</code></p>
-<p><img alt="" src="../images/filter2.png" /></p>
-<p>This allows to kill two birds with the same stone:</p>
+</div>
+<details class="tip how to be faster"><summary>Tip</summary><p>Just re-play the previous tool run by clicking the circular arrow at the bottom of the dataset box,
+just changing the <strong>pattern from</strong> <code>^#</code> to <code>SVTYPE=BND</code></p>
+</details>
+<p>This step allows to kill two birds with the same stone (tool):</p>
 <ul>
 <li>Selecting non-header part of the vcf</li>
 <li>filtering out the variations that are not of type <code>BND</code> (Bondaries)</li>
 </ul>
-<h3 id="3-reorder-the-vcf-lines-in-the-previous-dataset">3. Reorder the vcf lines in the previous dataset<a class="headerlink" href="#3-reorder-the-vcf-lines-in-the-previous-dataset" title="Permanent link">&para;</a></h3>
-<p>To do that, we use the tool <code>Sort data in ascending or descending order (Galaxy Version 1.1.0)</code></p>
+<hr />
+<h3 id="3-reorder-the-vcf-lines-describing-the-genetic-variations-using-the-tool">3. Reorder the vcf lines describing the genetic variations using the tool:<a class="headerlink" href="#3-reorder-the-vcf-lines-describing-the-genetic-variations-using-the-tool" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Sort data in ascending or descending order (Galaxy Version 1.1.1)</p>
 <ul>
-<li>Sort Query: <code>Dataset collection</code> and <code>16: Select on collection 9</code></li>
-<li>Number of header lines: <code>0</code></li>
-<li>1: Column selections<ul>
-<li>on column: <code>Column: 1</code></li>
-<li>in: <code>Ascending order</code></li>
-<li>Flavor: <code>Natural / Version sort (-V)</code></li>
+<li><strong>Sort Query</strong>**: <code>16: Select on collection 9</code> (be careful to toggle the <code>Dataset collection</code> mode)</li>
+<li><strong>Number of header lines</strong>: <code>0</code></li>
+<li><strong>1: Column selections</strong><ul>
+<li><strong>on column</strong>: <code>1</code></li>
+<li><strong>in</strong>: <code>Ascending order</code></li>
+<li><strong>Flavor</strong>: <code>Natural/Version sort (-V)</code></li>
 </ul>
 </li>
-<li>
-<p>2: Column selections</p>
-<ul>
-<li>on column: <code>Column: 2</code></li>
-<li>in: <code>Ascending order</code></li>
-<li>Flavor: <code>Fast numeric sort (-n)</code></li>
+<li><strong>2: Column selections</strong><ul>
+<li><strong>on column</strong>: <code>2</code></li>
+<li><strong>in</strong>: <code>Ascending order</code></li>
+<li><strong>Flavor</strong>: <code>Fast numeric sort (-n)</code></li>
 </ul>
 </li>
-<li>
-<p>Output unique values: No</p>
-</li>
-<li>Ignore case: No</li>
+<li><strong>Output unique values</strong>: <code>No</code></li>
+<li><strong>Ignore case</strong>: <code>No</code></li>
 </ul>
-<p><img alt="" src="../images/sort.png" /></p>
-<h3 id="4-reassemble-the-saved-header-with-the-sortedfiltered-vcf-lines">4. Reassemble the saved header with the sorted/filtered vcf lines<a class="headerlink" href="#4-reassemble-the-saved-header-with-the-sortedfiltered-vcf-lines" title="Permanent link">&para;</a></h3>
-<p>To do that, we use the tool <code>Concatenate datasets tail-to-head (Galaxy Version 1.0.0)</code>
-Pay extra attention to the version of the tool, because there is a number of concatenate tools with the same name.</p>
+<p><img alt="" src="../images/sort.png" style="width:500px" /></p>
+</div>
+<hr />
+<h3 id="4-reassemble-the-saved-headers-with-the-sortedfiltered-vcf-parts-using">4. Reassemble the saved headers with the sorted/filtered vcf parts using<a class="headerlink" href="#4-reassemble-the-saved-headers-with-the-sortedfiltered-vcf-parts-using" title="Permanent link">&para;</a></h3>
+<div class="admonition example">
+<p class="admonition-title">Concatenate multiple datasets tail-to-head by specifying how (Galaxy Version 1.4.1)</p>
+<p>Pay extra attention to the <em>name</em> and the <em>version</em> of the tool, because there is a number of concatenation tools with the same name</p>
 <ul>
-<li>Concatenate Dataset: <code>Dataset collection</code> and <code>14: Select on collection 9</code></li>
-<li>Click on <code>+ Insert Dataset</code> to trigger an additional form section</li>
-<li>Dataset: <code>Dataset collection</code> and <code>18: Sort on collection 16</code></li>
-<li>1: Column selections</li>
+<li><strong>What type of data do you wish to concatenate?</strong>: <code>2 Collections</code></li>
+<li><strong>Depending on the type of input selected the concatenation options will differ</strong><ul>
+<li><strong>Input first collection</strong>: <code>21: Select on collection 12</code></li>
+<li><strong>Input second collection</strong>: <code>27: Sort on collection 24</code></li>
 </ul>
-<p><img alt="" src="../images/concatenate.png" /></p>
-<h3 id="5-rename-the-dataset-within-the-last-dataset-collection">5. Rename the dataset within the last dataset collection.<a class="headerlink" href="#5-rename-the-dataset-within-the-last-dataset-collection" title="Permanent link">&para;</a></h3>
-<p>Here we will rename the dataset of the last dataset collection. Here, there is something that maybe
-tricky to understand.</p>
-<p>A dataset collection is a kind of dictionary whose elements, the datasets, have as labels the key of this dictionary.
-However, the real name of this dataset is hidden.</p>
-<p>To see the real name of the dataset, navigate in the last collection (click on it) and further click the pencil icone.</p>
-<p><img alt="" src="../images/rename.png" /></p>
-<p>Here you can change the real name of the dataset, which is useful for the next step of visualisation in Genome Browser</p>
-<p>Rename it as <code>patient A vcf</code> or <code>patient B vcf</code> and click <code>Save</code></p>
+</li>
+<li><strong>Include dataset names?</strong>: <code>No</code></li>
+<li><strong>Number of lines to skip at the beginning of each concatenation:</strong> <code>0</code></li>
+</ul>
+<p><img alt="" src="../images/concatenate.png" style="width:500px" /></p>
+</div>
+<hr />
+<h3 id="5-rename-the-last-generated-collection-from-concatenation-by-pairs-">5. Rename the last generated collection from <code>Concatenation by pairs</code> &rarr;<a class="headerlink" href="#5-rename-the-last-generated-collection-from-concatenation-by-pairs-" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">Sorted VCFs</span>
+</pre></div>
+</td></tr></table>
+
+<p><img alt="" src="../images/rename.png" style="width:250px" />&rarr;<img alt="" src="../images/rename-bis.png" style="width:250px" /></p>
+<p>Do not forget to press the <code>Enter</code> Key !!!</p>
                 
                   
                 
@@ -1683,13 +1652,13 @@ However, the real name of this dataset is hidden.</p>
           </a>
         
         
-          <a href="../coverage/" title="Compute genome coverage" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../coverage/" title="Compute the genome read coverage" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Compute genome coverage
+                Compute the genome read coverage
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -106,17 +106,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://artbio.github.io/startbio/translocations/visualisation/</loc>
+     <lastmod>2020-01-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://artbio.github.io/startbio/translocations/workflow/</loc>
      <lastmod>2020-01-28</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://artbio.github.io/startbio/translocations/run_workflow/</loc>
-     <lastmod>2020-01-28</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://artbio.github.io/startbio/translocations/visualisation/</loc>
      <lastmod>2020-01-28</lastmod>
      <changefreq>daily</changefreq>
     </url>
