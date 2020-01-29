@@ -1533,9 +1533,7 @@ in the order of chromosomes and secondly in the order of coordinates.</p>
 variations we are not interested in.</p>
 <hr />
 <h3 id="1-save-the-headers-of-the-vcf-files-using-the-tool">1. Save the headers of the vcf files using the tool:<a class="headerlink" href="#1-save-the-headers-of-the-vcf-files-using-the-tool" title="Permanent link">&para;</a></h3>
-<div class="admonition example">
-<p class="admonition-title">Select lines that match an expression (Galaxy Version 1.0.1)</p>
-<ul>
+<details class="example"><summary>Select lines that match an expression (Galaxy Version 1.0.1)</summary><ul>
 <li><strong>Select lines from</strong>: <code>9: Variant Lumpy Calling</code> (be careful to toggle the <code>Dataset collection</code> mode)</li>
 <li><strong>that</strong>: <code>matching</code></li>
 <li><strong>the pattern</strong>: <code>^#</code>
@@ -1544,12 +1542,10 @@ variations we are not interested in.</p>
 </td></tr></table>
 <img alt="" src="../images/filter.png" /></li>
 </ul>
-</div>
+</details>
 <hr />
 <h3 id="2-save-the-rest-of-the-vcf-files-in-another-dataset-collection-using-the-same-tool">2. Save the rest of the vcf files in another Dataset Collection using the same tool:<a class="headerlink" href="#2-save-the-rest-of-the-vcf-files-in-another-dataset-collection-using-the-same-tool" title="Permanent link">&para;</a></h3>
-<div class="admonition example">
-<p class="admonition-title">Select lines that match an expression (Galaxy Version 1.0.1)</p>
-<ul>
+<details class="example"><summary>Select lines that match an expression (Galaxy Version 1.0.1)</summary><ul>
 <li><strong>Select lines from</strong>: <code>9: Variant Lumpy Calling</code> (be careful to toggle the <code>Dataset collection</code> mode)</li>
 <li><strong>that</strong>: <code>matching</code></li>
 <li><strong>the pattern</strong>: <code>SVTYPE=BND</code>
@@ -1558,7 +1554,7 @@ variations we are not interested in.</p>
 </td></tr></table>
 <img alt="" src="../images/filter2.png" /></li>
 </ul>
-</div>
+</details>
 <details class="tip how to be faster"><summary>Tip</summary><p>Just re-play the previous tool run by clicking the circular arrow at the bottom of the dataset box,
 just changing the <strong>pattern from</strong> <code>^#</code> to <code>SVTYPE=BND</code></p>
 </details>
@@ -1569,9 +1565,7 @@ just changing the <strong>pattern from</strong> <code>^#</code> to <code>SVTYPE=
 </ul>
 <hr />
 <h3 id="3-reorder-the-vcf-lines-describing-the-genetic-variations-using-the-tool">3. Reorder the vcf lines describing the genetic variations using the tool:<a class="headerlink" href="#3-reorder-the-vcf-lines-describing-the-genetic-variations-using-the-tool" title="Permanent link">&para;</a></h3>
-<div class="admonition example">
-<p class="admonition-title">Sort data in ascending or descending order (Galaxy Version 1.1.1)</p>
-<ul>
+<details class="example"><summary>Sort data in ascending or descending order (Galaxy Version 1.1.1)</summary><ul>
 <li><strong>Sort Query</strong>**: <code>16: Select on collection 9</code> (be careful to toggle the <code>Dataset collection</code> mode)</li>
 <li><strong>Number of header lines</strong>: <code>0</code></li>
 <li><strong>1: Column selections</strong><ul>
@@ -1590,12 +1584,10 @@ just changing the <strong>pattern from</strong> <code>^#</code> to <code>SVTYPE=
 <li><strong>Ignore case</strong>: <code>No</code></li>
 </ul>
 <p><img alt="" src="../images/sort.png" style="width:500px" /></p>
-</div>
+</details>
 <hr />
 <h3 id="4-reassemble-the-saved-headers-with-the-sortedfiltered-vcf-parts-using">4. Reassemble the saved headers with the sorted/filtered vcf parts using<a class="headerlink" href="#4-reassemble-the-saved-headers-with-the-sortedfiltered-vcf-parts-using" title="Permanent link">&para;</a></h3>
-<div class="admonition example">
-<p class="admonition-title">Concatenate multiple datasets tail-to-head by specifying how (Galaxy Version 1.4.1)</p>
-<p>Pay extra attention to the <em>name</em> and the <em>version</em> of the tool, because there is a number of concatenation tools with the same name</p>
+<details class="example"><summary>Concatenate multiple datasets tail-to-head by specifying how (Galaxy Version 1.4.1)</summary><p>Pay extra attention to the <em>name</em> and the <em>version</em> of the tool, because there is a number of concatenation tools with the same name</p>
 <ul>
 <li><strong>What type of data do you wish to concatenate?</strong>: <code>2 Collections</code></li>
 <li><strong>Depending on the type of input selected the concatenation options will differ</strong><ul>
@@ -1607,7 +1599,7 @@ just changing the <strong>pattern from</strong> <code>^#</code> to <code>SVTYPE=
 <li><strong>Number of lines to skip at the beginning of each concatenation:</strong> <code>0</code></li>
 </ul>
 <p><img alt="" src="../images/concatenate.png" style="width:500px" /></p>
-</div>
+</details>
 <hr />
 <h3 id="5-rename-the-last-generated-collection-from-concatenation-by-pairs-">5. Rename the last generated collection from <code>Concatenation by pairs</code> &rarr;<a class="headerlink" href="#5-rename-the-last-generated-collection-from-concatenation-by-pairs-" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">Sorted VCFs</span>
