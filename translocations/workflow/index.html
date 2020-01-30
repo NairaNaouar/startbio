@@ -1562,6 +1562,28 @@
 <p><img alt="" src="../images/workflow-edit-2.png" /></p>
 <h3 id="step-2-reconnect-tools-starting-from-the-input-data-collection">step 2: reconnect tools, <strong>starting from the input data collection</strong><a class="headerlink" href="#step-2-reconnect-tools-starting-from-the-input-data-collection" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../images/workflow-edit-3.png" /></p>
+<div class="admonition bug">
+<p class="admonition-title">Warning</p>
+<p>When reconnection, you may have the warning
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">Can&#39;t map over this input with</span>
+<span class="err">output collection type - an output</span>
+<span class="err">of this tool is not mapped over</span>
+<span class="err">constraining this input.</span>
+<span class="err">Disconnect output(s) and retry.</span>
+</pre></div>
+</td></tr></table>
+This is a bug and
+You may need to manipulate a little the workflow editor before being able to reconnect the
+<code>input data collection</code> box to the <code>Map with BWA-MEM</code> tool box.
+Try to save the unlinked workflow, quit and reedit, or manipulate the <strong>Collection type</strong>
+parameter of the <code>input data collection</code> box, by clearing the field and re-entering
+<code>list:paired</code>. After a while it will go...
+```</p>
+</div>
 <h3 id="step-3-edit-the-last-step-of-the-workflow-to-rename-the-output">step 3: edit the last step of the workflow to rename the output<a class="headerlink" href="#step-3-edit-the-last-step-of-the-workflow-to-rename-the-output" title="Permanent link">&para;</a></h3>
 <p><img align="top" alt="" src="../images/workflow-edit-4.png" style="width:300px" /></p>
                 
