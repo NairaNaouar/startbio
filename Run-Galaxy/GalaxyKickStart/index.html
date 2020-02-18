@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
     
     
       
@@ -42,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -79,7 +79,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#installation-of-a-galaxy-server-with-ansible-and-the-galaxykickstart-playbook" tabindex="1" class="md-skip">
+      <a href="#installation-of-a-galaxy-server-with-ansible-and-the-galaxykickstart-playbook" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -88,7 +88,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://artbio.github.io/startbio/" title="STARTbio" class="md-header-nav__button md-logo">
+        <a href="https://artbio.github.io/startbio/" title="STARTbio" aria-label="STARTbio" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -119,7 +119,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -1409,6 +1409,42 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      Download TARGET-AML Data in Galaxy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        Download TARGET-AML Data in Galaxy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../TARGET_download/intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1670,13 +1706,13 @@ Repository <a href="https://github.com/ARTbio/GalaxyKickStart">https://github.co
 <ul>
 <li>connect to you VM using the Google ssh console</li>
 <li>start an interactive session as root using the command
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">sudo -i</span>
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">sudo -i</span>
+</code></pre></div>
 </td></tr></table></li>
 <li>
 <p>download the script <code>run_ansible_analyse_genomes_2019.sh</code> using the command
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/run_ansible_analyse_genomes_2019.sh</span>
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">wget https://raw.githubusercontent.com/ARTbio/Run-Galaxy/master/deployment_scripts/run_ansible_analyse_genomes_2019.sh</span>
+</code></pre></div>
 </td></tr></table></p>
 </li>
 <li>
@@ -1685,8 +1721,8 @@ Ansible Racing</mark>.
 In order to participate, you'll just have to put the <code>time</code> command just before the script invokation, as follows:</p>
 </li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">time sh run_ansible_analyse_genomes_2019.sh analyseGenomes_2019</span>
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">time sh run_ansible_analyse_genomes_2019.sh analyseGenomes_2019</span>
+</code></pre></div>
 </td></tr></table>
 
 <div class="admonition danger">
@@ -1695,10 +1731,10 @@ In order to participate, you'll just have to put the <code>time</code> command j
 It shoud look like this:
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">real    10m27.142s</span>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">real    10m27.142s</span>
 <span class="err">user    8m22.941s</span>
 <span class="err">sys 1m16.409s</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 Then Paste this time as a comment in this <a href="https://github.com/ARTbio/Run-Galaxy/issues/25">GitHub issue</a></p>
 </div>
@@ -1732,46 +1768,46 @@ to avoid your Galaxy server getting hacked before the end of the course.</p>
 <li>Press the top right button (above history list) <code>Import from file</code></li>
 <li>
 <p>copy this url :
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">https://galaxy.pasteur.fr/history/export_archive?id=4c5da5ad7355ff42</span>
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c">https://galaxy.pasteur.fr/history/export_archive?id=4c5da5ad7355ff42</span>
+</code></pre></div>
 </td></tr></table></p>
 </li>
 <li>
 <p>repeat the same operation with: 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">https://galaxy.pasteur.fr/history/export_archive?id=eb4c1d5564c9f78c</span>
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c">https://galaxy.pasteur.fr/history/export_archive?id=eb4c1d5564c9f78c</span>
+</code></pre></div>
 </td></tr></table>
 and
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">https://galaxy.pasteur.fr/history/export_archive?id=69a1b70d1c4a6bdb</span>
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c">https://galaxy.pasteur.fr/history/export_archive?id=69a1b70d1c4a6bdb</span>
+</code></pre></div>
 </td></tr></table></p>
 </li>
 </ul>
 <details class="bug"><summary>In case of emergency</summary><h3 id="nextcloud">NEXTCLOUD<a class="headerlink" href="#nextcloud" title="Permanent link">&para;</a></h3>
 <p>Small RNAseq
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/wC4DrxHN3gLtx4c/download</span>
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c">https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/wC4DrxHN3gLtx4c/download</span>
+</code></pre></div>
 </td></tr></table>
 Reférences
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/Sri6HKiwCn4RbSq/download</span>
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c">https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/Sri6HKiwCn4RbSq/download</span>
+</code></pre></div>
 </td></tr></table>
 RNAseq
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/4FWrWxZf72KDNji/download</span>
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c">https://usegalaxy.sorbonne-universite.fr/nextcloud/index.php/s/4FWrWxZf72KDNji/download</span>
+</code></pre></div>
 </td></tr></table></p>
 <h3 id="amazon-s3">Amazon S3<a class="headerlink" href="#amazon-s3" title="Permanent link">&para;</a></h3>
 <p>RNAseq
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">https://mydeepseqbucket.s3.amazonaws.com/RNAseq</span>
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c">https://mydeepseqbucket.s3.amazonaws.com/RNAseq</span>
+</code></pre></div>
 </td></tr></table>
 small RNAseq
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">https://mydeepseqbucket.s3.amazonaws.com/smallrnaseqs</span>
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c">https://mydeepseqbucket.s3.amazonaws.com/smallrnaseqs</span>
+</code></pre></div>
 </td></tr></table>
 references
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">https://mydeepseqbucket.s3.amazonaws.com/references</span>
-</pre></div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c">https://mydeepseqbucket.s3.amazonaws.com/references</span>
+</code></pre></div>
 </td></tr></table></p>
 </details>
 <hr />
@@ -1791,7 +1827,7 @@ references
 13
 14
 15
-16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+16</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 <span class="nb">set</span> -e
 apt update -y
 apt install -y python-pip python-dev python-setuptools git htop
@@ -1807,7 +1843,7 @@ cp scripts/8cpu_job_conf.xml roles/galaxyprojectdotorg.galaxy-extras/templates/j
 cp scripts/configure_slurm.py.j2 roles/galaxyprojectdotorg.galaxy-extras/templates/configure_slurm.py.j2
 ansible-playbook -i inventory_files/analyseGenomes galaxy.yml
 <span class="nb">echo</span> <span class="s2">&quot;end of deployment\n&quot;</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
 
 <details class="info"><summary>the <code>run_ansible_analyse_genomes_2019.sh</code> script explained</summary><ol>
@@ -1900,9 +1936,9 @@ Here, we play the playbook on the same computer (localhost).</li>
       <div class="md-footer-copyright">
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
@@ -1912,7 +1948,7 @@ Here, we play the playbook on the same computer (localhost).</li>
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
