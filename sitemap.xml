@@ -321,6 +321,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://artbio.github.io/startbio/links/</loc>
      <lastmod>2020-02-19</lastmod>
      <changefreq>daily</changefreq>
